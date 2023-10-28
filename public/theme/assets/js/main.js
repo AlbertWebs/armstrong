@@ -31,13 +31,13 @@ const headerSticky = (selector) => {
                 header.classList.add("is-sticky")
 
                 if (headerLogo) {
-                    headerLogo.src = "./assets/images/logo.png"
+                    headerLogo.src = "http://localhost:8000/theme/assets/images/logo.png"
                 }
             } else {
                 header.classList.remove("is-sticky")
 
                 if (headerLogo) {
-                    headerLogo.src = "./assets/images/logo-white.png"
+                    headerLogo.src = "http://localhost:8000/theme/assets/images/logo.png"
                 }
             }
         })
@@ -49,7 +49,7 @@ headerSticky(".header")
 // menu-items-list menu-items-list--dark
 
 /*--
-    Mobile Menu 
+    Mobile Menu
 
     Global Functions
     - Get Sibling
@@ -171,6 +171,7 @@ var swiper = new Swiper(".slider-active .swiper", {
     effect: "fade",
     loop: true,
     speed: 1200,
+    navigation:false,
 
     // If we need pagination
     pagination: {
@@ -187,7 +188,7 @@ var swiper = new Swiper(".slider-active .swiper", {
 })
 
 /*--
-    Features Text 
+    Features Text
 -----------------------------------*/
 var swiper = new Swiper(".features-text .swiper", {
     // slidesPerView: 2,
@@ -206,7 +207,7 @@ var swiper = new Swiper(".features-text .swiper", {
 })
 
 /*--
-    Brand 
+    Brand
 -----------------------------------*/
 var swiper = new Swiper(".brand-active .swiper", {
     loop: true,
@@ -794,7 +795,7 @@ const productQuantity = (selector) => {
 productQuantity(".product-quantity")
 
 /*--
-    Product Single Carousel 
+    Product Single Carousel
 -----------------------------------*/
 var swiper = new Swiper(".product-single-carousel .swiper", {
     loop: true,
@@ -930,7 +931,7 @@ const checkoutShipping = (selector) => {
 checkoutShipping(".checkout-shipping")
 
 /*--
-    Quick View Slides 
+    Quick View Slides
 -----------------------------------*/
 const QuickViewProduct = new Swiper(".quick-view-product-slide .swiper", {
     spaceBetween: 0,
