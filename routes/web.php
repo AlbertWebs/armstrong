@@ -18,4 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/contact-us', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact-us');
+
+Route::get('/shopping-cart', [App\Http\Controllers\HomeController::class, 'shopping'])->name('shopping');
+
 Auth::routes();

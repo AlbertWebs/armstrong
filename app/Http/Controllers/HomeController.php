@@ -25,4 +25,18 @@ class HomeController extends Controller
     {
         return view('front.index');
     }
+    public function contact()
+    {
+        return view('front.contact');
+    }
+
+    public function shopping()
+    {
+        return view('front.shopping');
+    }
+
+
+
 }
+
+

@@ -525,7 +525,7 @@
                                 <a href="#">Princess set</a>
                             </h4>
                             <span class="offcanvas-cart-item__quantity">
-                            1 × $69.99
+                            1 × kes 3069.99
                         </span>
                         </div>
                         <a class="offcanvas-cart-item__remove" href="#" aria-label="remove">
@@ -547,7 +547,7 @@
                                 <a href="#">Senecio stapeliiformis </a>
                             </h4>
                             <span class="offcanvas-cart-item__quantity">
-                            1 × $89.99
+                            1 × kes 3089.99
                         </span>
                         </div>
                         <a class="offcanvas-cart-item__remove" href="#" aria-label="remove">
@@ -569,7 +569,7 @@
                                 <a href="#">Hoya burtoniae </a>
                             </h4>
                             <span class="offcanvas-cart-item__quantity">
-                            1 × $35.99
+                            1 × kes 3035.99
                         </span>
                         </div>
                         <a class="offcanvas-cart-item__remove" href="#" aria-label="remove">
@@ -677,7 +677,7 @@
             <!-- Cart Buttons End-->
             <div class="cart-buttons">
                 <a href="#" class="cart-buttons__btn-1 btn">Checkout</a>
-                <a href="#" class="cart-buttons__btn-2 btn">View Cart</a>
+                <a href="{{url('/shopping-cart')}}" class="cart-buttons__btn-2 btn">View Cart</a>
             </div>
             <!-- Cart Buttons End-->
         </div>
@@ -743,11 +743,11 @@
             <!-- Off Canvas Sidebar Info Start -->
             <div class="offcanvas-sidebar__info">
                 <ul class="offcanvas-info-list">
-                    <li><a href="tel:+61225315600">(+612) 2531 5600</a></li>
-                    <li><a href="mailto:info@exmple.com">info@exmple.com</a></li>
+                    <li><a href="tel:(+254) 7230 14032">(+254) 7230 14032</a></li>
+                    <li><a href="mailto:info@armstrong.ke">info@armstrong.ke</a></li>
                     <li>
                         <span>
-                        PO Box 1622 Colins Street West Victoria 8077 Australia
+                        3571 Riverside Downs, Gitaru Road, Western ByPass
                     </span>
                     </li>
                 </ul>
@@ -772,6 +772,11 @@
                             <i class="lastudioicon-b-instagram"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="#" aria-label="linkedin">
+                            <i class="lastudioicon-b-linkedin"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!-- Off Canvas Sidebar Social End -->
@@ -780,9 +785,9 @@
             <div class="offcanvas-sidebar__copyright">
                 <p>
                     &copy;
-                    <span class="current-year">2023</span>
-                    <span> Lumin </span> Made with by
-                    <a href="https://hasthemes.com/">HasThemes</a>
+                    <span class="current-year">{{date('Y')}}</span>
+                    <span> Armstrong Boissons Limited - All Rights Reserved </span> Powered By
+                    <a href="https://designekta.com/">Designekta Studios</a>
                 </p>
             </div>
             <!-- Off Canvas Sidebar Social End -->
@@ -807,235 +812,114 @@
                 <ul class="mobile-menu-items">
                     <li>
                         <a href="#">
-                            Demos
+                            Wines
                             <span class="menu-expand" aria-label="down-arrow">
                             <i class="lastudioicon-down-arrow"></i>
                         </span>
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="{{url('/')}}">Candles-01</a></li>
-                            <li><a href="index-2.html">Wines 01</a></li>
+                            <li><a href="{{url('/')}}/wine/red-wine/" ><span>Red Wine</span></a></li>
+                            <li ><a href="{{url('/')}}/wine/red-wine/red-sweet-wine/" ><span>Red Sweet Wine</span></a></li>
+                            <li><a href="{{url('/')}}/wine/white-wine/" ><span>White Wine</span></a></li>
+                            <li><a href="{{url('/')}}/wine/white-wine/sweet-white-wine/" ><span>Sweet White Wine</span></a></li>
+                            <li><a href="{{url('/')}}/wine/rose-wine/" ><span>Rosé Wine</span></a></li>
+                            <li><a href="{{url('/')}}/wine/sparkling-wine/" ><span>Sparkling Wine</span></a></li>
+                            <li><a href="{{url('/')}}/wine/red-wine/port-sherry/" ><span>Port &amp; Sherry</span></a></li>
+                            <li><a href="{{url('/')}}/wine/flavoured-wine/" ><span>Flavoured Wine</span></a></li>
+                            <li><a href="{{url('/')}}/wine/" ><span>All Wines</span></a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="#">
-                            Pages
+                            Spirits
                             <span class="menu-expand" aria-label="down-arrow">
                             <i class="lastudioicon-down-arrow"></i>
                         </span>
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="about.html">About us</a></li>
-                            <li><a href="coming-soon.html">Coming Soon</a></li>
-                            <li><a href="our-team.html">Our Team</a></li>
-                            <li><a href="contact-us.html">Contact Us</a></li>
-                            <li><a href="faqs.html">FAQ's</a></li>
-                            <li><a href="term-of-use.html">term of use</a></li>
-                            <li><a href="404.html">404 Page</a></li>
-                            <li>
-                                <a href="login-register.html">Login & Register</a>
-                            </li>
+                            <li id="nav-menu-item-48270" ><a href="{{url('/')}}/spirits/whisky/" ><span>Whisky</span></a></li>
+                            <li id="nav-menu-item-48271" ><a href="{{url('/')}}/spirits/rum/" ><span>Rum</span></a></li>
+                            <li id="nav-menu-item-48272" ><a href="{{url('/')}}/spirits/vodka/" ><span>Vodka</span></a></li>
+                            <li id="nav-menu-item-48273" ><a href="{{url('/')}}/spirits/gin/" ><span>Gin</span></a></li>
+                            <li id="nav-menu-item-55545" ><a href="{{url('/')}}/spirits/brandy/cognac/" ><span>Cognac</span></a></li>
+                            <li id="nav-menu-item-55544" ><a href="{{url('/')}}/spirits/brandy/" ><span>Brandy</span></a></li>
+                            <li id="nav-menu-item-55548" ><a href="{{url('/')}}/spirits/tequila/" ><span>Tequila</span></a></li>
+                            <li id="nav-menu-item-55549" ><a href="{{url('/')}}/spirits/liqueur/" ><span>Liqueur</span></a></li>
+
                         </ul>
                     </li>
+
                     <li>
                         <a href="#">
-                            Shop
-                            <span class="menu-expand" aria-label="down-arrow">
-                            <i class="lastudioicon-down-arrow"></i>
-                        </span>
-                        </a>
-                        <div class="mega-menu">
-                            <div class="mega-menu-col">
-                                <h5 class="mega-menu-title">Shop Layout</h5>
-                                <ul class="">
-                                    <li>
-                                        <a href="shop-fullwidth.html">Shop Fullwidth</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-sidebar.html">Shop Sidebar</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-masonry.html">Shop Masonry</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-3-columns.html">Shop 03 Columns</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-4-columns.html">Shop 04 Columns</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="mega-menu-col">
-                                <ul class="">
-                                    <li><a href="#">Featured Banner</a></li>
-                                    <li class="mega-menu-title">Hover Style</li>
-                                    <li><a href="#">Hover Style 01</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-menu-col">
-                                <h5 class="mega-menu-title">Shop Pages</h5>
-                                <ul class="">
-                                    <li>
-                                        <a href="my-account.html">My Account</a>
-                                    </li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li>
-                                        <a href="order-tracking.html">Order Tracking</a>
-                                    </li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="compare.html">Compare</a></li>
-                                    <li>
-                                        <a href="empty-cart.html">Cart Empty</a>
-                                    </li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="thank-you.html">Thank You</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-menu-col">
-                                <h5 class="mega-menu-title">Product Pages</h5>
-                                <ul class="">
-                                    <li>
-                                        <a href="product-single.html">
-                                            Product Simple
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="product-single-variable.html">
-                                            Product Variable
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="product-single-carousel.html">
-                                            Product Carousel
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="product-single-affiliate.html">
-                                            Product Affiliate
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="product-single-countdown.html">
-                                            Product CountDown
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Collections
-                            <span class="menu-expand" aria-label="down-arrow">
-                            <i class="lastudioicon-down-arrow"></i>
-                        </span>
-                        </a>
-                        <div class="mega-menu">
-                            <div class="mega-menu__banner">
-                                <a href="#">
-                                    <div class="mega-menu__banner--image">
-                                        <img src="{{asset('theme/assets/images/megamenu-fashion-01.jpg')}}" alt="Fashion Banner" width="269" height="271" />
-                                    </div>
-                                    <div class="mega-menu__banner--caption">
-                                        <h4 class="caption-title">New Arrival</h4>
-                                        <p class="caption-desc">
-                                            Non curabitur gravida
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="mega-menu__content">
-                                <h4 class="mega-menu__content--title">
-                                    Summer Collection 2023
-                                </h4>
-                                <div class="d-flex flex-wrap">
-                                    <ul class="mega-menu__content--list">
-                                        <li>
-                                            <a href="#">Dresses and jumpsuits</a>
-                                        </li>
-                                        <li><a href="#">Shirts</a></li>
-                                        <li><a href="#">T-shirts and tops</a></li>
-                                        <li>
-                                            <a href="#">Jackets and Suit Jackets</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Cardigans and sweaters</a>
-                                        </li>
-                                        <li><a href="#">Sweatshirts</a></li>
-                                        <li><a href="#">Coats</a></li>
-                                    </ul>
-                                    <ul class="mega-menu__content--list">
-                                        <li><a href="#">Trousers</a></li>
-                                        <li><a href="#">Jeans</a></li>
-                                        <li><a href="#">Skirts</a></li>
-                                        <li><a href="#">Shorts</a></li>
-                                        <li>
-                                            <a href="#">Bikinis and swimsuits</a>
-                                        </li>
-                                        <li><a href="#">Sportswear</a></li>
-                                        <li>
-                                            <a href="#">Underwear and lingerie</a>
-                                        </li>
-                                        <li><a href="#">Pyjamas</a></li>
-                                    </ul>
-                                </div>
-                                <div class="mt-auto">
-                                    <ul class="mega-menu__info">
-                                        <li><a href="#">info@exmple.com</a></li>
-                                        <li><a href="#">(626)997-4298</a></li>
-                                    </ul>
-                                    <div class="mega-menu__social">
-                                        <div class="mega-menu__social--lable">
-                                            Connect with us
-                                        </div>
-                                        <ul class="mega-menu__social--social">
-                                            <li>
-                                                <a href="#" aria-label="facebook">
-                                                    <i
-                                                    class="lastudioicon-b-facebook"
-                                                ></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" aria-label="twitter">
-                                                    <i
-                                                    class="lastudioicon-b-twitter"
-                                                ></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" aria-label="instagram">
-                                                    <i
-                                                    class="lastudioicon-b-instagram"
-                                                ></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Blog
+                            Beers
                             <span class="menu-expand" aria-label="down-arrow">
                             <i class="lastudioicon-down-arrow"></i>
                         </span>
                         </a>
                         <ul class="sub-menu">
-                            <li>
-                                <a href="blog-right-sidebar.html">
-                                    Blog Right Sidebar
-                                </a>
-                            </li>
-                            <li>
-                                <a href="blog-left-sidebar.html">
-                                    Blog Left Sidebar
-                                </a>
-                            </li>
-                            <li><a href="blog.html">Blog No Sidebar</a></li>
-                            <li><a href="blog-single.html">Single Post</a></li>
+                            <li id="nav-menu-item-17196"><a href="{{url('/')}}/beer/?_origin=kenya" c><span>Domestic</span></a></li>
+                            <li id="nav-menu-item-17205"><a href="{{url('/')}}/product-tag/imported/" c><span>Imported</span></a></li>
+                            <li id="nav-menu-item-66132"><a href="{{url('/')}}/beer/craft-beer/" c><span>Craft Beer</span></a></li>
+                            <li id="nav-menu-item-66133"><a href="{{url('/')}}/beer/cider/" c><span>Cider</span></a></li>
+                            <li id="nav-menu-item-66134"><a href="{{url('/')}}/beer/non-alcoholic-beer/" c><span>Non-alcoholic Beer</span></a></li>
+                            <li id="nav-menu-item-48224"><a href="{{url('/')}}/beer/" c><span>All Beer</span></a></li>
+
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Mixers
+                            <span class="menu-expand" aria-label="down-arrow">
+                            <i class="lastudioicon-down-arrow"></i>
+                        </span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li id="nav-menu-item-63765" ><a href="{{url('/')}}/mixers/sodas/" class="cg-menu-link sub-menu-link"><span>Sodas</span></a></li>
+                            <li id="nav-menu-item-66131" ><a href="{{url('/')}}/mixers/sodas/tonic/" class="cg-menu-link sub-menu-link"><span>Tonic</span></a></li>
+                            <li id="nav-menu-item-63764" ><a href="{{url('/')}}/mixers/juices/" class="cg-menu-link sub-menu-link"><span>Juices</span></a></li>
+                            <li id="nav-menu-item-63826" ><a href="{{url('/')}}/mixers/water/" class="cg-menu-link sub-menu-link"><span>Water</span></a></li>
+                            <li id="nav-menu-item-63761" ><a href="{{url('/')}}/mixers/syrups-bitters/" class="cg-menu-link sub-menu-link"><span>Syrups &amp; Bitters</span></a></li>
+                            <li id="nav-menu-item-63762" ><a href="{{url('/')}}/mixers/energy-drinks/" class="cg-menu-link sub-menu-link"><span>Energy Drinks</span></a></li>
+                            <li id="nav-menu-item-63838" ><a href="{{url('/')}}/mixers/coffee-tea/" class="cg-menu-link sub-menu-link"><span>Coffee &amp; Tea</span></a></li>
+                            <li id="nav-menu-item-63763" ><a href="{{url('/')}}/mixers/kombucha/" class="cg-menu-link sub-menu-link"><span>Kombucha</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Snacks
+                            <span class="menu-expand" aria-label="down-arrow">
+                            <i class="lastudioicon-down-arrow"></i>
+                        </span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li id="nav-menu-item-76691" ><a href="{{url('/')}}/snacks/frozen/ice-cream/" class="cg-menu-link sub-menu-link"><span>Ice Cream</span></a></li>
+                            <li id="nav-menu-item-76685" ><a href="{{url('/')}}/snacks/popcorn/" class="cg-menu-link sub-menu-link"><span>Popcorn</span></a></li>
+                            <li id="nav-menu-item-76686" ><a href="{{url('/')}}/snacks/crisps/" class="cg-menu-link sub-menu-link"><span>Crisps</span></a></li>
+                            <li id="nav-menu-item-76687" ><a href="{{url('/')}}/snacks/chocolate/" class="cg-menu-link sub-menu-link"><span>Chocolate</span></a></li>
+                            <li id="nav-menu-item-76689" ><a href="{{url('/')}}/snacks/nuts/" class="cg-menu-link sub-menu-link"><span>Nuts</span></a></li>
+                            <li id="nav-menu-item-76690" ><a href="{{url('/')}}/snacks/biscuits-waffles/" class="cg-menu-link sub-menu-link"><span>Biscuits &amp; Waffles</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Extras
+                            <span class="menu-expand" aria-label="down-arrow">
+                            <i class="lastudioicon-down-arrow"></i>
+                        </span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li id="nav-menu-item-63765" ><a href="{{url('/')}}/mixers/sodas/" class="cg-menu-link sub-menu-link"><span>Sodas</span></a></li>
+                            <li id="nav-menu-item-66131" ><a href="{{url('/')}}/mixers/sodas/tonic/" class="cg-menu-link sub-menu-link"><span>Tonic</span></a></li>
+                            <li id="nav-menu-item-63764" ><a href="{{url('/')}}/mixers/juices/" class="cg-menu-link sub-menu-link"><span>Juices</span></a></li>
+                            <li id="nav-menu-item-63826" ><a href="{{url('/')}}/mixers/water/" class="cg-menu-link sub-menu-link"><span>Water</span></a></li>
+                            <li id="nav-menu-item-63761" ><a href="{{url('/')}}/mixers/syrups-bitters/" class="cg-menu-link sub-menu-link"><span>Syrups &amp; Bitters</span></a></li>
+                            <li id="nav-menu-item-63762" ><a href="{{url('/')}}/mixers/energy-drinks/" class="cg-menu-link sub-menu-link"><span>Energy Drinks</span></a></li>
+                            <li id="nav-menu-item-63838" ><a href="{{url('/')}}/mixers/coffee-tea/" class="cg-menu-link sub-menu-link"><span>Coffee &amp; Tea</span></a></li>
+                            <li id="nav-menu-item-63763" ><a href="{{url('/')}}/mixers/kombucha/" class="cg-menu-link sub-menu-link"><span>Kombucha</span></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -1216,6 +1100,11 @@
                                     <li>
                                         <a href="#" aria-label="instagram">
                                             <i class="lastudioicon-b-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="linkedin">
+                                            <i class="lastudioicon-b-linkedin 2x"></i>
                                         </a>
                                     </li>
                                 </ul>

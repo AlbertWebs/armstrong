@@ -30,54 +30,6 @@
                     </div>
                 </div>
                 <!-- Slider Item End -->
-
-                <!-- Slider Item Start -->
-                {{-- <div class="slider-item home-2-slider-style d-flex align-items-center swiper-slide home-2-slider-animation" style="
-                            background-image: url({{asset('theme/assets/images/slider-2/slider-2.jpg')}});
-                        ">
-                    <div class="container-fluid custom-container">
-                        <!-- Slider Content Start -->
-                        <div class="home-2-slider-content-style-1 mx-auto text-center">
-                            <h3 class="home-2-slider-content-style-1__sub-title">
-                                FROM FRANCE
-                            </h3>
-                            <h2 class="home-2-slider-content-style-1__title text-white">
-                                RED WINE
-                            </h2>
-                            <p class="home-2-slider-content-style-1__description text-white">
-                                Quam pellentesque nec nam aliquam sem
-                                et. Enim diam vulputate ut
-                            </p>
-                            <a class="home-2-slider-content-style-1__btn" href="shop-fullwidth.html">
-                                Discover more
-                            </a>
-                        </div>
-                        <!-- Slider Content End -->
-                    </div>
-                </div> --}}
-                <!-- Slider Item End -->
-
-                <!-- Slider Item Start -->
-                {{-- <div class="slider-item home-2-slider-style d-flex align-items-center swiper-slide home-2-slider-animation" style="
-                            background-image: url({{asset('theme/assets/images/slider-2/slider-3.jpg')}});
-                        ">
-                    <div class="container-fluid custom-container">
-                        <!-- Slider Content Start -->
-                        <div class="home-2-slider-content-style-1">
-                            <h3 class="home-2-slider-content-style-1__sub-title">
-                                FROM FRANCE
-                            </h3>
-                            <h2 class="home-2-slider-content-style-1__title text-white">
-                                Great wines tell a story
-                            </h2>
-                            <a class="home-2-slider-content-style-1__btn" href="shop-fullwidth.html">
-                                Discover more
-                            </a>
-                        </div>
-                        <!-- Slider Content End -->
-                    </div>
-                </div> --}}
-                <!-- Slider Item End -->
             </div>
             {{-- <div class="swiper-button-next">
                 <i class="lastudioicon-arrow-right"></i>
@@ -772,6 +724,11 @@
             <div class="gallery-wrapper gallery-active navigation-arrows-style-1 js-scroll ShortFadeInUp scrolled">
                 <div class="swiper">
                     <div class="swiper-wrapper">
+
+                        <!-- Gallery Item Start -->
+                        <div class="swiper-slide gallery-item">
+                            <img src="{{asset('theme/assets/images/gallery/barrel.jpg')}}" alt="gallery" width="918" height="550" loading="lazy" />
+                        </div>
                         <!-- Gallery Item Start -->
                         <div class="swiper-slide gallery-item">
                             <img src="{{asset('theme/assets/images/gallery/gallery-01.jpg')}}" alt="gallery" width="918" height="550" loading="lazy" />
@@ -785,6 +742,11 @@
                         <!-- Gallery Item Start -->
                         <div class="swiper-slide gallery-item">
                             <img src="{{asset('theme/assets/images/gallery/gallery-03.jpg')}}" alt="gallery" width="918" height="550" loading="lazy" />
+                        </div>
+                        <!-- Gallery Item End -->
+                        <!-- Gallery Item Start -->
+                        <div class="swiper-slide gallery-item">
+                            <img src="{{asset('theme/assets/images/gallery/pexels-elevate-1267331.jpg')}}" alt="gallery" width="918" height="550" loading="lazy" />
                         </div>
                         <!-- Gallery Item End -->
                     </div>
@@ -834,7 +796,7 @@
             <!-- Section Title Start -->
             <div class="section-title-2 text-center js-scroll ShortFadeInUp scrolled">
                 <h2 class="section-title-2__title">
-                    Featured Producers
+                    Featured Partners
                 </h2>
             </div>
             <!-- Section Title End -->
@@ -846,28 +808,35 @@
                         <div class="swiper-slide">
                             <!-- Brand Item Start -->
                             <div class="brand-item-2">
-                                <img src="{{asset('theme/assets/images/brand/brand-2-1.png')}}" alt="Brand" width="308" height="210" loading="lazy" />
+                                <img src="{{asset('uploads/partners/keroche.png')}}" alt="Brand" width="308" height="210" loading="lazy" />
                             </div>
                             <!-- Brand Item End -->
                         </div>
                         <div class="swiper-slide">
                             <!-- Brand Item Start -->
                             <div class="brand-item-2">
-                                <img src="{{asset('theme/assets/images/brand/brand-2-2.png')}}" alt="Brand" width="308" height="210" loading="lazy" />
+                                <img src="{{asset('uploads/partners/254.png')}}" alt="Brand" width="308" height="210" loading="lazy" />
                             </div>
                             <!-- Brand Item End -->
                         </div>
                         <div class="swiper-slide">
                             <!-- Brand Item Start -->
                             <div class="brand-item-2">
-                                <img src="{{asset('theme/assets/images/brand/brand-2-3.png')}}" alt="Brand" width="308" height="210" loading="lazy" />
+                                <img src="{{asset('uploads/partners/eabl.png')}}" alt="Brand" width="308" height="210" loading="lazy" />
                             </div>
                             <!-- Brand Item End -->
                         </div>
                         <div class="swiper-slide">
                             <!-- Brand Item Start -->
                             <div class="brand-item-2">
-                                <img src="{{asset('theme/assets/images/brand/brand-2-4.png')}}" alt="Brand" width="308" height="210" loading="lazy" />
+                                <img src="{{asset('uploads/partners/italy-wines.png')}}" alt="Brand" width="308" height="210" loading="lazy" />
+                            </div>
+                            <!-- Brand Item End -->
+                        </div>
+                        <div class="swiper-slide">
+                            <!-- Brand Item Start -->
+                            <div class="brand-item-2">
+                                <img src="{{asset('uploads/partners/sab.png')}}" alt="Brand" width="308" height="210" loading="lazy" />
                             </div>
                             <!-- Brand Item End -->
                         </div>
@@ -1008,50 +977,16 @@
             <h3 class="about-content__sub-title">
                 THE STORY BEHIND
             </h3>
-            <h2 class="about-content__title">OUR WINERY</h2>
+            <h2 class="about-content__title">OUR COMPANY</h2>
             <a class="about-content__btn" href="#">Discover More</a>
         </div>
         <!-- About Content End -->
         </div>
 
         <div class="about-section__year js-scroll ShortFadeInUp scrolled">
-        Since 1928
+        Since 2018
         </div>
     </div>
     <!-- About End -->
-
-    <!-- Call to Action Start -->
-    <div class="call-to-action-section d-flex align-items-cente">
-        <div class="container-fluid custom-container">
-            <!-- Call to Action Wrapper Start -->
-            <div class="call-to-action-wrapper d-md-flex justify-content-between align-items-center">
-                <!-- Call to Action Image Start -->
-                <div class="call-to-action-image-01 js-scroll ShortFadeInUp scrolled">
-                    <img src="{{asset('theme/assets/images/cta-1.png')}}" alt="Cal to Action" width="231" height="212" loading="lazy" />
-                </div>
-                <!-- Call to Action Image End -->
-                <!-- Call to Action Image Start -->
-                <div class="call-to-action-image-02 js-scroll ShortFadeInUp scrolled">
-                    <img src="{{asset('theme/assets/images/cta-2.png')}}" alt="Cal to Action" width="893" height="305" loading="lazy" />
-                </div>
-                <!-- Call to Action Image End -->
-                <!-- Call to Action Content Start -->
-                <div class="call-to-action-content text-center js-scroll ShortFadeInUp scrolled">
-                    <h3 class="call-to-action-content__title">
-                        Wine Festival Italy
-                    </h3>
-                    <p class="call-to-action-content__description">
-                        Quam pellentesque nec nam
-                    </p>
-                    <a class="call-to-action-content__btn" href="#">
-                        Join now
-                    </a>
-                </div>
-                <!-- Call to Action Content End -->
-            </div>
-            <!-- Call to Action Wrapper End -->
-        </div>
-    </div>
-    <!-- Call to Action End -->
 </main>
 @endsection
