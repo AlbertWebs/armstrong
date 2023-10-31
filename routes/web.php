@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/order', [App\Http\Controllers\HomeController::class, 'wine'])->name('wine');
 Route::get('/wine/{type}', [App\Http\Controllers\HomeController::class, 'wine'])->name('wine');
 Route::get('/spirit/{type}', [App\Http\Controllers\HomeController::class, 'spirit'])->name('spirit');
 Route::get('/beer/{type}', [App\Http\Controllers\HomeController::class, 'beer'])->name('beer');

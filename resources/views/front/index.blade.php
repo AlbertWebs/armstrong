@@ -22,7 +22,7 @@
                             <p class="home-2-slider-content-style-1__description">
                                 We are your premier beverage delivery partner, renowned for its swift and reliable delivery service
                             </p>
-                            <a class="home-2-slider-content-style-1__btn" href="shop-fullwidth.html">
+                            <a class="home-2-slider-content-style-1__btn" href="{{url('/')}}/order">
                                 Discover more
                             </a>
                         </div>
