@@ -142,12 +142,13 @@
                         </div>
                     </div>
                 </div>
+                <br><br>
                 {{--  --}}
-                {{-- <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="col-lg-2 col-md-4 col-sm-6">
                     <div class="swiper-slide category-item text-center">
                         <div class="category-item__image">
                             <a href="#">
-                                <img src="{{asset('theme/assets/images/category/')}}" alt="Category" width="300" height="340" loading="lazy" />
+                                <img src="{{asset('theme/assets/images/category/category-4.png')}}" alt="Category" width="300" height="340" loading="lazy" />
                             </a>
                         </div>
                         <div class="category-item__content">
@@ -226,7 +227,7 @@
                             </h3>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
     </div>
