@@ -239,7 +239,7 @@
         <div class="container-fluid home-container">
             <!-- Section Title Start -->
             <div class="section-title-2 text-center js-scroll ShortFadeInUp scrolled">
-                <h2 class="section-title-2__title">New Arrival</h2>
+                <h2 class="section-title-2__title">Trending Refreshments</h2>
             </div>
             <!-- Section Title End -->
 

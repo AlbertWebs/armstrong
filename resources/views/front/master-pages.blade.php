@@ -634,7 +634,7 @@
             <!-- Free Shipping Goal Start-->
             <div class="free-shipping-goal">
                 <div class="free-shipping-goal__label text-center">
-                    Buy $3.03 more to enjoy
+                    Buy kes 363.03 more to enjoy
                     <strong>FREE Shipping</strong>
                 </div>
                 <div class="free-shipping-goal__loading-bar">
@@ -686,7 +686,7 @@
                         <tr class="cart-subtotal">
                             <th>Subtotal</th>
                             <td>
-                                <span>$195.97</span>
+                                <span>kes 36195.97</span>
                             </td>
                         </tr>
 
@@ -699,7 +699,7 @@
                                         <label for="flat-rate" class="single-form__label radio-label">
                                             <span></span>
                                             Flat rate:
-                                            <strong class="price">$20.00</strong>
+                                            <strong class="price">kes 3620.00</strong>
                                         </label>
                                     </li>
                                     <li class="single-form">
@@ -716,7 +716,7 @@
                         <tr class="order-total">
                             <th>Total</th>
                             <td data-title="Total">
-                                <strong><span>$215.97</span></strong>
+                                <strong><span>kes 36215.97</span></strong>
                             </td>
                         </tr>
                     </tbody>

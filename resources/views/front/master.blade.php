@@ -584,7 +584,7 @@
             <!-- Free Shipping Goal Start-->
             <div class="free-shipping-goal">
                 <div class="free-shipping-goal__label text-center">
-                    Buy $3.03 more to enjoy
+                    Buy kes 363.03 more to enjoy
                     <strong>FREE Shipping</strong>
                 </div>
                 <div class="free-shipping-goal__loading-bar">
@@ -636,7 +636,7 @@
                         <tr class="cart-subtotal">
                             <th>Subtotal</th>
                             <td>
-                                <span>$195.97</span>
+                                <span>kes 36195.97</span>
                             </td>
                         </tr>
 
@@ -649,7 +649,7 @@
                                         <label for="flat-rate" class="single-form__label radio-label">
                                             <span></span>
                                             Flat rate:
-                                            <strong class="price">$20.00</strong>
+                                            <strong class="price">kes 3620.00</strong>
                                         </label>
                                     </li>
                                     <li class="single-form">
@@ -666,7 +666,7 @@
                         <tr class="order-total">
                             <th>Total</th>
                             <td data-title="Total">
-                                <strong><span>$215.97</span></strong>
+                                <strong><span>kes 36215.97</span></strong>
                             </td>
                         </tr>
                     </tbody>
@@ -1191,11 +1191,11 @@
                             <!-- Product Single Content Start -->
                             <div class="product-single-content quick-view-product-content">
                                 <h2 class="product-single-content__title">
-                                    Product Simple
+                                    Pombe Noma Sana
                                 </h2>
                                 <div class="product-single-content__price-stock">
                                     <div class="product-single-content__price">
-                                        <ins>$36.99</ins>
+                                        <ins>kes 3630.99</ins>
                                     </div>
                                     <div class="product-single-content__stock">
                                         <span
@@ -1242,19 +1242,19 @@
                                 <div class="product-single-content__meta">
                                     <div class="product-single-content__meta--item">
                                         <div class="label">SKU:</div>
-                                        <div class="content">REF. HT-5732</div>
+                                        <div class="content">REF. ABL-5732</div>
                                     </div>
                                     <div class="product-single-content__meta--item">
                                         <div class="label">Categories:</div>
                                         <div class="content">
-                                            <a href="#">Fashion</a>
-                                            <a href="#">Women</a>
+                                            <a href="#">Liqueur</a>
+                                            <a href="#">Spirit</a>
                                         </div>
                                     </div>
                                     <div class="product-single-content__meta--item">
                                         <div class="label">Tag:</div>
                                         <div class="content">
-                                            <a href="#">Teen</a>
+                                            <a href="#">Refreshments</a>
                                         </div>
                                     </div>
                                 </div>
