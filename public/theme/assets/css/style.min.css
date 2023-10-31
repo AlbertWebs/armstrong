@@ -12202,8 +12202,12 @@ hr {
 .blog-single-meta__item li a:hover {
     color: #d68d67;
 }
+.header__main--logo a img {
+    width:150px !important;
+}
 @media only screen and (max-width: 767px) {
     .header__main--logo a img {
         width:100px !important;
     }
 }
+
