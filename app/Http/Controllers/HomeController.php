@@ -35,6 +35,21 @@ class HomeController extends Controller
         return view('front.shopping');
     }
 
+    public function wine()
+    {
+        return view('front.shop');
+    }
+
+    public function spirit()
+    {
+        return view('front.shop');
+    }
+
+    public function beer()
+    {
+        return view('front.shop');
+    }
+
 
 
 }

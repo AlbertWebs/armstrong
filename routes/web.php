@@ -18,7 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/wine/{type}', [App\Http\Controllers\HomeController::class, 'wine'])->name('wine');
+Route::get('/spirit/{type}', [App\Http\Controllers\HomeController::class, 'spirit'])->name('spirit');
+Route::get('/beer/{type}', [App\Http\Controllers\HomeController::class, 'beer'])->name('beer');
 Route::get('/contact-us', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact-us');
+
+
 
 Route::get('/shopping-cart', [App\Http\Controllers\HomeController::class, 'shopping'])->name('shopping');
 
