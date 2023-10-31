@@ -11,6 +11,32 @@
     <meta name="description" content="Your One Stop Liquor Store - Armstrong Boissons Limited" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+    {{-- SEO --}}
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow"><!-- Google Specific -->
+    <meta name="subject" content="Your One Stop Liquor Store - Armstrong Boissons Limited">
+    <meta name="rating" content="General">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="#1c2c52">
+    <meta name="description" content="Your One Stop Liquor Store In Nairobi - Armstrong Boissons Limited">
+    <link rel="canonical" href="{{url('/')}}"/>
+    <meta property="og:description" content="Your One Stop Liquor Store In Nairobi - Armstrong Boissons Limited" />
+    <meta property="og:title" content="Your One Stop Liquor Store - Armstrong Boissons Limited" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{url('/')}}" />
+
+    <meta property="og:image" content="http://armstrong.venshaq.com/public/theme/assets/images/logo.png" />
+    <meta property="og:site_name" content="Royaltech Computers Limited">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:title" content="Your One Stop Liquor Store - Armstrong Boissons Limited" />
+    <meta name="twitter:site" content="@RoyaltechC" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@RoyaltechC">
+    <meta name="twitter:url" content="{{url('/')}}">
+    <meta name="twitter:description" content="Your One Stop Liquor Store In Nairobi - Armstrong Boissons Limited">
+    <meta name="twitter:image" content="http://armstrong.venshaq.com/public/theme/assets/images/logo.png">
+    {{-- SEO --}}
+
     <!-- Favicon -->
     @include('front.favicon')
 
