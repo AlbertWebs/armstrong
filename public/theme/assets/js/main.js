@@ -26,6 +26,7 @@ const headerSticky = (selector) => {
 
         window.addEventListener("scroll", () => {
             const currentScroll = window.pageYOffset
+            // var currentLocation = window.location;
 
             if (currentScroll > 150) {
                 header.classList.add("is-sticky")

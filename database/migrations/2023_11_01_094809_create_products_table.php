@@ -16,12 +16,16 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('slung')->nullable();
             $table->string('price')->nullable();
+            $table->string('price_raw')->nullable();
+            $table->string('stock')->nullable();
             $table->string('category_id')->nullable();
+            $table->string('google_product_category')->nullable();
             $table->string('brand')->nullable();
             $table->string('origin')->nullable();
             $table->string('sku')->nullable();
             $table->string('abv')->nullable();
-            $table->string('description')->nullable();
+            $table->text('meta')->nullable();
+            $table->text('content')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

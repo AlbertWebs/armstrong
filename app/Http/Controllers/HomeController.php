@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -21,6 +22,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    public function home()
+    {
+        return view('home');
+    }
     public function index()
     {
         return view('front.index');
@@ -48,6 +54,11 @@ class HomeController extends Controller
     public function beer()
     {
         return view('front.shop');
+    }
+
+    public function product($slung){
+        $Products = Product::where('slung',$slung)->get();
+        return view('front.product', compact('Products'));
     }
 
 
