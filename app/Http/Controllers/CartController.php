@@ -8,12 +8,22 @@ use App\Models\Product;
 use App\Models\orders;
 use App\Models\Payment;
 use Pesapal;
+use Redirect;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Auth;
 
 class CartController extends Controller
 {
     public function addToCart($id){
+        $Product = Product::find($id);
+        Cart::add($Product->id, $Product->title, 1, $Product->price);
+        return response()->json([
+            ''.$Product->title.' Added To Cart'
+        ]);
+    }
+
+    public function addToCartPost(Request $request){
+        $id= $request->product_id;
         $Product = Product::find($id);
         Cart::add($Product->id, $Product->title, 1, $Product->price);
         return response()->json([
@@ -29,10 +39,7 @@ class CartController extends Controller
 
     public function remove($rowId){
         Cart::remove($rowId);
-        return response()->json([
-            'Product Removed'
-        ]);
-    }
+        return Redirect::back();    }
 
     public function destroy(){
         Cart::destroy();
@@ -61,10 +68,10 @@ class CartController extends Controller
         $Shipping = 250;
         $Ship = ($Shipping);
         $Tot = \Cart::total();
-        $All = $Ship+$Tot;
+        // dd($All = $Ship+$Tot);
 
         // $amount = $All;
-        $amount = "1";
+        $amount = $Tot;
         // $description = Session::get('description');
         $payments = new Payment;
         $payments -> businessid = 1; //Business ID
@@ -76,13 +83,15 @@ class CartController extends Controller
         $payments -> order_id = $OrderId;
         $payments -> save();
 
+
+
         // Email Order
         // ReplyMessage::mailclient(Auth::User()->email,Auth::User()->name,$OrderId,$Ship,$All);
 
         // ReplyMessage::mailmerchant(Auth::User()->email,Auth::User()->name,Auth::User()->mobile);
 
 
-        $description = "Add Cart Content Here";
+        $description = "Add To Cart";
         $details = array(
             'amount' => $payments -> amount,
             'description' => $description,

@@ -144,7 +144,7 @@
                                         <form action="#">
                                             <div class="accordion-item">
                                                 <div class="single-form" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                                    <input type="radio" name="payment-method" id="bank-transfer" />
+                                                    <input type="radio" checked name="payment-method" id="bank-transfer" />
                                                     <label for="bank-transfer" class="single-form__label radio-label">
                                                         <span></span>
                                                         M-Pesa & M-Pesa Express
@@ -153,7 +153,7 @@
                                                 <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#payment-method">
                                                     <div class="payment-method-body">
                                                         <p>
-                                                            Make your
+                                                            {{-- Make your
                                                             payment
                                                             directly
                                                             into our
@@ -170,45 +170,13 @@
                                                             until the
                                                             funds have
                                                             cleared in
-                                                            our account.
+                                                            our account. --}}
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="accordion-item">
-                                                <div class="single-form collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                                    <input type="radio" name="payment-method" id="cash-on-delivery" />
-                                                    <label for="cash-on-delivery" class="single-form__label radio-label">
-                                                        <span></span>
-                                                        Cash On Delivery
-                                                    </label>
-                                                </div>
-                                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#payment-method">
-                                                    <div class="payment-method-body">
-                                                        <p>
-                                                            Make your
-                                                            payment
-                                                            directly
-                                                            into our
-                                                            bank
-                                                            account.
-                                                            Please use
-                                                            your Order
-                                                            ID as the
-                                                            payment
-                                                            reference.
-                                                            Your order
-                                                            will not be
-                                                            shipped
-                                                            until the
-                                                            funds have
-                                                            cleared in
-                                                            our account.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                         </form>
                                     </div>
                                 </div>

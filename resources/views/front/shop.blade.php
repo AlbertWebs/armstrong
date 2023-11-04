@@ -252,55 +252,57 @@
             <!-- Shop Wrapper Start -->
             <div class="shop-wrapper">
                 <div class="row">
+                    <?php
+                        $Products = DB::table('products')->limit(12)->get();
+                    ?>
+                    @foreach ($Products as $Product)
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <!-- Single product Start -->
-                        <div class="single-product js-scroll ShortFadeInUp">
+                        <div class="single-product single-product-02 js-scroll ShortFadeInUp scrolled">
                             <div class="single-product__thumbnail">
-                                <div class="single-product__thumbnail--meta-3">
-                                    <a href="#" data-bs-tooltip="tooltip" data-bs-placement="top" data-bs-title="Add to wishlist" data-bs-custom-class="p-meta-tooltip" aria-label="wishlist"><i
-                                                class="lastudioicon-heart-2"
-                                            ></i></a>
-                                </div>
-                                <div class="single-product__thumbnail--badge onsale">
-                                    Sale
-                                </div>
                                 <div class="single-product__thumbnail--holder">
-                                    <a href="product-single.html">
-                                        <img src="{{asset('theme/assets/images/products/wines/product-12.png')}}" alt="Product" width="344" height="370" />
+                                    <a href="{{url('/')}}/product/{{$Product->slung}}">
+                                        <img src="{{url('/')}}/uploads/products/{{$Product->image}}" alt="Product" width="392" height="400" loading="lazy" />
                                     </a>
-                                </div>
-                                <div class="single-product__thumbnail--meta-2">
-                                    <a href="#" data-bs-tooltip="tooltip" data-bs-placement="top" data-bs-title="Add to cart" data-bs-custom-class="p-meta-tooltip" aria-label="cart"><i
-                                                class="lastudioicon-shopping-cart-3"
-                                            ></i></a>
-                                    <a href="#" data-bs-tooltip="tooltip" data-bs-placement="top" data-bs-title="Add to compare" data-bs-custom-class="p-meta-tooltip" aria-label="compare"><i
-                                                class="lastudioicon-ic_compare_arrows_24px"
-                                            ></i></a>
-                                    <button data-bs-tooltip="tooltip" data-bs-placement="top" data-bs-title="Quickview" data-bs-custom-class="p-meta-tooltip" data-bs-toggle="modal" data-bs-target="#quickView" aria-label="zoom-in">
-                                        <i
-                                                class="lastudioicon-search-zoom-in"
-                                            ></i>
-                                    </button>
                                 </div>
                             </div>
                             <div class="single-product__info text-center">
                                 <div class="single-product__info--tags">
-                                    <a href="#">Wines</a>
+                                    <?php
+                                        $Category = \App\Models\Category::find($Product->category_id)
+                                    ?>
+                                    {{-- <a href="{{url('/')}}/{{$Category->slung}}">{{$Category->title}}</a>  --}}
+                                    Alc. {{$Product->abv}}%  {{$Product->origin}}
                                 </div>
                                 <h3 class="single-product__info--title">
-                                    <a href="product-single.html">
-                                        2024 clare valley watervale
-                                        riesling
+                                    <a href="{{url('/')}}/product/{{$Product->slung}}">
+                                        {{$Product->title}}
                                     </a>
                                 </h3>
                                 <div class="single-product__info--price">
-                                    <del>kes 3039.99</del>
-                                    <ins>kes 3029.99</ins>
+                                    <ins>kes {{$Product->price}}</ins>
                                 </div>
+                                {{-- <div class="single-product__info--rating">
+                                    <span class="star-rating">
+                                            <span style="width: 80%">
+                                            </span>
+                                    </span>
+                                </div> --}}
+                                <form method="POST" action="{{route('add.to.cart.post')}}" class="ajax-request">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{$Product->id}}">
+                                <button type="submit" id="ajax-add-to-cart" class="cart-empty__btn btn add-bg-color">
+                                    Add To Basket <i class="lastudioicon-shopping-cart-3"></i>
+                                    <span class="loading-ajax">
+                                        <img width="25" src="{{url('/')}}/uploads/icon/loading.gif" >
+                                    </span>
+                                </button>
+                                </form>
                             </div>
                         </div>
                         <!-- Single product End -->
                     </div>
+                    @endforeach
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <!-- Single product Start -->
                         <div class="single-product js-scroll ShortFadeInUp">

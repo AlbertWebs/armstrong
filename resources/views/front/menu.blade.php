@@ -1,21 +1,43 @@
 <ul class="menu-items-list menu-uppercase d-flex">
+    <?php
+       $Category = DB::table('categories')->get();
+    ?>
+    @foreach ($Category as $cat)
+    {{-- <li>
+        <a href="#">
+        <span>{{$cat->title}}</span>
+        <i class="lastudioicon-down-arrow" aria-hidden="true"></i>
+        </a>
+        <ul class="sub-menu">
+           <li><a href="{{url('/')}}/wine/red-wine/" ><span>Red Wine</span></a></li>
+           <li ><a href="{{url('/')}}/wine/red-wine/red-sweet-wine/" ><span>Red Sweet Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/white-wine/" ><span>White Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/white-wine/sweet-white-wine/" ><span>Sweet White Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/rose-wine/" ><span>Rosé Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/sparkling-wine/" ><span>Sparkling Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/red-wine/port-sherry/" ><span>Port &amp; Sherry</span></a></li>
+           <li><a href="{{url('/')}}/wine/flavoured-wine/" ><span>Flavoured Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/" ><span>All Wines</span></a></li>
+        </ul>
+     </li> --}}
+    @endforeach
     <li>
-       <a href="#">
-       <span>Wines</span>
-       <i class="lastudioicon-down-arrow" aria-hidden="true"></i>
-       </a>
-       <ul class="sub-menu">
-          <li><a href="{{url('/')}}/wine/red-wine/" ><span>Red Wine</span></a></li>
-          <li ><a href="{{url('/')}}/wine/red-wine/red-sweet-wine/" ><span>Red Sweet Wine</span></a></li>
-          <li><a href="{{url('/')}}/wine/white-wine/" ><span>White Wine</span></a></li>
-          <li><a href="{{url('/')}}/wine/white-wine/sweet-white-wine/" ><span>Sweet White Wine</span></a></li>
-          <li><a href="{{url('/')}}/wine/rose-wine/" ><span>Rosé Wine</span></a></li>
-          <li><a href="{{url('/')}}/wine/sparkling-wine/" ><span>Sparkling Wine</span></a></li>
-          <li><a href="{{url('/')}}/wine/red-wine/port-sherry/" ><span>Port &amp; Sherry</span></a></li>
-          <li><a href="{{url('/')}}/wine/flavoured-wine/" ><span>Flavoured Wine</span></a></li>
-          <li><a href="{{url('/')}}/wine/" ><span>All Wines</span></a></li>
-       </ul>
-    </li>
+        <a href="#">
+        <span>Wines</span>
+        <i class="lastudioicon-down-arrow" aria-hidden="true"></i>
+        </a>
+        <ul class="sub-menu">
+           <li><a href="{{url('/')}}/wine/red-wine/" ><span>Red Wine</span></a></li>
+           <li ><a href="{{url('/')}}/wine/red-wine/red-sweet-wine/" ><span>Red Sweet Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/white-wine/" ><span>White Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/white-wine/sweet-white-wine/" ><span>Sweet White Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/rose-wine/" ><span>Rosé Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/sparkling-wine/" ><span>Sparkling Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/red-wine/port-sherry/" ><span>Port &amp; Sherry</span></a></li>
+           <li><a href="{{url('/')}}/wine/flavoured-wine/" ><span>Flavoured Wine</span></a></li>
+           <li><a href="{{url('/')}}/wine/" ><span>All Wines</span></a></li>
+        </ul>
+     </li>
     <li>
        <a href="#">
        <span>Spirits</span>
