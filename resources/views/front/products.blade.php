@@ -260,7 +260,7 @@
                 <div class="row">
 
                     @foreach ($Products as $Product)
-                    <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <!-- Single product Start -->
                         <div class="single-product single-product-02 js-scroll ShortFadeInUp scrolled">
                             <div class="single-product__thumbnail">
