@@ -86,7 +86,7 @@
         <!-- Header Top End -->
 
         <!-- Header Main Start -->
-        <div class="header__main header__main-darks header-shadow d-flex align-items-center">
+        <div class="header__main header__main-dark header-shadow d-flex align-items-center">
             <div class="container-fluid custom-container">
                 <div class="row align-items-center position-relative">
                     <div class="col-md-4 col-3 d-xl-none">
@@ -104,7 +104,7 @@
                     <div class="col-xl-6 d-none d-xl-block">
                         <nav class="header__main--menu position-static">
                             <!-- Menu Item List Start -->
-                            @include('front.menu')
+                            @include('front.menu-page')
                             <!-- Menu Item List End -->
                         </nav>
                     </div>
@@ -442,120 +442,7 @@
         <!-- offcanvas-body Start -->
         <div class="offcanvas-body">
             <nav class="navbar-mobile-menu">
-                <ul class="mobile-menu-items">
-                    <li>
-                        <a href="#">
-                            Wines
-                            <span class="menu-expand" aria-label="down-arrow">
-                            <i class="lastudioicon-down-arrow"></i>
-                        </span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li><a href="{{url('/')}}/wine/red-wine/" ><span>Red Wine</span></a></li>
-                            <li ><a href="{{url('/')}}/wine/red-wine/red-sweet-wine/" ><span>Red Sweet Wine</span></a></li>
-                            <li><a href="{{url('/')}}/wine/white-wine/" ><span>White Wine</span></a></li>
-                            <li><a href="{{url('/')}}/wine/white-wine/sweet-white-wine/" ><span>Sweet White Wine</span></a></li>
-                            <li><a href="{{url('/')}}/wine/rose-wine/" ><span>Rosé Wine</span></a></li>
-                            <li><a href="{{url('/')}}/wine/sparkling-wine/" ><span>Sparkling Wine</span></a></li>
-                            <li><a href="{{url('/')}}/wine/red-wine/port-sherry/" ><span>Port &amp; Sherry</span></a></li>
-                            <li><a href="{{url('/')}}/wine/flavoured-wine/" ><span>Flavoured Wine</span></a></li>
-                            <li><a href="{{url('/')}}/wine/" ><span>All Wines</span></a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Spirits
-                            <span class="menu-expand" aria-label="down-arrow">
-                            <i class="lastudioicon-down-arrow"></i>
-                        </span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li id="nav-menu-item-48270" ><a href="{{url('/')}}/spirits/whisky/" ><span>Whisky</span></a></li>
-                            <li id="nav-menu-item-48271" ><a href="{{url('/')}}/spirits/rum/" ><span>Rum</span></a></li>
-                            <li id="nav-menu-item-48272" ><a href="{{url('/')}}/spirits/vodka/" ><span>Vodka</span></a></li>
-                            <li id="nav-menu-item-48273" ><a href="{{url('/')}}/spirits/gin/" ><span>Gin</span></a></li>
-                            <li id="nav-menu-item-55545" ><a href="{{url('/')}}/spirits/brandy/cognac/" ><span>Cognac</span></a></li>
-                            <li id="nav-menu-item-55544" ><a href="{{url('/')}}/spirits/brandy/" ><span>Brandy</span></a></li>
-                            <li id="nav-menu-item-55548" ><a href="{{url('/')}}/spirits/tequila/" ><span>Tequila</span></a></li>
-                            <li id="nav-menu-item-55549" ><a href="{{url('/')}}/spirits/liqueur/" ><span>Liqueur</span></a></li>
-
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Beers
-                            <span class="menu-expand" aria-label="down-arrow">
-                            <i class="lastudioicon-down-arrow"></i>
-                        </span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li id="nav-menu-item-17196"><a href="{{url('/')}}/beer/?_origin=kenya" c><span>Domestic</span></a></li>
-                            <li id="nav-menu-item-17205"><a href="{{url('/')}}/product-tag/imported/" c><span>Imported</span></a></li>
-                            <li id="nav-menu-item-66132"><a href="{{url('/')}}/beer/craft-beer/" c><span>Craft Beer</span></a></li>
-                            <li id="nav-menu-item-66133"><a href="{{url('/')}}/beer/cider/" c><span>Cider</span></a></li>
-                            <li id="nav-menu-item-66134"><a href="{{url('/')}}/beer/non-alcoholic-beer/" c><span>Non-alcoholic Beer</span></a></li>
-                            <li id="nav-menu-item-48224"><a href="{{url('/')}}/beer/" c><span>All Beer</span></a></li>
-
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Mixers
-                            <span class="menu-expand" aria-label="down-arrow">
-                            <i class="lastudioicon-down-arrow"></i>
-                        </span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li id="nav-menu-item-63765" ><a href="{{url('/')}}/mixers/sodas/" class="cg-menu-link sub-menu-link"><span>Sodas</span></a></li>
-                            <li id="nav-menu-item-66131" ><a href="{{url('/')}}/mixers/sodas/tonic/" class="cg-menu-link sub-menu-link"><span>Tonic</span></a></li>
-                            <li id="nav-menu-item-63764" ><a href="{{url('/')}}/mixers/juices/" class="cg-menu-link sub-menu-link"><span>Juices</span></a></li>
-                            <li id="nav-menu-item-63826" ><a href="{{url('/')}}/mixers/water/" class="cg-menu-link sub-menu-link"><span>Water</span></a></li>
-                            <li id="nav-menu-item-63761" ><a href="{{url('/')}}/mixers/syrups-bitters/" class="cg-menu-link sub-menu-link"><span>Syrups &amp; Bitters</span></a></li>
-                            <li id="nav-menu-item-63762" ><a href="{{url('/')}}/mixers/energy-drinks/" class="cg-menu-link sub-menu-link"><span>Energy Drinks</span></a></li>
-                            <li id="nav-menu-item-63838" ><a href="{{url('/')}}/mixers/coffee-tea/" class="cg-menu-link sub-menu-link"><span>Coffee &amp; Tea</span></a></li>
-                            <li id="nav-menu-item-63763" ><a href="{{url('/')}}/mixers/kombucha/" class="cg-menu-link sub-menu-link"><span>Kombucha</span></a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Snacks
-                            <span class="menu-expand" aria-label="down-arrow">
-                            <i class="lastudioicon-down-arrow"></i>
-                        </span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li id="nav-menu-item-76691" ><a href="{{url('/')}}/snacks/frozen/ice-cream/" class="cg-menu-link sub-menu-link"><span>Ice Cream</span></a></li>
-                            <li id="nav-menu-item-76685" ><a href="{{url('/')}}/snacks/popcorn/" class="cg-menu-link sub-menu-link"><span>Popcorn</span></a></li>
-                            <li id="nav-menu-item-76686" ><a href="{{url('/')}}/snacks/crisps/" class="cg-menu-link sub-menu-link"><span>Crisps</span></a></li>
-                            <li id="nav-menu-item-76687" ><a href="{{url('/')}}/snacks/chocolate/" class="cg-menu-link sub-menu-link"><span>Chocolate</span></a></li>
-                            <li id="nav-menu-item-76689" ><a href="{{url('/')}}/snacks/nuts/" class="cg-menu-link sub-menu-link"><span>Nuts</span></a></li>
-                            <li id="nav-menu-item-76690" ><a href="{{url('/')}}/snacks/biscuits-waffles/" class="cg-menu-link sub-menu-link"><span>Biscuits &amp; Waffles</span></a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            Extras
-                            <span class="menu-expand" aria-label="down-arrow">
-                            <i class="lastudioicon-down-arrow"></i>
-                        </span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li id="nav-menu-item-63765" ><a href="{{url('/')}}/mixers/sodas/" class="cg-menu-link sub-menu-link"><span>Sodas</span></a></li>
-                            <li id="nav-menu-item-66131" ><a href="{{url('/')}}/mixers/sodas/tonic/" class="cg-menu-link sub-menu-link"><span>Tonic</span></a></li>
-                            <li id="nav-menu-item-63764" ><a href="{{url('/')}}/mixers/juices/" class="cg-menu-link sub-menu-link"><span>Juices</span></a></li>
-                            <li id="nav-menu-item-63826" ><a href="{{url('/')}}/mixers/water/" class="cg-menu-link sub-menu-link"><span>Water</span></a></li>
-                            <li id="nav-menu-item-63761" ><a href="{{url('/')}}/mixers/syrups-bitters/" class="cg-menu-link sub-menu-link"><span>Syrups &amp; Bitters</span></a></li>
-                            <li id="nav-menu-item-63762" ><a href="{{url('/')}}/mixers/energy-drinks/" class="cg-menu-link sub-menu-link"><span>Energy Drinks</span></a></li>
-                            <li id="nav-menu-item-63838" ><a href="{{url('/')}}/mixers/coffee-tea/" class="cg-menu-link sub-menu-link"><span>Coffee &amp; Tea</span></a></li>
-                            <li id="nav-menu-item-63763" ><a href="{{url('/')}}/mixers/kombucha/" class="cg-menu-link sub-menu-link"><span>Kombucha</span></a></li>
-                        </ul>
-                    </li>
-                </ul>
+               @include('front.mobile-menu')
             </nav>
         </div>
         <!-- offcanvas-body end -->
@@ -571,22 +458,17 @@
                     <i class="lastudioicon-zoom-1"></i>
                 </button>
             </li>
+
             <li>
-                <a href="wishlist.html" aria-label="wishlist">
-                    <i class="lastudioicon-heart-1"></i>
-                    <span class="badge">03</span>
-                </a>
-            </li>
-            <li>
-                <a href="compare.html" aria-label="compare">
-                    <i class="lastudioicon-ic_compare_arrows_24px"> </i>
-                    <span class="badge">03</span>
+                <a href="{{url('/')}}/shopping-cart" aria-label="compare">
+                    <i class="lastudioicon-shopping-cart-3"> </i>
+                    <span class="badge"></span>
                 </a>
             </li>
             <li>
                 <button data-bs-toggle="offcanvas" data-bs-target="#cartSidebar" aria-label="cart">
                     <i class="lastudioicon-shopping-cart-1"></i>
-                    <span class="badge">03</span>
+                    <span class="badge">0{{Cart::count()}}</span>
                 </button>
             </li>
         </ul>
@@ -597,185 +479,7 @@
     @yield('content')
 
     <!-- Footer Start -->
-    <footer class="footer-section">
-        <div class="container-fluid home-container">
-            <!-- Footer Main Start -->
-            <div class="footer-padding">
-                <div class="row">
-                    <div class="col-xxl-9">
-                        <div class="row">
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="footer-link__wrapper">
-                                    <h4 class="footer-title-2">Connect with us</h4>
-
-                                    <ul class="footer-link__list">
-                                        <li>
-                                            <span>
-                                            4517 Riverside Downs. Gitaru Road,
-                                            Wangige
-                                        </span>
-                                        </li>
-                                        <li>
-                                            <a href="mailto:info@armstrong.ke">
-                                                info@armstrong.ke
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="tel:+254723014032">254723014032</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="footer-link__wrapper">
-                                    <h4 class="footer-title-2">Helpful Links</h4>
-
-                                    <ul class="footer-link__list">
-                                        <li>
-                                            <a href="contact-us.html">
-                                                Contact Us
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Careers </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Find a Location </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Site Map </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Accessibility </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="footer-link__wrapper">
-                                    <h4 class="footer-title-2">My Account</h4>
-
-                                    <ul class="footer-link__list">
-                                        <li>
-                                            <a href="login-register.html">
-                                                Login or Register
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> Account Settings </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-fullwidth.html">
-                                                My Orders
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Gift Card Balance Check
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="footer-link__wrapper">
-                                    <h4 class="footer-title-2">Support</h4>
-
-                                    <ul class="footer-link__list">
-                                        <li>
-                                            <a href="term-of-use.html">
-                                                Terms & Conditions
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="term-of-use.html">
-                                                Privacy Policy
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="term-of-use.html">
-                                                Shipping & Return Policy
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3">
-                        <!-- Footer Newsletter Start -->
-                        <div class="footer-newsletter">
-                            <h2 class="footer-title-2">Stay with us</h2>
-
-                            <div class="footer-newsletter__form">
-                                <form action="#">
-                                    <div class="footer-newsletter__input">
-                                        <input type="email" placeholder="Email address..." />
-                                        <button type="submit">Subscribe</button>
-                                    </div>
-                                </form>
-                                <p>
-                                    This site is protected by reCAPTCHA and the
-                                    Google Privacy Policy and Terms of Service
-                                    apply.
-                                </p>
-                                <ul class="footer-newsletter__social">
-                                    <li>
-                                        <a href="#" aria-label="facebook">
-                                            <i class="lastudioicon-b-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" aria-label="twitter">
-                                            <i class="lastudioicon-b-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" aria-label="instagram">
-                                            <i class="lastudioicon-b-instagram"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" aria-label="linkedin">
-                                            <i class="lastudioicon-b-linkedin 2x"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Footer Newsletter End -->
-                    </div>
-                </div>
-            </div>
-            <!-- Footer Main End -->
-
-            <!-- Footer CopyRight Start -->
-            <div class="footer-copyright">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <div class="text-center text-md-start">
-                            <p>
-                                &copy;
-                                <span class="current-year">{{date('Y')}}</span>
-                                <span> Armstrong Boissons Limited - All RIghts Reserved</span> | Powered By
-
-
-                                <a href="https://designekta.com/">Designekta Studio</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="d-flex justify-content-center justify-content-md-end">
-                            <li><a href="term-of-use.html">Term of user</a></li>
-                            <li><a href="#">Payment refund</a></li>
-                            <li><a href="#">Accessibility</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer CopyRight End -->
-        </div>
-    </footer>
+    @include('front.footer')
 
     <!-- Footer End -->
 

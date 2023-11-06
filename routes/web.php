@@ -5,6 +5,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\Auth\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +18,6 @@ use App\Http\Controllers\CartController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-
-
-
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/products/{category}', [App\Http\Controllers\HomeController::class, 'category'])->name('category');
@@ -45,6 +43,20 @@ Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('r
 
 
 Auth::routes();
+
+
+    Route::group(['prefix'=>'dashboard'], function(){
+    Route::get('/', [ClientController::class, 'index'])->name('dashboard.home');
+    Route::post('/update-settings', [ClientController::class, 'save'])->name('dashboard.update');
+
+    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+    // SocialMedia
+    Route::get('/facebook', [LoginController::class, 'facebook']);
+    Route::get('/facebook/redirect', [LoginController::class, 'facebookRedirect']);
+    Route::get('/google', [LoginController::class, 'google']);
+    Route::get('/google/redirect', [LoginController::class, 'googleRedirect']);
+
+});
 /*------------------------------------------
 --------------------------------------------
 All Normal Users Routes List

@@ -1,4 +1,4 @@
-<ul class="menu-items-list menu-uppercase d-flex">
+<ul class="menu-items-list menu-items-list--dark d-flex justify-content-center">
     <?php
        $Category = DB::table('categories')->limit('8')->get();
     ?>

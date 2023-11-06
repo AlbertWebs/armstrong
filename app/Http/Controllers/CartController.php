@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\orders;
 use App\Models\Payment;
+use App\Models\ReplyMessage;
 use Pesapal;
 use Redirect;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -68,10 +69,10 @@ class CartController extends Controller
         $Shipping = 250;
         $Ship = ($Shipping);
         $Tot = \Cart::total();
-        // dd($All = $Ship+$Tot);
+        $All = $Ship+$Tot;
 
-        // $amount = $All;
-        $amount = $Tot;
+        $amount = $All;
+
         // $description = Session::get('description');
         $payments = new Payment;
         $payments -> businessid = 1; //Business ID
@@ -83,15 +84,12 @@ class CartController extends Controller
         $payments -> order_id = $OrderId;
         $payments -> save();
 
-
-
         // Email Order
-        // ReplyMessage::mailclient(Auth::User()->email,Auth::User()->name,$OrderId,$Ship,$All);
+        ReplyMessage::mailclient(Auth::User()->email,Auth::User()->name,$OrderId,$Ship,$All);
 
-        // ReplyMessage::mailmerchant(Auth::User()->email,Auth::User()->name,Auth::User()->mobile);
+        ReplyMessage::mailmerchant(Auth::User()->email,Auth::User()->name,Auth::User()->mobile);
 
-
-        $description = "Add To Cart";
+        $description = "Ordering $Count Products Online";
         $details = array(
             'amount' => $payments -> amount,
             'description' => $description,

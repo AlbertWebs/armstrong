@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class SendMails extends Model
 {
     use HasFactory;
-    public static function contact_form($name,$email,$subject,$message){ 
+    public static function contact_form($name,$email,$subject,$message){
         //The Generic mailler Goes here
         $messageee = ''.$message.'';
         $data = array(
@@ -20,10 +20,9 @@ class SendMails extends Model
         );
 
         $subject = "Contact Form: $subject";
-     
+
         $appEmail = 'mailer@aste-aste.com';
-    
-    
+
         $SenderEmail = $email;
         $SenderName = $name;
 
@@ -31,14 +30,13 @@ class SendMails extends Model
 
         $toVariableName = 'Aste E-commerce';
 
-
         Mail::send('mailTheme', $data, function($message) use ($subject,$SenderEmail,$SenderName,$toVariable,$toVariableName,$email,$name){
             $message->from($SenderEmail , $SenderName);
             $message->to($toVariable, $toVariableName)->cc('albertmuhatia@gmail.com')->replyTo($SenderEmail, $SenderName)->subject($subject);
         });
     }
 
-    public static function approvePayment($name,$email,$subject,$message){ 
+    public static function approvePayment($name,$email,$subject,$message){
         //The Generic mailler Goes here
         $messageee = ''.$message.'';
         $data = array(
@@ -49,17 +47,15 @@ class SendMails extends Model
         );
 
         $subject = "$subject";
-     
+
         $appEmail = 'mailer@pipdotfx.com';
-    
-    
+
         $SenderEmail = $email;
         $SenderName = $name;
 
         $toVariable = $appEmail;
 
         $toVariableName = 'Aste E-commerce';
-
 
         Mail::send('mailTheme', $data, function($message) use ($subject,$SenderEmail,$SenderName,$toVariable,$toVariableName,$email,$name){
             $message->from($toVariable , $toVariableName);

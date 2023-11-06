@@ -1,21 +1,27 @@
 @extends('front.master-pages')
 
 @section('content')
+
 <main>
     <!-- Breadcrumb Start -->
-    {{-- <div class="breadcrumb-section">
+    <div class="breadcrumb-section">
         <div class="container-fluid custom-container">
             <div class="breadcrumb-wrapper text-center">
                 <h2 class="breadcrumb-wrapper__title">
-                    Shop Full Width
+                    <?php
+
+                        $Category = \App\Models\Category::find($category);
+                    ?>
+                    {{$Category->title}}
                 </h2>
                 <ul class="breadcrumb-wrapper__items justify-content-center">
-                    <li><a href="index.html">Home</a></li>
-                    <li><span>Shop</span></li>
+                    <li><a href="{{url('/')}}">Home</a></li>
+                    <li><span>Products</span></li>
+                    <li><span>{{$Category->title}}</span></li>
                 </ul>
             </div>
         </div>
-    </div> --}}
+    </div>
     <!-- Breadcrumb End -->
 
     <!-- Shop Start -->
@@ -252,9 +258,7 @@
             <!-- Shop Wrapper Start -->
             <div class="shop-wrapper">
                 <div class="row">
-                    <?php
-                        $Products = DB::table('products')->limit(12)->get();
-                    ?>
+
                     @foreach ($Products as $Product)
                     <div class="col-lg-3 col-md-4 col-sm-6">
                         <!-- Single product Start -->
@@ -308,7 +312,7 @@
             <!-- Shop Wrapper End -->
 
             <!-- Pagination Start -->
-            <div class="paginations">
+            {{-- <div class="paginations">
                 <ul class="paginations-list">
                     <li>
                         <a href="#">
@@ -339,12 +343,10 @@
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
             <!-- Pagination End -->
         </div>
     </div>
     <!-- Shop End -->
-
-
 </main>
 @endsection

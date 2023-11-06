@@ -3,13 +3,7 @@
 @section('content')
 
 <main>
-    <!-- Breadcrumb Start -->
-    <div class="breadcrumb-section">
-        <div class="container-fluid custom-container">
-
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
+<br>
 
     <!-- Log In & Register Start -->
     <div class="login-register-section section-padding-2">
@@ -27,7 +21,7 @@
                                     <!-- Single Form Start -->
                                     <div class="single-form">
 
-                                        <input id="email" type="email" class="single-form__input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        <input placeholder="email address" id="email" type="email" class="single-form__input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -39,7 +33,7 @@
                                     <!-- Single Form Start -->
                                     <div class="single-form">
                                         {{-- <input class="single-form__input" type="password" placeholder="Password *" /> --}}
-                                        <input id="password" type="password" class="form-control single-form__input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                        <input placeholder="password" id="password" type="password" class="form-control single-form__input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
@@ -57,13 +51,13 @@
                                             {{ __('Remember Me') }}
                                         </label>
 
-                                        <p class="lost-password">
+                                        {{-- <p class="lost-password">
                                             @if (Route::has('password.request'))
-                                            <a class="btn btn-link lost-password" href="{{ route('password.request') }}">
+                                            <a class="btn btn-links lost-password" href="{{ route('password.request') }}">
                                                 {{ __('Forgot Your Password?') }}
                                             </a>
                                             @endif
-                                        </p>
+                                        </p> --}}
 
 
                                     </div>
@@ -85,27 +79,29 @@
 
                             <ul class="login-register__social">
                                 <li>
-                                    <a class="social-facebook" href="#">
+                                    <a class="social-facebook" href="{{url('/')}}/dashboard/facebook">
                                         <span class="social-icon">
                                                 <img
                                                     src="{{asset('theme/assets/images/facebook.svg')}}"
                                                     alt="Facebook"
                                                 />
-                                            </span>
+                                        </span>
                                         <span class="social-text"
-                                                >Login with Facebook</span>
+                                                >Login with Facebook
+                                        </span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="social-google" href="#">
+                                    <a class="social-google" href="{{url('/')}}/dashboard/facebook">
                                         <span class="social-icon">
-                                                <img
-                                                    src="{{asset('theme/assets/images/google.svg')}}"
-                                                    alt="Facebook"
-                                                />
-                                            </span>
+                                            <img
+                                                src="{{asset('theme/assets/images/google.svg')}}"
+                                                alt="Facebook"
+                                            />
+                                        </span>
                                         <span class="social-text"
-                                                >Login with Google</span>
+                                            >Login with Google
+                                        </span>
                                     </a>
                                 </li>
                             </ul>

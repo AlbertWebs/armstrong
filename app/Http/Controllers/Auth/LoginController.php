@@ -4,6 +4,16 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+
+use Carbon\Carbon;
+use Hash;
+use Socialite;
+use App\Models\User;
+use Auth;
+use Str;
+use Session;
+use Redirect;
+
 class LoginController extends Controller
 {
     /*
@@ -47,5 +57,50 @@ class LoginController extends Controller
             return redirect()->route('admin.home');
         }
         return redirect()->route('home');
+    }
+
+    public function facebookRedirect(){
+        $user = Socialite::driver('facebook')->user();
+        // Logic
+        $user = User::firstOrCreate([
+            'email' => $user->email
+
+        ],[
+             'name' =>$user->name,
+             'password' => Hash::make(Str::random(24))
+        ]);
+
+        Auth::login($user, true);
+        return redirect()->to('/dashboard');
+    }
+
+    public function facebook(){
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function google(){
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function googleRedirect(){
+        $user = Socialite::driver('google')->user();
+        // Logic
+        $user = User::firstOrCreate([
+            'email' => $user->email
+
+        ],[
+             'name' =>$user->name,
+             'password' => Hash::make(Str::random(24))
+        ]);
+
+        Auth::login($user, true);
+        return redirect()->to('/dashboard');
+    }
+
+    public function callback(SocialFacebookAccountService $service)
+    {
+        $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
+        auth()->login($user);
+        return redirect()->to('/home');
     }
 }

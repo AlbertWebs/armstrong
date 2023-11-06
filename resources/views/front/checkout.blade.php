@@ -147,7 +147,7 @@
                                                     <input type="radio" checked name="payment-method" id="bank-transfer" />
                                                     <label for="bank-transfer" class="single-form__label radio-label">
                                                         <span></span>
-                                                        M-Pesa & M-Pesa Express
+                                                        Card Payment,M-Pesa & M-Pesa Express , Airtel Money
                                                     </label>
                                                 </div>
                                                 <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#payment-method">

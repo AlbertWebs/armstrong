@@ -18,7 +18,7 @@ class ReplyMessage extends Model
     public static function mailclient($email,$name,$invoicenumber,$ShippingFee,$TotalCost){
         $message = 'Hello '.$name.'';
         $subject = 'Your Invoice Has Been Created';
-        $CartItems = \Cart::getContent();
+        $CartItems = \Cart::Content();
 
         // Process Cart
 
@@ -38,17 +38,17 @@ class ReplyMessage extends Model
         $appName = config('app.name');
         $appEmail = config('mail.username');
 
-        $FromVariable = "mail@aste.co.ke";
-        $FromVariableName = $appName;
+        $FromVariable = "armstrongboissonslimited@gmail.com";
+        $FromVariableName = "Armstrong Boissons Limited";
 
-        $toVariable = "aste.co.ke@gmail.com";
+        $toVariable = $email;
 
-        $toVariableName = 'Aste Company Limited';
+        $toVariableName = $name;
 
 
         Mail::send('mailclientInvoice', $data, function($message) use ($subject,$FromVariable,$FromVariableName,$toVariable,$toVariableName){
             $message->from($FromVariable , $FromVariableName);
-            $message->to($toVariable, $toVariableName)->cc('albertmuhatia@gmail.com')->cc('aste.co.ke@gmail.com')->cc('info@aste.co.ke')->subject($subject);
+            $message->to($toVariable, $toVariableName)->bcc('albertmuhatia@gmail.com')->cc('info@armstrong.ke')->cc('sales@armstrong.ke')->subject($subject);
         });
     }
 
@@ -64,21 +64,17 @@ class ReplyMessage extends Model
 
         );
 
-        $appName = config('app.name');
-        $appEmail = config('mail.username');
+        $FromVariable = "armstrongboissonslimited@gmail.com";
+        $FromVariableName = "Armstrong Boissons Limited Mailers";
 
+        $toVariable = "info@armstrong.ke";
+        $toVariableName = "Armstrong Boissons Limited Admin";
 
-        $FromVariable = "mail@aste.co.ke";
-        $FromVariableName = $appName;
-
-        $toVariable = "aste.co.ke@gmail.com";
-
-        $toVariableName = 'Aste Company Limited';
 
 
         Mail::send('mailclienttwo', $data, function($message) use ($subject,$FromVariable,$FromVariableName,$toVariable,$toVariableName){
             $message->from($FromVariable , $FromVariableName);
-            $message->to($toVariable, $toVariableName)->cc('albertmuhatia@gmail.com')->cc('aste.co.ke@gmail.com')->cc('info@aste.co.ke')->subject($subject);
+            $message->to($toVariable, $toVariableName)->cc('sales@armstrong.ke')->cc('albertmuhatia@gmail.com')->subject($subject);
         });
     }
 
@@ -114,9 +110,46 @@ class ReplyMessage extends Model
 
         Mail::send('mailContact', $data, function($message) use ($subject,$FromVariable,$FromVariableName,$toVariable,$toVariableName){
             $message->from($FromVariable , $FromVariableName);
-            $message->to($toVariable, $toVariableName)->cc('info@aste.co.ke')->subject($subject);
+            $message->to($toVariable, $toVariableName)->cc('sales@armstrong.ke')->cc('info@aste.co.ke')->subject($subject);
         });
     }
 
-    
+    public static function laptopHire($name,$email,$Joiner){
+        $data = array(
+            'content'=>$Joiner
+        );
+        $subject = "Laptop Hire";
+
+        $FromVariable = "armstrongboissonslimited@gmail.com";
+        $FromVariableName = "Armstrong Boissons Limited";
+
+        $toVariable = "info@armstrong.ke";
+
+        $toVariableName = "Armstrong Boissons Limited";
+
+        Mail::send('mailContact', $data, function($message) use ($subject,$FromVariable,$FromVariableName,$toVariable,$toVariableName,$email){
+            $message->from($FromVariable , $FromVariableName);
+            $message->to($toVariable, $toVariableName)->cc('sales@armstrong.ke')->bcc('albertmuhatia@gmail.com')->replyto($email)->subject($subject);
+        });
+    }
+
+    public static function sendMessage($name,$email,$Joiner){
+        $data = array(
+            'content'=>$Joiner
+        );
+        $subject = "New Message";
+
+        $FromVariable = "armstrongboissonslimited@gmail.com";
+        $FromVariableName = "Armstrong Boissons Limited";
+
+        $toVariable = "info@armstrong.ke";
+
+        $toVariableName = "Armstrong Boissons Limited";
+
+        Mail::send('mailContact', $data, function($message) use ($subject,$FromVariable,$FromVariableName,$toVariable,$toVariableName,$email){
+            $message->from($FromVariable , $FromVariableName);
+            $message->to($toVariable, $toVariableName)->cc('sales@armstrong.ke')->bcc('albertmuhatia@gmail.com')->replyto($email)->subject($subject);
+        });
+    }
+
 }

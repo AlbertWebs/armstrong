@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Product;
+use \App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -59,6 +60,15 @@ class HomeController extends Controller
     public function product($slung){
         $Products = Product::where('slung',$slung)->get();
         return view('front.product', compact('Products'));
+    }
+
+    public function category($category){
+        $Category = Category::where('slung',$category)->get();
+        foreach($Category as $cat){
+            $Products = Product::where('category_id',$cat->id)->get();
+            $category = $cat->id;
+            return view('front.products', compact('Products','category'));
+        }
     }
 
 
