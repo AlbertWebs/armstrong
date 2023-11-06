@@ -66,14 +66,23 @@
                     </div>
                     <div class="header__top--right">
                         <ul class="header__top--items">
+                            @if(Auth::User())
                             <li>
-                                <a href="login-register.html" aria-label="login">
+                                <a href="{{url('/')}}/" aria-label="login">
+                                    <i class="lastudioicon-single-01-1"></i>
+                                    <span>{{Auth::User()->name}}</span>
+                                </a>
+                            </li>
+                            @else
+                            <li>
+                                <a href="{{url('/')}}/login" aria-label="login">
                                     <i class="lastudioicon-single-01-1"></i>
                                     <span>Login</span>
                                 </a>
                             </li>
+                            @endif
                             <li>
-                                <a href="term-of-use.html" aria-label="help">
+                                <a href="{{url('/')}}/contact-us" aria-label="help">
                                     <i class="lastudioicon-b-meeting-2"></i>
                                     <span>Help Center</span>
                                 </a>

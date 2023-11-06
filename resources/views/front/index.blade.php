@@ -62,7 +62,7 @@
                   $Category = DB::table('categories')->get();
                 ?>
                 @foreach ($Category as $category)
-                <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6">
                     <div class="swiper-slide category-item text-center">
                         <div class="category-item__image">
                             <a href="{{url('/')}}/products/{{$category->slung}}">
