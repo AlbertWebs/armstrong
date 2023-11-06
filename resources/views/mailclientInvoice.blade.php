@@ -117,7 +117,7 @@
                 <tr>
                     <td align="center" valign="top" style="padding: 15px 0;" class="logo">
                         <a href="{{url('/')}}" target="_blank">
-                            <img alt="Armstrong Boissons Limited" src="{{url('/')}}/theme/assets/images/logo.png" width="200" height="160" style="display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">
+                            <img alt="Armstrong Boissons Limited" src="http://armstrong.premiumhomes.casa/theme/assets/images/logo.png" width="200" height="160" style="display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">
                         </a>
                     </td>
                 </tr>
