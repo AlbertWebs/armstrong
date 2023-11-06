@@ -50,11 +50,11 @@ class LoginController extends Controller
         ]);
         $credentials = $request->only('email', 'password');
         if(! auth()->attempt($credentials)){
-            return redirect()->route('login')
+            return redirect()->route('proceed-cart')
                 ->with('error','Email-Address And Password Are Wrong.');
         }
         if (auth()->user()->is_admin == 1) {
-            return redirect()->route('admin.home');
+            return redirect()->route('proceed-cart');
         }
         return redirect()->route('home');
     }
