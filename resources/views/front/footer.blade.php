@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <footer class="footer-section">
         <div class="container-fluid home-container">
             <!-- Footer Main Start -->
@@ -17,11 +18,11 @@
                                         </li>
                                         <li>
                                             <a href="mailto:info@armstrong.ke">
-                                                info@armstrong.ke
+                                                <span class="fa fa-envelope"></span> info@armstrong.ke
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="tel:+254723014032">254723014032</a>
+                                            <a href="tel:+254723014032"><span class="fa fa-phone"></span> 254723014032</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -163,7 +164,7 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="d-flex justify-content-center justify-content-md-end">
-                            <li><a href="{{url('/')}}/terms-and-condit ion">Term of Use</a></li>
+                            <li><a href="{{url('/')}}/terms-and-condition">Term of Use</a></li>
                             <li><a href="{{url('/')}}/refund-policy">Refund Policy</a></li>
                             <li><a href="#">Sitemap</a></li>
                         </ul>
