@@ -163,9 +163,9 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="d-flex justify-content-center justify-content-md-end">
-                            <li><a href="term-of-use.html">Term of user</a></li>
-                            <li><a href="#">Payment refund</a></li>
-                            <li><a href="#">Accessibility</a></li>
+                            <li><a href="{{url('/')}}/terms-and-condit ion">Term of Use</a></li>
+                            <li><a href="{{url('/')}}/refund-policy">Refund Policy</a></li>
+                            <li><a href="#">Sitemap</a></li>
                         </ul>
                     </div>
                 </div>
