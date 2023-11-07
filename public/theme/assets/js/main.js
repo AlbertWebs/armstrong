@@ -32,13 +32,13 @@ const headerSticky = (selector) => {
                 header.classList.add("is-sticky")
 
                 if (headerLogo) {
-                    headerLogo.src = "http://armstrong.premiumhomes.casa/theme/assets/images/logo.png"
+                    headerLogo.src = "https://armstrong.ke/theme/assets/images/logo.png"
                 }
             } else {
                 header.classList.remove("is-sticky")
 
                 if (headerLogo) {
-                    headerLogo.src = "http://armstrong.premiumhomes.casa/theme/assets/images/logo.png"
+                    headerLogo.src = "https://armstrong.ke/theme/assets/images/logo.png"
                 }
             }
         })
