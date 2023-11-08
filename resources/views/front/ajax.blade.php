@@ -15,6 +15,7 @@
                 success: function(data) {
                     // $("#cartSidebar").load(" #cartSidebar");
                     $("#cartSidebar").load(" #cartSidebar > *");
+                    $("#cart-number").load(" #cart-number > *");
                     // Open Cart
                     $(".open-cart").click();
                     console.log(data);

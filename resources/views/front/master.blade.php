@@ -98,7 +98,7 @@
                                 <!-- Meta Item List Start -->
                                 <ul class="meta-items-list d-flex justify-content-end align-items-center">
 
-                                    <li class="cart">
+                                    <li id="cart-number" class="cart">
                                         <button class="open-cart" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
                                             <i class="lastudioicon-bag-3"></i>
                                             <span class="badge">0{{ Cart::count()}}</span>

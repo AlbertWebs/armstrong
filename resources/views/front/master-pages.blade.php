@@ -132,7 +132,7 @@
                                     </form>
                                 </li>
 
-                                <li class="cart">
+                                <li id="cart-number" class="cart">
                                     <button class="open-cart" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar" aria-label="Cart">
                                         <i class="lastudioicon-shopping-cart-1"></i><span class="badge">0{{ Cart::count()}}</span>
                                     </button>

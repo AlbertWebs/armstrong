@@ -134,9 +134,13 @@
                                             ></i>
                                     </button>
                                 </div>
-                                <button class="product-single-content__add-to-cart btn">
-                                    Add to cart
-                                </button>
+                                <form method="POST" action="{{route('add.to.cart.post')}}" class="ajax-request">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{$Product->id}}">
+                                    <button id="ajax-add-to-cart" class="product-single-content__add-to-cart btn">
+                                        Add to cart
+                                    </button>
+                                </form>
                             </div>
 
                             <a href="#" class="product-add-compare">
@@ -249,7 +253,7 @@
                                     </h5>
                                     <div class="product-single-tab-image__image">
                                         <a class="glightbox" href="https://www.youtube.com/watch?v=exlcGoyy3ro" aria-label="Video"></a>
-                                        <img src="{{asset('theme/assets/images/content-single-product-image-1.png')}}" alt="product-image" width="320" height="218" loading="lazy" />
+                                        <img src="{{url('/')}}/uploads/products/{{$Product->image}}" alt="product-image" width="320" height="218" loading="lazy" />
                                     </div>
                                 </div>
                                 <!-- Product Single Tab Image End -->

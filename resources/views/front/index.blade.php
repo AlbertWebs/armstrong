@@ -133,14 +133,14 @@
                                         </span>
                                     </div> --}}
                                     <form method="POST" action="{{route('add.to.cart.post')}}" class="ajax-request">
-                                    @csrf
-                                    <input type="hidden" name="product_id" value="{{$Product->id}}">
-                                    <button type="submit" id="ajax-add-to-cart" class="cart-empty__btn btn add-bg-color">
-                                        Add To Basket <i class="lastudioicon-shopping-cart-3"></i>
-                                        <span class="loading-ajax">
-                                            <img width="25" src="{{url('/')}}/uploads/icon/loading.gif" >
-                                        </span>
-                                    </button>
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{$Product->id}}">
+                                        <button type="submit" id="ajax-add-to-cart" class="cart-empty__btn btn add-bg-color">
+                                            Add To Basket <i class="lastudioicon-shopping-cart-3"></i>
+                                            <span class="loading-ajax">
+                                                <img width="25" src="{{url('/')}}/uploads/icon/loading.gif" >
+                                            </span>
+                                        </button>
                                     </form>
                                 </div>
                             </div>
