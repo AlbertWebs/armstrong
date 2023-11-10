@@ -74,7 +74,7 @@ class ReplyMessage extends Model
 
         Mail::send('mailclienttwo', $data, function($message) use ($subject,$FromVariable,$FromVariableName,$toVariable,$toVariableName){
             $message->from($FromVariable , $FromVariableName);
-            $message->to($toVariable, $toVariableName)->cc('sales@armstrong.ke')->cc('albertmuhatia@gmail.com')->subject($subject);
+            $message->to($toVariable, $toVariableName)->cc('sales@armstrong.ke')->cc('armstrongboissons@gmail.com')->cc('albertmuhatia@gmail.com')->subject($subject);
         });
     }
 
