@@ -9,7 +9,6 @@
             <div class="breadcrumb-wrapper text-center">
                 <h2 class="breadcrumb-wrapper__title">
                     <?php
-
                         $Category = \App\Models\Category::find($category);
                     ?>
                     {{$Category->title}}
