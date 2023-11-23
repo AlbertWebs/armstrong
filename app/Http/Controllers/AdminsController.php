@@ -1998,6 +1998,8 @@ class AdminsController extends Controller
         }
         return "Done";
     }
+    //write a method to send email
+
 
 
 }
