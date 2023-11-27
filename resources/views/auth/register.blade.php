@@ -1,77 +1,202 @@
-@extends('layouts.app')
+@extends('front.master-client')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+<main>
+<br>
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+    <!-- Log In & Register Start -->
+    <div class="login-register-section section-padding-2">
+        <div class="container-fluid custom-container">
+            <div class="row">
+                <div class="col-md-12" style="margin:0 auto">
+                    <div class="col-md-6" style="margin:0 auto">
+                        <!-- Log In & Register Box Start -->
+                        <div class="login-register">
+                            <h3 class="login-register__title">Sign Up</h3>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <form method="POST" action="{{ route('register') }}">
+                                @csrf
+                                <div class="login-register__form">
+                                     <!-- Single Form Start -->
+                                     <div class="single-form">
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                                        <input placeholder="Full Name" id="name" type="text" class="single-form__input @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <!-- Single Form Start -->
+
+                                     <!-- Single Form Start -->
+                                     <div class="single-form">
+
+                                        <input placeholder="Email Address" id="email" type="email" class="single-form__input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <!-- Single Form Start -->
+
+
+                                    <!-- Single Form Start -->
+                                    <div class="single-form">
+
+                                        <input placeholder="Mobile" id="email" type="text" class="single-form__input @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus>
+
+                                        @error('mobile')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <!-- Single Form Start -->
+
+                                      <!-- Single Form Start -->
+                                      <div class="single-form">
+
+                                        <input placeholder="Delivery Address" id="address" type="text" class="single-form__input @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+
+                                        @error('address')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <!-- Single Form Start -->
+
+
+                                    <!-- Single Form Start -->
+                                    <div class="single-form">
+                                        {{-- <input class="single-form__input" type="password" placeholder="Password *" /> --}}
+                                        <input placeholder="password" id="password" type="password" class="form-control single-form__input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <!-- Single Form Start -->
+
+                                    <!-- Single Form Start -->
+                                    <div class="single-form">
+                                        {{-- <input class="single-form__input" type="password" placeholder="Password *" /> --}}
+                                        <input placeholder="{{ __('Confirm Password') }}" id="password" type="password" class="form-control single-form__input @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="current-password">
+
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <!-- Single Form Start -->
+
+
+
+
+
+
+                                    <!-- Single Form Start -->
+                                    <div class="single-form">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ __('Register') }}
+                                        </button>
+                                    </div>
+                                    <!-- Single Form Start -->
+                                    <hr>
+                                    <p class="lost-passwords">
+                                        Already Have an Account?<a href="{{url('/')}}/login">Login</a>
+                                    </p>
+                                </div>
+                            </form>
+
+
                         </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        <!-- Log In & Register Box End -->
+                    </div>
                 </div>
+                {{-- <div class="col-md-6">
+                    <!-- Log In & Register Box Start -->
+                    <div class="login-register">
+                        <h3 class="login-register__title">Register</h3>
+
+                        <form action="#">
+                            <div class="login-register__form">
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <input class="single-form__input" type="email" placeholder="Email address *" />
+                                </div>
+                                <!-- Single Form Start -->
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <input class="single-form__input" type="password" placeholder="Password *" />
+                                </div>
+                                <!-- Single Form Start -->
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <p class="privacy-policy-text">
+                                        Your personal data will be used
+                                        to support your experience
+                                        throughout this website, to
+                                        manage access to your account,
+                                        and for other purposes described
+                                        in our
+                                        <a href="#">privacy policy</a>.
+                                    </p>
+                                </div>
+                                <!-- Single Form Start -->
+
+                                <!-- Single Form Start -->
+                                <div class="single-form">
+                                    <button class="single-form__btn btn">
+                                        Register
+                                    </button>
+                                </div>
+                                <!-- Single Form Start -->
+                            </div>
+                        </form>
+
+                        <ul class="login-register__social">
+                            <li>
+                                <a class="social-facebook" href="#">
+                                    <span class="social-icon">
+                                            <img
+                                                src="{{asset('theme/assets/images/facebook.svg')}}"
+                                                alt="Facebook"
+                                            />
+                                        </span>
+                                    <span class="social-text"
+                                            >Login with Facebook</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="social-google" href="#">
+                                    <span class="social-icon">
+                                            <img
+                                                src="{{asset('theme/assets/images/google.svg')}}"
+                                                alt="Facebook"
+                                            />
+                                        </span>
+                                    <span class="social-text"
+                                            >Login with Google</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Log In & Register Box End -->
+                </div> --}}
             </div>
         </div>
     </div>
-</div>
+    <!-- Log In & Register End -->
+
+
+</main>
 @endsection

@@ -113,76 +113,7 @@
                         <!-- Log In & Register Box End -->
                     </div>
                 </div>
-                {{-- <div class="col-md-6">
-                    <!-- Log In & Register Box Start -->
-                    <div class="login-register">
-                        <h3 class="login-register__title">Register</h3>
 
-                        <form action="#">
-                            <div class="login-register__form">
-                                <!-- Single Form Start -->
-                                <div class="single-form">
-                                    <input class="single-form__input" type="email" placeholder="Email address *" />
-                                </div>
-                                <!-- Single Form Start -->
-                                <!-- Single Form Start -->
-                                <div class="single-form">
-                                    <input class="single-form__input" type="password" placeholder="Password *" />
-                                </div>
-                                <!-- Single Form Start -->
-                                <!-- Single Form Start -->
-                                <div class="single-form">
-                                    <p class="privacy-policy-text">
-                                        Your personal data will be used
-                                        to support your experience
-                                        throughout this website, to
-                                        manage access to your account,
-                                        and for other purposes described
-                                        in our
-                                        <a href="#">privacy policy</a>.
-                                    </p>
-                                </div>
-                                <!-- Single Form Start -->
-
-                                <!-- Single Form Start -->
-                                <div class="single-form">
-                                    <button class="single-form__btn btn">
-                                        Register
-                                    </button>
-                                </div>
-                                <!-- Single Form Start -->
-                            </div>
-                        </form>
-
-                        <ul class="login-register__social">
-                            <li>
-                                <a class="social-facebook" href="#">
-                                    <span class="social-icon">
-                                            <img
-                                                src="{{asset('theme/assets/images/facebook.svg')}}"
-                                                alt="Facebook"
-                                            />
-                                        </span>
-                                    <span class="social-text"
-                                            >Login with Facebook</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="social-google" href="#">
-                                    <span class="social-icon">
-                                            <img
-                                                src="{{asset('theme/assets/images/google.svg')}}"
-                                                alt="Facebook"
-                                            />
-                                        </span>
-                                    <span class="social-text"
-                                            >Login with Google</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Log In & Register Box End -->
-                </div> --}}
             </div>
         </div>
     </div>

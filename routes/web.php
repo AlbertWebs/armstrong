@@ -31,6 +31,10 @@ Route::get('/contact-us', [App\Http\Controllers\HomeController::class, 'contact'
 Route::get('/shopping-cart', [CartController::class, 'cart'])->name('shopping-cart');
 Route::get('/shopping-cart/destroy', [CartController::class, 'destroy'])->name('destroy-cart');
 Route::get('/shopping-cart/procced', [CartController::class, 'procced'])->name('proceed-cart');
+Route::get('/shopping-cart/reorder/{id}', [CartController::class, 'reorder'])->name('reorder-cart');
+Route::get('/shopping-cart/checkout/guest', [CartController::class, 'guest'])->name('guest-checkout-cart');
+
+
 Route::get('/shopping-cart/remove/{rowID}', [CartController::class, 'remove'])->name('remove-cart');
 Route::get('/shopping-cart/checkout/make-payment', [App\Http\Controllers\CartController::class, 'make_payments'])->name('make-paymens');
 
@@ -40,30 +44,45 @@ Route::post('add-to-cart', [CartController::class, 'addToCartPost'])->name('add.
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
 
-
+Route::group(['prefix' => '/webhooks'], function () {
+    //PESAPAL
+    Route::get('donepayment', [App\Http\Controllers\PaymentsController::class, 'paymentsuccess'])->name('paymentsuccess');
+    Route::get('paymentconfirmation', [App\Http\Controllers\PaymentsController::class, 'paymentconfirmation']);
+});
 
 Auth::routes();
 
-
     Route::group(['prefix'=>'dashboard'], function(){
-    Route::get('/', [ClientController::class, 'index'])->name('dashboard.home');
-    Route::post('/update-settings', [ClientController::class, 'save'])->name('dashboard.update');
+        Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/order-history', [App\Http\Controllers\DashboardController::class, 'history'])->name('history');
+        Route::get('/order-history/{order}', [App\Http\Controllers\DashboardController::class, 'history_expand'])->name('history-with-order-number');
+        Route::get('/transaction-history', [App\Http\Controllers\DashboardController::class, 'transaction'])->name('transaction');
+        Route::get('/track-order', [App\Http\Controllers\DashboardController::class, 'track'])->name('track-order');
 
-    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-    // SocialMedia
-    Route::get('/facebook', [LoginController::class, 'facebook']);
-    Route::get('/facebook/redirect', [LoginController::class, 'facebookRedirect']);
-    Route::get('/google', [LoginController::class, 'google']);
-    Route::get('/google/redirect', [LoginController::class, 'googleRedirect']);
+        Route::post('/update-info', [App\Http\Controllers\DashboardController::class, 'update'])->name('update');
 
-});
+        Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+        // SocialMedia
+        Route::get('/facebook', [LoginController::class, 'facebook']);
+        Route::get('/facebook/redirect', [LoginController::class, 'facebookRedirect']);
+        Route::get('/google', [LoginController::class, 'google']);
+        Route::get('/google/redirect', [LoginController::class, 'googleRedirect']);
+    });
+
+    // Route::group(['prefix'=>'dashboard'], function(){
+    // Route::get('/', [ClientController::class, 'index'])->name('dashboard.home');
+    // Route::post('/update-settings', [ClientController::class, 'save'])->name('dashboard.update');
+
+
+
+// });
 /*------------------------------------------
 --------------------------------------------
 All Normal Users Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:user'])->group(function () {
-Route::get('/home', [HomeController::class, 'home'])->name('home');
+Route::get('/home', [CartController::class, 'procced'])->name('proceed-cart');
 });
 /*------------------------------------------
 --------------------------------------------
@@ -291,11 +310,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/google', [LoginController::class, 'google']);
     Route::get('/google/redirect', [LoginController::class, 'googleRedirect']);
 
-    Route::group(['prefix' => '/webhooks'], function () {
-        //PESAPAL
-        Route::get('donepayment', [App\Http\Controllers\PaymentsController::class, 'paymentsuccess'])->name('paymentsuccess');
-        Route::get('paymentconfirmation', [App\Http\Controllers\PaymentsController::class, 'paymentconfirmation']);
-    });
+
     });
     /*------------------------------------------
     --------------------------------------------

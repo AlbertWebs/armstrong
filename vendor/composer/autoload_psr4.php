@@ -98,5 +98,6 @@ return array(
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
     'BinaryCats\\Sku\\' => array($vendorDir . '/binary-cats/laravel-sku/src'),
+    'Artesaos\\SEOTools\\' => array($vendorDir . '/artesaos/seotools/src/SEOTools'),
     'App\\' => array($baseDir . '/app', $vendorDir . '/laravel/pint/app'),
 );

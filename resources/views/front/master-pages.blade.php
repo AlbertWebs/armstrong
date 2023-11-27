@@ -59,7 +59,7 @@
                             <li>
                                 <a href="#" aria-label="Map">
                                     <i class="lastudioicon-pin-3-1"></i>
-                                    <span>3571 Riverside Downs</span>
+                                    <span>Mirage Towers, Tower 2, 1st Floor, Suite 9, Westlands, Nairobi, Kenya</span>
                                 </a>
                             </li>
                         </ul>
@@ -68,7 +68,7 @@
                         <ul class="header__top--items">
                             @if(Auth::User())
                             <li>
-                                <a href="{{url('/')}}/" aria-label="login">
+                                <a href="{{url('/')}}/dashboard" aria-label="login">
                                     <i class="lastudioicon-single-01-1"></i>
                                     <span>{{Auth::User()->name}}</span>
                                 </a>

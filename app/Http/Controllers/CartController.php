@@ -12,7 +12,7 @@ use Pesapal;
 use Redirect;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Auth;
-
+use DB;
 class CartController extends Controller
 {
     public function addToCart($id){
@@ -22,6 +22,27 @@ class CartController extends Controller
             ''.$Product->title.' Added To Cart'
         ]);
     }
+
+
+
+    public function reorder($id)
+    {
+        $Order = DB::table('orders')->where('id',$id)->get();
+        foreach($Order as $order){
+           $OrderProducts = DB::table('orders_product')->where('orders_id',$order->id)->get();
+           foreach($OrderProducts as $orderproducts){
+               $products_id = $orderproducts->product_id;
+               $qty = $orderproducts->qty;
+               $Product = Product::find($products_id);
+                Cart::add($Product->id, $Product->title, $qty, $Product->price);
+           }
+        }
+        $data = "Success";
+        $Cart = Cart::content();
+        // dd($Cart);
+        return view('front.shopping-cart', compact('Cart'));
+    }
+
 
     public function addToCartPost(Request $request){
         $id= $request->product_id;
@@ -37,6 +58,14 @@ class CartController extends Controller
         // dd($Cart);
         return view('front.shopping-cart', compact('Cart'));
     }
+
+    public function guest(){
+        $Cart = Cart::content();
+        // dd($Cart);
+        return view('front.guest', compact('Cart'));
+    }
+
+
 
     public function remove($rowId){
         Cart::remove($rowId);
@@ -111,8 +140,8 @@ class CartController extends Controller
 
         $Message = "";
         $phone = "254790841987";
-        // $this->sendSMS($sms_u,Auth::User()->mobile);
-        // $this->sendSMS($sms_a,$phone);
+        $this->sendSMS($sms_u,Auth::User()->mobile);
+        $this->sendSMS($sms_a,$phone);
 
         // return view('payments.business.pesapal', compact('iframe'));
         return view('front.checkout-payment', compact('iframe','cartItems'));

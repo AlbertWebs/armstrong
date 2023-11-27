@@ -42,6 +42,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
     public function login(Request $request)
     {
         $request->validate([
@@ -56,7 +57,7 @@ class LoginController extends Controller
         if (auth()->user()->is_admin == 1) {
             return redirect()->route('proceed-cart');
         }
-        return redirect()->route('home');
+        return redirect()->route('proceed-cart');
     }
 
     public function facebookRedirect(){

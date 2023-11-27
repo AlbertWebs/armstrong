@@ -186,6 +186,7 @@ class ComposerStaticInit03e27089f25c3dca111cc3acf3009747
         ),
         'A' => 
         array (
+            'Artesaos\\SEOTools\\' => 18,
             'App\\' => 4,
         ),
     );
@@ -564,6 +565,10 @@ class ComposerStaticInit03e27089f25c3dca111cc3acf3009747
         array (
             0 => __DIR__ . '/..' . '/binary-cats/laravel-sku/src',
         ),
+        'Artesaos\\SEOTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -591,6 +596,7 @@ class ComposerStaticInit03e27089f25c3dca111cc3acf3009747
         'App\\Http\\Controllers\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/CartController.php',
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PaymentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/PaymentsController.php',
         'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
@@ -665,6 +671,27 @@ class ComposerStaticInit03e27089f25c3dca111cc3acf3009747
         'App\\Repositories\\ConfigurationJsonRepository' => __DIR__ . '/..' . '/laravel/pint/app/Repositories/ConfigurationJsonRepository.php',
         'App\\Repositories\\GitPathsRepository' => __DIR__ . '/..' . '/laravel/pint/app/Repositories/GitPathsRepository.php',
         'App\\ValueObjects\\Issue' => __DIR__ . '/..' . '/laravel/pint/app/ValueObjects/Issue.php',
+        'Artesaos\\SEOTools\\Contracts\\JsonLd' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/JsonLd.php',
+        'Artesaos\\SEOTools\\Contracts\\JsonLdMulti' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/JsonLdMulti.php',
+        'Artesaos\\SEOTools\\Contracts\\MetaTags' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/MetaTags.php',
+        'Artesaos\\SEOTools\\Contracts\\OpenGraph' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/OpenGraph.php',
+        'Artesaos\\SEOTools\\Contracts\\SEOFriendly' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/SEOFriendly.php',
+        'Artesaos\\SEOTools\\Contracts\\SEOTools' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/SEOTools.php',
+        'Artesaos\\SEOTools\\Contracts\\TwitterCards' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Contracts/TwitterCards.php',
+        'Artesaos\\SEOTools\\Facades\\JsonLd' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/JsonLd.php',
+        'Artesaos\\SEOTools\\Facades\\JsonLdMulti' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/JsonLdMulti.php',
+        'Artesaos\\SEOTools\\Facades\\OpenGraph' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/OpenGraph.php',
+        'Artesaos\\SEOTools\\Facades\\SEOMeta' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/SEOMeta.php',
+        'Artesaos\\SEOTools\\Facades\\SEOTools' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/SEOTools.php',
+        'Artesaos\\SEOTools\\Facades\\TwitterCard' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Facades/TwitterCard.php',
+        'Artesaos\\SEOTools\\JsonLd' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/JsonLd.php',
+        'Artesaos\\SEOTools\\JsonLdMulti' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/JsonLdMulti.php',
+        'Artesaos\\SEOTools\\OpenGraph' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/OpenGraph.php',
+        'Artesaos\\SEOTools\\Providers\\SEOToolsServiceProvider' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Providers/SEOToolsServiceProvider.php',
+        'Artesaos\\SEOTools\\SEOMeta' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/SEOMeta.php',
+        'Artesaos\\SEOTools\\SEOTools' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/SEOTools.php',
+        'Artesaos\\SEOTools\\Traits\\SEOTools' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/Traits/SEOTools.php',
+        'Artesaos\\SEOTools\\TwitterCards' => __DIR__ . '/..' . '/artesaos/seotools/src/SEOTools/TwitterCards.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'BinaryCats\\Sku\\Concerns\\SkuGenerator' => __DIR__ . '/..' . '/binary-cats/laravel-sku/src/Concerns/SkuGenerator.php',
         'BinaryCats\\Sku\\Concerns\\SkuMacro' => __DIR__ . '/..' . '/binary-cats/laravel-sku/src/Concerns/SkuMacro.php',

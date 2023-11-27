@@ -1,4 +1,4 @@
-@extends('front.master-pages')
+@extends('front.master-client')
 
 @section('content')
 
@@ -70,6 +70,7 @@
                                         </button>
                                     </div>
                                     <!-- Single Form Start -->
+
                                     <hr>
                                     <p class="lost-passwords">
                                         New Here?<a href="{{url('/')}}/register">Register</a>
@@ -77,33 +78,18 @@
                                 </div>
                             </form>
 
-                            <ul class="login-register__social">
-                                <li>
-                                    <a class="social-facebook" href="{{url('/')}}/dashboard/facebook">
-                                        <span class="social-icon">
-                                                <img
-                                                    src="{{asset('theme/assets/images/facebook.svg')}}"
-                                                    alt="Facebook"
-                                                />
-                                        </span>
-                                        <span class="social-text"
-                                                >Login with Facebook
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="social-google" href="{{url('/')}}/dashboard/facebook">
-                                        <span class="social-icon">
-                                            <img
-                                                src="{{asset('theme/assets/images/google.svg')}}"
-                                                alt="Facebook"
-                                            />
-                                        </span>
-                                        <span class="social-text"
-                                            >Login with Google
-                                        </span>
-                                    </a>
-                                </li>
+                            <ul class="login-register__social text-center">
+
+                                    <li style="margin:0 auto">
+                                        <a class="social-facebook text-center" style="background-color: #d8b871" href="{{url('/')}}/shopping-cart/checkout/guest">
+
+                                            <span class="social-text"
+                                                    ><strong><i class="lastudioicon-shopping-cart-3"></i>  Checkout as Guest</strong>
+                                            </span>
+                                        </a>
+                                    </li>
+
+
                             </ul>
                         </div>
                         <!-- Log In & Register Box End -->

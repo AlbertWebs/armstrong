@@ -11,34 +11,8 @@
     <meta name="description" content="Your One Stop Liquor Store - Armstrong Boissons Limited" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    {{-- SEO --}}
-    <meta name="robots" content="index,follow">
-    <meta name="googlebot" content="index,follow"><!-- Google Specific -->
-    <meta name="subject" content="Your One Stop Liquor Store - Armstrong Boissons Limited">
-    <meta name="rating" content="General">
-    <meta name="referrer" content="no-referrer">
-    <meta name="theme-color" content="#1c2c52">
-    <meta name="description" content="Your One Stop Liquor Store In Nairobi - Armstrong Boissons Limited">
-    <link rel="canonical" href="{{url('/')}}"/>
-    <meta property="og:description" content="Your One Stop Liquor Store In Nairobi - Armstrong Boissons Limited" />
-    <meta property="og:title" content="Your One Stop Liquor Store - Armstrong Boissons Limited" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{url('/')}}" />
-
-    <meta property="og:image" content="http://armstrong.venshaq.com/public/theme/assets/images/logo.png" />
-    <meta property="og:site_name" content="Royaltech Computers Limited">
-    <meta property="og:locale" content="en_US">
-    <meta name="twitter:title" content="Your One Stop Liquor Store - Armstrong Boissons Limited" />
-    <meta name="twitter:site" content="@RoyaltechC" />
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@RoyaltechC">
-    <meta name="twitter:url" content="{{url('/')}}">
-    <meta name="twitter:description" content="Your One Stop Liquor Store In Nairobi - Armstrong Boissons Limited">
-    <meta name="twitter:image" content="http://armstrong.venshaq.com/public/theme/assets/images/logo.png">
-    {{-- SEO --}}
-
-    <!-- Favicon -->
-    @include('front.favicon')
+      <!-- Favicon -->
+      @include('front.favicon')
 
     <!-- CSS (Font, Vendor, Icon, Plugins & Style CSS files) -->
 
@@ -61,64 +35,66 @@
 </head>
 
 
-<body class="bg-home">
+<body>
     <!-- Header Start -->
-    <header class="header">
-
-        <!-- Header Main Start -->
-        <div class="header__main header-padding d-flex align-items-center">
+    <header class="header bg-white header-height">
+        <!-- Header Top Start -->
+        <div class="header__top">
             <div class="container-fluid custom-container">
-                <div class="row align-items-center position-relative">
-                    <div class="col-md-4 col-3 d-xl-none">
-                        <!-- Header Main Toggle Start -->
-                        <button class="header__main--toggle" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-label="menu">
-                            <i class="lastudioicon-menu-8-1"></i>
-                        </button>
-                        <!-- Header Main Toggle End -->
+                <div class="header__top--wrapper justify-content-between">
+                    <div class="header__top--left d-none d-md-block">
+                        <ul class="header__top--items">
+                            <li>
+                                <a href="mailto:info@armstrong.ke" aria-label="mail">
+                                    <i class="lastudioicon-mail-2"></i>
+                                    <span>info@armstrong.ke</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+(254)723014032" aria-label="Phone">
+                                    <i class="lastudioicon-phone-call"></i>
+                                    <span>(254)723014032</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Map">
+                                    <i class="lastudioicon-pin-3-1"></i>
+                                    <span>Mirage Towers, Tower 2, 1st Floor, Suite 9, Westlands, Nairobi, Kenya</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-6">
-                        <!-- Header Main Logo Start -->
-                        <div class="header__main--logo change-logo text-center text-xl-start">
-                            <a href="{{url('/')}}">
-                                <img src="{{asset('theme/assets/images/logo.png')}}" alt="Armstrong Boissons Limited" width="150"  />
-                            </a>
-                        </div>
-                        <!-- Header Main Logo End -->
-                    </div>
-                    <div class="col-xl-9 col-md-4 col-3">
-                        <!-- Header Main Menu Start -->
-                        <div class="d-flex justify-content-end align-items-center">
-                            <nav class="header__main--menu position-static d-none d-xl-block me-4">
-                                <!-- Menu Item List Start -->
-                                @include('front.menu')
-                                <!-- Menu Item List End -->
-                            </nav>
-
-                            <div class="header__main--meta">
-                                <!-- Meta Item List Start -->
-                                <ul class="meta-items-list d-flex justify-content-end align-items-center">
-
-                                    <li id="cart-number" class="cart">
-                                        <button class="open-cart" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
-                                            <i class="lastudioicon-bag-3"></i>
-                                            <span class="badge">0{{ Cart::count()}}</span>
-                                        </button>
-                                    </li>
-                                    <li class="search">
-                                        <button data-bs-toggle="modal" data-bs-target="#SearchModal" aria-label="search">
-                                            <i class="lastudioicon-zoom-1"></i>
-                                        </button>
-                                    </li>
-                                </ul>
-                                <!-- Meta Item List End -->
-                            </div>
-                        </div>
-                        <!-- Header Main Menu End -->
+                    <div class="header__top--right">
+                        <ul class="header__top--items">
+                            @if(Auth::User())
+                            <li>
+                                <a href="{{url('/')}}/dashboard" aria-label="login">
+                                    <i class="lastudioicon-single-01-1"></i>
+                                    <span>{{Auth::User()->name}}</span>
+                                </a>
+                            </li>
+                            @else
+                            <li>
+                                <a href="{{url('/')}}/login" aria-label="login">
+                                    <i class="lastudioicon-single-01-1"></i>
+                                    <span>Login</span>
+                                </a>
+                            </li>
+                            @endif
+                            <li>
+                                <a href="{{url('/')}}/contact-us" aria-label="help">
+                                    <i class="lastudioicon-b-meeting-2"></i>
+                                    <span>Help Center</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Header Main End -->
+        <!-- Header Top End -->
+
+
     </header>
 
     <!-- Header End -->
@@ -166,13 +142,13 @@
                                             <strong class="price">kes 0.00</strong>
                                         </label>
                                     </li>
-                                    {{-- <li class="single-form">
+                                    <li class="single-form">
                                         <input type="radio" name="shipping" id="local-pickup" />
                                         <label for="local-pickup" class="single-form__label radio-label">
                                             <span></span>
                                             Local pickup
                                         </label>
-                                    </li> --}}
+                                    </li>
                                 </ul>
                             </td>
                         </tr>
@@ -267,13 +243,13 @@
                                             <strong class="price">kes {{$Shipping}}</strong>
                                         </label>
                                     </li>
-                                    {{-- <li class="single-form">
+                                    <li class="single-form">
                                         <input type="radio" name="shipping" id="local-pickup" />
                                         <label for="local-pickup" class="single-form__label radio-label">
                                             <span></span>
                                             Local pickup
                                         </label>
-                                    </li> --}}
+                                    </li>
                                 </ul>
                             </td>
                         </tr>
@@ -339,33 +315,24 @@
             <!-- Off Canvas Sidebar Menu Start -->
             <div class="offcanvas-sidebar__menu">
                 <ul class="offcanvas-menu-list">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="blog.html">News & Events</a></li>
-                    <li><a href="faqs.html">FAQs</a></li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Shopping Cart</a></li>
+                    <li><a href="#">Checkout</a></li>
+                    <li><a href="#">Delivery</a></li>
+                    <li><a href="#">Payment Refund</a></li>
                 </ul>
             </div>
             <!-- Off Canvas Sidebar Menu End -->
 
-            <!-- Off Canvas Sidebar Banner Start -->
-            <div class="offcanvas-sidebar__banner" style="
-                background-image: url(assets/images/shop-sidebar-banner.jpg);
-            ">
-                <h3 class="banner-title">NEW NOW</h3>
-                <h4 class="banner-sub-title">WARM WOOL PREMIUM COAT</h4>
-                <a href="#" class="banner-btn">Discover</a>
-            </div>
-            <!-- Off Canvas Sidebar Banner End -->
 
             <!-- Off Canvas Sidebar Info Start -->
             <div class="offcanvas-sidebar__info">
                 <ul class="offcanvas-info-list">
-                    <li><a href="tel:(+254) 7230 14032">(+254) 7230 14032</a></li>
+                    <li><a href="tel:+254723014032">(+254) 23014032</a></li>
                     <li><a href="mailto:info@armstrong.ke">info@armstrong.ke</a></li>
                     <li>
                         <span>
-                        Mirage Towers, Tower 2, 1st Floor, Suite 9, Westlands, Nairobi, Kenya, Gitaru Road, Western ByPass
+                            4517 Riverside Downs. Gitaru Road, Wangige
                     </span>
                     </li>
                 </ul>
@@ -402,10 +369,12 @@
             <!-- Off Canvas Sidebar Social End -->
             <div class="offcanvas-sidebar__copyright">
                 <p>
-                    &copy;
-                    <span class="current-year">{{date('Y')}}</span>
-                    <span> Armstrong Boissons Limited - All Rights Reserved </span> Powered By
-                    <a href="https://designekta.com/">Designekta Studios</a>
+                    ©
+                    <span class="current-year">2023</span>
+                    <span> Armstrong Boissons Limited - All RIghts Reserved</span> | Powered By
+
+
+                    <a href="https://designekta.com/">Designekta Studio</a>
                 </p>
             </div>
             <!-- Off Canvas Sidebar Social End -->
@@ -427,7 +396,7 @@
         <!-- offcanvas-body Start -->
         <div class="offcanvas-body">
             <nav class="navbar-mobile-menu">
-                @include('front.mobile-menu')
+               @include('front.mobile-menu')
             </nav>
         </div>
         <!-- offcanvas-body end -->
@@ -468,137 +437,7 @@
 
     <!-- Footer End -->
 
-    <!-- Quick View Start -->
-    <!-- Modal Start -->
-    <div class="modal quickview-modal fade" id="quickView">
-        <div class="modal-dialog modal-dialog-centered">
-            <!-- Modal Content Start -->
-            <div class="modal-content">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="remove">
-                    <i class="lastudioicon-e-remove"></i>
-                </button>
-                <div class="modal-body">
-                    <div class="row g-0">
-                        <div class="col-md-6">
-                            <!-- Product Single image Start -->
-                            <div class="product-single-image">
-                                <div class="quick-view-product-slide navigation-arrows-style-1">
-                                    <div class="swiper">
-                                        <div class="swiper-wrapper">
-                                            <div class="product-single-slide-item swiper-slide">
-                                                <img src="{{asset('theme/assets/images/products/wines/product-single-01.png')}}" alt="Product Single" width="742" height="778" loading="lazy" />
-                                            </div>
-                                            <div class="product-single-slide-item swiper-slide">
-                                                <img src="{{asset('theme/assets/images/products/wines/product-single-02.png')}}" alt="Product Single" width="742" height="778" loading="lazy" />
-                                            </div>
-                                            <div class="product-single-slide-item swiper-slide">
-                                                <img src="{{asset('theme/assets/images/products/wines/product-single-03.png')}}" alt="Product Single" width="742" height="778" loading="lazy" />
-                                            </div>
-                                            <div class="product-single-slide-item swiper-slide">
-                                                <img src="{{asset('theme/assets/images/products/wines/product-single-04.png')}}" alt="Product Single" width="742" height="778" loading="lazy" />
-                                            </div>
-                                        </div>
-                                        <div class="swiper-button-next" aria-label="arrow-right">
-                                            <i class="lastudioicon-arrow-right"></i>
-                                        </div>
-                                        <div class="swiper-button-prev" aria-label="arrow-left">
-                                            <i class="lastudioicon-arrow-left"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product Single image End -->
-                        </div>
-                        <div class="col-md-6">
-                            <!-- Product Single Content Start -->
-                            <div class="product-single-content quick-view-product-content">
-                                <h2 class="product-single-content__title">
-                                    Pombe Noma Sana
-                                </h2>
-                                <div class="product-single-content__price-stock">
-                                    <div class="product-single-content__price">
-                                        <ins>kes 3630.99</ins>
-                                    </div>
-                                    <div class="product-single-content__stock">
-                                        <span
-                                        class="stock-icon"
-                                        aria-label="check-circle"
-                                    >
-                                        <i
-                                            class="dlicon ui-1_check-circle-08"
-                                        ></i>
-                                    </span>
-                                        <span class="stock-text">97 in stock</span>
-                                    </div>
-                                </div>
-                                <div class="product-single-content__short-description">
-                                    <p>
-                                        Proin volutpat vitae libero at tincidunt.
-                                        Maecenas sapien lectus, vehicula vel euismod
-                                        sed, vulputate a lorem. Integer at tristique
-                                        libero. Nullam porta eleifend metus a
-                                        interdum.
-                                    </p>
-                                </div>
-                                <div class="product-single-content__add-to-cart-wrapper">
-                                    <div class="product-single-content__quantity-add-to-cart">
-                                        <div class="product-single-content__quantity product-quantity">
-                                            <button type="button" class="decrease" aria-label="delete">
-                                                <i
-                                                class="lastudioicon-i-delete-2"
-                                            ></i>
-                                            </button>
-                                            <input class="quantity-input" type="text" value="01" />
-                                            <button type="button" class="increase" aria-label="add">
-                                                <i class="lastudioicon-i-add-2"></i>
-                                            </button>
-                                        </div>
-                                        <button class="product-single-content__add-to-cart btn">
-                                            Add to cart
-                                        </button>
-                                    </div>
-
-                                    <a href="#" class="product-add-compare">Add to Compare</a>
-                                    <a href="#" class="product-add-wishlist">Add to Wishlist</a>
-                                </div>
-                                <div class="product-single-content__meta">
-                                    <div class="product-single-content__meta--item">
-                                        <div class="label">SKU:</div>
-                                        <div class="content">REF. ABL-5732</div>
-                                    </div>
-                                    <div class="product-single-content__meta--item">
-                                        <div class="label">Categories:</div>
-                                        <div class="content">
-                                            <a href="#">Liqueur</a>
-                                            <a href="#">Spirit</a>
-                                        </div>
-                                    </div>
-                                    <div class="product-single-content__meta--item">
-                                        <div class="label">Tag:</div>
-                                        <div class="content">
-                                            <a href="#">Refreshments</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Product Single Content End -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal Content End -->
-        </div>
-    </div>
-    <!-- Modal End -->
-
-    <!-- Quick View End -->
-
-    <!-- Popup Modal Start -->
-
-    <!-- Popup Modal End -->
-
     <!-- JS Vendor, Plugins & Activation Script Files -->
-
     <!-- Bootstrap JS -->
     <script src="{{asset('theme/assets/js/bootstrap.bundle.min.js')}}"></script>
 
@@ -611,7 +450,6 @@
     <!-- Activation JS -->
     <script src="{{asset('theme/assets/js/main.js')}}"></script>
     @include('front.ajax')
-
 
 </body>
 

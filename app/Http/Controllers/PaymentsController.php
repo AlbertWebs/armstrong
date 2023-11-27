@@ -12,7 +12,8 @@ class PaymentsController extends Controller
 {
     public function payment(Request $request){//initiates payment
         if($request->currency == "KES"){
-            $amount = $request -> amount;
+            // $amount = $request -> amount;
+            $amount = "1";
         }elseif($request->currency == "USD"){
             $amount = Currency::convert()->from('USD')->to('KES')->amount($request -> amount)->get();
         }elseif($request->currency == "GBP"){
@@ -20,6 +21,7 @@ class PaymentsController extends Controller
         }elseif($request->currency == "EUR"){
             $amount = Currency::convert()->from('EUR')->to('KES')->amount($request -> amount)->get();
         }
+        $amount = "1";
 
 
 
@@ -50,8 +52,11 @@ class PaymentsController extends Controller
     }
     public function paymentsuccess(Request $request)//just tells u payment has gone thru..but not confirmed
     {
+        // Create Order
+
+
         // Clear Cart
-        \Cart::clear();
+        \Cart::destroy();
         $trackingid = $request->input('tracking_id');
         $ref = $request->input('merchant_reference');
 
