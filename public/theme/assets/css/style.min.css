@@ -3879,7 +3879,7 @@ hr {
     font-weight: 400;
 }
 .single-product-02 .single-product__info--title {
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 .single-product-02 .single-product__info--price {
     color: #d8b871;
