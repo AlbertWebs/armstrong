@@ -54,7 +54,10 @@
                         <form method="POST" action="{{url('/')}}/admin/add_Variation" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="row">
-
+                                <div class="input-field col s12">
+                                    <input autocomplete="off" name="title" id="list-title" placeholder="Sminoff Black Ice" type="text" class="validate" required>
+                                    <label for="list-title"> Size Title</label>
+                                </div>
                                 {{--  --}}
                                 <div class="input-field col s12">
                                     <input autocomplete="off" name="value" id="list-title" placeholder="36" type="number" class="validate" required>

@@ -1652,6 +1652,7 @@ class AdminsController extends Controller
         }
 
         $Variation = new Variation;
+        $Variation->title = $request->title;
         $Variation->type = $type = $request->type;
         $Variation->value = $value = $request->value;
         $Variation->image = $title = $image;
