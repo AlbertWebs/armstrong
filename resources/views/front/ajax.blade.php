@@ -27,7 +27,7 @@
         });
     });
 </script>
-@include('front.concent')
+{{-- @include('front.concent') --}}
 
 <script>
     !function (t, e, c, n) {
