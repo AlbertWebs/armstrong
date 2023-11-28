@@ -59,7 +59,7 @@
 
             <div class="row gy-xxl-3 gx-xxl-5">
                 <?php
-                  $Category = DB::table('categories')->get();
+                  $Category = DB::table('categories')->limit('6')->inRandomOrder()->get();
                 ?>
                 @foreach ($Category as $category)
                 <div class="col-lg-2 col-md-4 col-sm-6 col-4">
@@ -97,7 +97,7 @@
             <div class="product-wrapper">
                 <div class="row gy-xxl-3 gx-xxl-5">
                     <?php
-                        $Products = DB::table('products')->limit(24)->get();
+                        $Products = DB::table('products')->inRandomOrder()->limit(24)->get();
                     ?>
                     @foreach ($Products as $Product)
                         <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 col-6">
