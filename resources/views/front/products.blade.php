@@ -28,7 +28,7 @@
         <div class="container-fluid custom-container">
             <br><br><br>
             <!-- Shop Filter Start -->
-            <div class="shop-filter align-items-center">
+            {{-- <div class="shop-filter align-items-center">
                 <!-- Shop Filter Default Start -->
                 <div class="shop-filter-default justify-content-between align-items-center">
                     <!-- Shop Filter Count Start -->
@@ -251,7 +251,7 @@
                     </div>
                 </div>
                 <!-- Shop Filter widget End -->
-            </div>
+            </div> --}}
             <!-- Shop Filter End -->
 
             <!-- Shop Wrapper Start -->

@@ -22,9 +22,6 @@ class PaymentsController extends Controller
             $amount = Currency::convert()->from('EUR')->to('KES')->amount($request -> amount)->get();
         }
         $amount = "1";
-
-
-
         $payments = new Payment;
         $payments -> businessid = 1; //Business ID
         $payments -> transactionid = Pesapal::random_reference();
@@ -47,10 +44,9 @@ class PaymentsController extends Controller
         );
         // dd($details);
         $iframe=Pesapal::makePayment($details);
-
         return view('payments.business.pesapal', compact('iframe'));
     }
-    public function paymentsuccess(Request $request)//just tells u payment has gone thru..but not confirmed
+    public function paymentsuccess(Request $request)
     {
         // Create Order
 

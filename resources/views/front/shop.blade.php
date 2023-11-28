@@ -23,7 +23,7 @@
         <div class="container-fluid custom-container">
             <br><br><br>
             <!-- Shop Filter Start -->
-            <div class="shop-filter align-items-center">
+            {{-- <div class="shop-filter align-items-center">
                 <!-- Shop Filter Default Start -->
                 <div class="shop-filter-default justify-content-between align-items-center">
                     <!-- Shop Filter Count Start -->
@@ -246,7 +246,7 @@
                     </div>
                 </div>
                 <!-- Shop Filter widget End -->
-            </div>
+            </div> --}}
             <!-- Shop Filter End -->
 
             <!-- Shop Wrapper Start -->
@@ -256,7 +256,7 @@
                         $Products = DB::table('products')->limit(12)->get();
                     ?>
                     @foreach ($Products as $Product)
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-6">
                         <!-- Single product Start -->
                         <div class="single-product single-product-02 js-scroll ShortFadeInUp scrolled">
                             <div class="single-product__thumbnail">
@@ -308,7 +308,7 @@
             <!-- Shop Wrapper End -->
 
             <!-- Pagination Start -->
-            <div class="paginations">
+            {{-- <div class="paginations">
                 <ul class="paginations-list">
                     <li>
                         <a href="#">
@@ -339,7 +339,7 @@
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
             <!-- Pagination End -->
         </div>
     </div>

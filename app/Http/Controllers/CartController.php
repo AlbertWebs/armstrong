@@ -209,7 +209,8 @@ class CartController extends Controller
         $sms_u = "Hello $u, Your Order Was Posted Successfully, Our delivery agent will contact you shortly";
         $sms_a = "New Order! You have received a new order, check your email for the order details";
         $details = array(
-            'amount' => $payments -> amount,
+            // 'amount' => $payments -> amount,
+             'amount' => "1",
             'description' => $description,
             'type' => 'MERCHANT',
             'first_name' => Auth::User()->name,
