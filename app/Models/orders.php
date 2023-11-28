@@ -34,7 +34,7 @@ class orders extends Model
             $Notifications->content = 'You have a new Order';
             $Notifications->save();
 
+    }
 
 
-       }
 }

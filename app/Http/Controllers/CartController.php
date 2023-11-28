@@ -12,7 +12,10 @@ use Pesapal;
 use Redirect;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Auth;
+use App\Models\User;
 use DB;
+use Hash;
+
 class CartController extends Controller
 {
     public function addToCart($id){
@@ -87,19 +90,102 @@ class CartController extends Controller
         }
     }
 
+    public function register($name,$email,$mobile,$address){
+        User::create([
+            'name' => $name,
+            'email' => $email,
+            'mobile' => $mobile,
+            'address' => $address,
+            'password' => Hash::make($email)
+        ]);
+        $credentials = only('email', 'password');
+        Auth::attempt($credentials);
+        $request->session()->regenerate();
+    }
+
+    public function guest_checkout(Request $request){
+        //Login User
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'mobile' => $request->password,
+            'address' => $request->address,
+            'password' => Hash::make($request->email)
+        ]);
+
+        $user = User::where('email','=',$request->email)->first();
+        Auth::loginUsingId($user->id, TRUE);
+
+        orders::createOrder();
+        $latest = orders::orderBy('date','DESC')->first();
+        $OrderId = $latest->id;
+        $Count = Cart::content()->count();
+        $Shipping = 250;
+        $Ship = ($Shipping);
+        $Tot = \Cart::total();
+        $All = $Ship+$Tot;
+        $amount = $All;
+        //
+        // $description = Session::get('description');
+        $payments = new Payment;
+        $payments -> businessid = 1; //Business ID
+        $payments -> transactionid = Pesapal::random_reference();
+        $payments -> status = 'NEW'; //if user gets to iframe then exits, i prefer to have that as a new/lost transaction, not pending
+        $payments -> amount = (int)$amount;
+        $payments -> currency = "KES";
+        $payments -> user_id = 0;
+        $payments -> order_id = $OrderId;
+        $payments -> save();
+        //
+         // Email Order
+         ReplyMessage::mailclient($request->email,$request->name,$OrderId,$Ship,$All);
+
+         ReplyMessage::mailmerchant($request->email,$request->name,$request->mobile);
+
+         $description = "Ordering $Count Products Online";
+         $u = $request->name;
+         $sms_u = "Hello $u, Your Order Was Posted Successfully, Our delivery agent will contact you shortly";
+         $sms_a = "New Order! You have received a new order, check your email for the order details";
+         $details = array(
+             'amount' => $payments -> amount,
+             'description' => $description,
+             'type' => 'MERCHANT',
+             'first_name' => $request->name,
+             'last_name' => "Armstrong",
+             'email' => $request->email,
+             'phonenumber' => $request->mobile,
+             'reference' => $payments -> transactionid,
+             'height'=>'400px',
+             'currency' => 'KES'
+         );
+         // dd($details);
+         $iframe=Pesapal::makePayment($details);
+         $cartItems = \Cart::Content();
+
+         $Message = "";
+         $phone = "254790841987";
+         $this->sendSMS($sms_u,$request->mobile);
+         $this->sendSMS($sms_a,$phone);
+        //Logout now
+        $this->logout();
+        return view('front.checkout-payment', compact('iframe','cartItems'));
+    }
+
+    public function logout(){
+        Auth::logout();
+    }
+
     public function make_payments()
     {
         orders::createOrder();
         $latest = orders::orderBy('date','DESC')->first();
         $OrderId = $latest->id;
-        // echo $OrderId;
 
         $Count = Cart::content()->count();
         $Shipping = 250;
         $Ship = ($Shipping);
         $Tot = \Cart::total();
         $All = $Ship+$Tot;
-
         $amount = $All;
 
         // $description = Session::get('description');
@@ -140,8 +226,8 @@ class CartController extends Controller
 
         $Message = "";
         $phone = "254790841987";
-        $this->sendSMS($sms_u,Auth::User()->mobile);
-        $this->sendSMS($sms_a,$phone);
+        // $this->sendSMS($sms_u,Auth::User()->mobile);
+        // $this->sendSMS($sms_a,$phone);
 
         // return view('payments.business.pesapal', compact('iframe'));
         return view('front.checkout-payment', compact('iframe','cartItems'));

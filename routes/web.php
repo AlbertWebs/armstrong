@@ -41,6 +41,8 @@ Route::get('/shopping-cart/checkout/make-payment', [App\Http\Controllers\CartCon
 
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
 Route::post('add-to-cart', [CartController::class, 'addToCartPost'])->name('add.to.cart.post');
+Route::post('guest-checkout', [CartController::class, 'guest_checkout'])->name('guest-checkout');
+
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
 

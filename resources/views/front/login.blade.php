@@ -19,7 +19,7 @@
                     <div class="col-md-6" style="margin:0 auto">
                         <!-- Log In & Register Box Start -->
                         <div class="login-register">
-                            <h3 class="login-register__title">Log In</h3>
+                            <h3 class="login-register__title">Logs In</h3>
 
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
@@ -46,26 +46,6 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
-                                    </div>
-                                    <!-- Single Form Start -->
-                                    <!-- Single Form Start -->
-                                    <div class="single-form">
-
-                                        <input class="single-form__input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                        <label class="single-form__label checkbox-label" for="remember">
-                                            {{ __('Remember Me') }}
-                                        </label>
-
-                                        <p class="lost-password">
-                                            @if (Route::has('password.request'))
-                                            <a class="btn btn-link lost-password" href="{{ route('password.request') }}">
-                                                {{ __('Forgot Your Password?') }}
-                                            </a>
-                                            @endif
-                                        </p>
-
-
                                     </div>
                                     <!-- Single Form Start -->
 

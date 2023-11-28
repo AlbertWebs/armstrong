@@ -1,22 +1,8 @@
-@extends('front.master-pages')
+@extends('front.master-client')
 
 @section('content')
 
 <main>
-    <!-- Breadcrumb Start -->
-    <div class="breadcrumb-section">
-        <div class="container-fluid custom-container">
-            <div class="breadcrumb-wrapper text-center">
-                <h2 class="breadcrumb-wrapper__title">Guest Checkout</h2>
-                <ul class="breadcrumb-wrapper__items justify-content-center">
-                    <li><a href="{{url('/')}}">Home</a></li>
-                    <li><span>Guest Checkout</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
-
     <!-- Checkout Start -->
     <div class="checkout-section section-padding-2">
         <div class="container-fluid custom-container">
@@ -29,47 +15,14 @@
                     <div class="checkout-col-3" style="margin:0 auto">
                         <!-- Checkout Details Start -->
                         <div class="checkout-details">
-                            <h3 class="checkout-details__title">
-                                Your order
-                            </h3>
+
 
                             <div class="checkout-details__order-review">
                                 <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th class="product-name">
-                                                Product
-                                            </th>
-                                            <th class="product-total">
-                                                Subtotal
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($Cart as $cart)
-                                        <?php
-                                            $Product = \App\Models\Product::find($cart->id);
-                                         ?>
-                                        <tr class="cart-item">
-                                            <td class="product-name">
-                                                {{$cart->name}}
-                                                <strong
-                                                        >×&nbsp; {{$cart->qty}}</strong>
-                                            </td>
-                                            <td class="product-total">
-                                                <span> kes {{$cart->price}} </span>
-                                            </td>
-                                        </tr>
-                                        @endforeach
 
-                                    </tbody>
+
                                     <tfoot>
-                                        <tr class="cart-subtotal">
-                                            <th>Subtotal</th>
-                                            <td>
-                                                <span>kes {{Cart::subtotal()}} </span>
-                                            </td>
-                                        </tr>
+
                                         <?php $Subtotal = Cart::total(); $Shipping = 250 ?>
 
 
@@ -129,26 +82,30 @@
                                 </div>
 
 
-                                <form action="#">
+                                <form action="{{route('guest-checkout')}}" method="POST">
+                                    @csrf
                                     <div class="single-form">
                                         <label class="single-form__label">Your Name</label>
-                                        <input required class="single-form__input" type="text" placeholder="Found in your order confirmation email." />
+                                        <input required class="single-form__input" type="text" name="name" required placeholder="Your Full Name" />
                                     </div>
                                     <div class="single-form">
                                         <label class="single-form__label">Email</label>
-                                        <input class="single-form__input" type="text" placeholder="Email you used during checkout." />
+                                        <input class="single-form__input" type="email" name="email" required placeholder="Your Email" />
+                                        <p>
+                                            Your email already exists as a user
+                                        </p>
                                     </div>
                                     <div class="single-form">
                                         <label class="single-form__label">Phone Number</label>
-                                        <input class="single-form__input" type="text" placeholder="Email you used during checkout." />
+                                        <input class="single-form__input" type="text" name="password" required placeholder="Your Mobile Number" />
                                     </div>
                                     <div class="single-form">
                                         <label class="single-form__label">Delivery Address</label>
-                                        <input class="single-form__input" type="text" placeholder="Email you used during checkout." />
+                                        <input class="single-form__input" type="text" name="address" required placeholder="Add Delivery Address" />
                                     </div>
                                     <br><br>
                                     <div class="checkout-details__btn">
-                                        <button class="single-form__btn btn">
+                                        <button type="submit" class="single-form__btn btn">
                                             Procced to Checkout
                                         </button>
                                     </div>

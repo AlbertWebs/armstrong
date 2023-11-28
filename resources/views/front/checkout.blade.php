@@ -193,7 +193,7 @@
 
                                 <div class="checkout-details__btn">
                                     <a href="{{route('make-paymens')}}" class="btn">
-                                        Place Order
+                                        Place Order {{Auth::User()->mobile}}
                                     </a>
                                 </div>
                             </div>

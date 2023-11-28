@@ -45,19 +45,15 @@
                                     <!-- Single Form Start -->
                                     <div class="single-form">
 
-                                        <input class="single-form__input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                        <label class="single-form__label checkbox-label" for="remember">
-                                            {{ __('Remember Me') }}
-                                        </label>
 
-                                        {{-- <p class="lost-password">
+                                        <p class="lost-password" style="width:80%">
                                             @if (Route::has('password.request'))
                                             <a class="btn btn-links lost-password" href="{{ route('password.request') }}">
                                                 {{ __('Forgot Your Password?') }}
                                             </a>
                                             @endif
-                                        </p> --}}
+                                        </p>
 
 
                                     </div>
