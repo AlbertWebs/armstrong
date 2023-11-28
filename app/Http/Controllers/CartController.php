@@ -227,8 +227,8 @@ class CartController extends Controller
 
         $Message = "";
         $phone = "254790841987";
-        // $this->sendSMS($sms_u,Auth::User()->mobile);
-        // $this->sendSMS($sms_a,$phone);
+        $this->sendSMS($sms_u,Auth::User()->mobile);
+        $this->sendSMS($sms_a,$phone);
 
         // return view('payments.business.pesapal', compact('iframe'));
         return view('front.checkout-payment', compact('iframe','cartItems'));
