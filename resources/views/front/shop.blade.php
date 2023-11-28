@@ -253,7 +253,7 @@
             <div class="shop-wrapper">
                 <div class="row">
                     <?php
-                        $Products = DB::table('products')->limit(12)->get();
+                        $Products = DB::table('products')->limit(100)->get();
                     ?>
                     @foreach ($Products as $Product)
                     <div class="col-lg-2 col-md-4 col-sm-6 col-6">
