@@ -13,7 +13,7 @@
             $Product = DB::table('products')->where('category_id',$cat->id)->limit('6')->get();
             ?>
             @foreach ($Product as $Pro)
-               <li><a href="{{url('/')}}/products/{{$Pro->slung}}" ><span>{{$Pro->title}}</span></a></li>
+               <li><a href="{{url('/')}}/product/{{$Pro->slung}}" ><span>{{$Pro->title}}</span></a></li>
             @endforeach
            <li><a href="{{url('/')}}/products/{{$cat->slung}}" ><span>All {{$cat->title}}</span></a></li>
         </ul>

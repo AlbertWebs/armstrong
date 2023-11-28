@@ -71,6 +71,11 @@ class HomeController extends Controller
         }
     }
 
+    public function search(Request $request){
+        $Products = Product::where('title','like','%'.$request->search.'%')->get();
+        $Search = $request->search;
+        return view('front.search', compact('Products','Search'));
+    }
 
 
 }

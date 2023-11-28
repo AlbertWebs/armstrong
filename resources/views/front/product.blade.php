@@ -102,21 +102,7 @@
                         </div>
                         <div class="product-single-content__short-description">
                             <p>
-                                Proin volutpat vitae libero at
-                                tincidunt. Maecenas sapien lectus,
-                                vehicula vel euismod sed, vulputate a
-                                lorem. Integer at tristique libero.
-                                Nullam porta eleifend metus a interdum.
-                                <br><br>Proin volutpat vitae libero at
-                                tincidunt. Maecenas sapien lectus,
-                                vehicula vel euismod sed, vulputate a
-                                lorem. Integer at tristique libero.
-                                Nullam porta eleifend metus a interdum.
-                                <br><br>Proin volutpat vitae libero at
-                                tincidunt. Maecenas sapien lectus,
-                                vehicula vel euismod sed, vulputate a
-                                lorem. Integer at tristique libero.
-                                Nullam porta eleifend metus a interdum.
+                                {!!html_entity_decode($Product->content)!!}
                             </p>
                         </div>
                         <div class="product-single-content__add-to-cart-wrapper">
@@ -143,12 +129,6 @@
                                 </form>
                             </div>
 
-                            <a href="#" class="product-add-compare">
-                                Add to Compare
-                            </a>
-                            <a href="#" class="product-add-wishlist">
-                                Add to Wishlist
-                            </a>
                         </div>
                         <div class="product-single-content__meta">
                             <div class="product-single-content__meta--item">
@@ -169,7 +149,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-single-content__social">
+                        {{-- <div class="product-single-content__social">
                             <div class="label">Share</div>
                             <ul class="socail-icon">
                                 <li>
@@ -194,7 +174,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                     <!-- Product Single content End -->
                 </div>
@@ -210,13 +190,13 @@
             <!-- Product Single Tabs Start -->
             <div class="product-single-tabs">
                 <ul class="nav justify-content-center">
-                    <li>
+                    {{-- <li>
                         <button class="active" data-bs-toggle="pill" data-bs-target="#description" type="button">
                             Description
                         </button>
-                    </li>
+                    </li> --}}
                     <li>
-                        <button data-bs-toggle="pill" data-bs-target="#additionalInformation " type="button">
+                        <button class="active" data-bs-toggle="pill" data-bs-target="#additionalInformation " type="button">
                             Additional information
                         </button>
                     </li>
@@ -224,7 +204,7 @@
                 </ul>
 
                 <div class="tab-content">
-                    <div class="tab-pane fade show active" id="description">
+                    <div class="tab-pane fade" id="description">
                         <div class="row justify-content-between align-items-center">
                             <div class="col-lg-6">
                                 <!-- Product Single Tab Description Start -->
@@ -260,7 +240,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="additionalInformation">
+                    <div class="tab-pane fade show active" id="additionalInformation">
                         <!-- Product Single Table Start -->
                         <div class="product-single-table">
                             <div class="table-responsive">

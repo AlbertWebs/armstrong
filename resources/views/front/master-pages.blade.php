@@ -347,8 +347,8 @@
             <div class="modal-content">
                 <!-- Search Form Start  -->
                 <div class="search-modal__form">
-                    <form action="#">
-                        <input type="text" placeholder="Search product…" />
+                    <form action="{{route('search')}}" method="GET">
+                        <input type="text" name="search" placeholder="Search product…" />
                         <button class="" aria-label="search">
                             <i class="lastudioicon-zoom-1"></i>
                         </button>

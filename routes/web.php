@@ -20,6 +20,9 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/search-armstrong-boissons-limited', [App\Http\Controllers\HomeController::class, 'search'])->name('search');
 Route::get('/products/{category}', [App\Http\Controllers\HomeController::class, 'category'])->name('category');
 Route::get('/product/{slung}', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
 Route::get('/order', [App\Http\Controllers\HomeController::class, 'wine'])->name('wine');
