@@ -112,9 +112,11 @@
                                                 @foreach ($Orders as $order)
                                                     <?php
                                                        $ProductOrder = DB::table('orders_product')->where('orders_id',$order->id)->get();
+                                                    //    dd($ProductOrder);
                                                     ?>
                                                     @foreach ($ProductOrder as $proOrder)
-                                                        <?php $Product = \App\Models\Product::find($proOrder->product_id) ?>
+                                                        <?php $Product = \App\Models\Product::where('id',$proOrder->product_id)->get(); ?>
+
                                                         <tr>
                                                             <td>
                                                                 <a href="#"> #{{$order->id}} </a>

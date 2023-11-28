@@ -18,7 +18,7 @@
         @include('admin.sidebar')
 
         <!--== BODY INNER CONTAINER ==-->
-        
+
         <div class="sb2-2">
             <div class="sb2-2-2">
                 <ul>
@@ -29,7 +29,7 @@
                     <li class="page-back"><a href="{{url('/')}}/admin/products"><i class="fa fa-backward" aria-hidden="true"></i> All Products</a>
                     </li>
                 </ul>
-               
+
             </div>
             <div class="sb2-2-add-blog sb2-2-1">
                 <div class="box-inn-sp">
@@ -39,7 +39,7 @@
                             @if(Session::has('message'))
                                           <div class="alert alert-success">{{ Session::get('message') }}</div>
                            @endif
-           
+
                            @if(Session::has('messageError'))
                                           <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
                            @endif
@@ -50,7 +50,7 @@
                             {{csrf_field()}}
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input autocomplete="off" name="title" id="list-title" value="{{$Product->name}}" type="text" class="validate" required>
+                                    <input autocomplete="off" name="title" id="list-title" value="{{$Product->title}}" type="text" class="validate" required>
                                     <label for="list-title">Product Name</label>
                                 </div>
                                 <div class="input-field col s12">
@@ -62,16 +62,16 @@
                                     <label for="list-title">SKU</label>
                                 </div>
 
-                                
+
                             </div>
                             <div class="row">
-                             
+
                                 {{--  --}}
                                 <div class="input-field col s12">
                                     <select required name="category" class="icons" id="mydiv">
                                         <?php $CategorySelected = DB::table('categories')->where('id',$Product->category)->get() ?>
                                         @foreach ($CategorySelected as $CatSel)
-                                        <option value="{{$CatSel->id}}" selected>{{$CatSel->title}}</option>                                        
+                                        <option value="{{$CatSel->id}}" selected>{{$CatSel->title}}</option>
                                         @endforeach
                                         @foreach ($Category as $Categories)
                                         <option value="{{$Categories->id}}" data-icon="{{url('/')}}/uploads/categories/{{$Categories->image}}" class="circle">{{$Categories->title}}</option>
@@ -79,7 +79,7 @@
                                     </select>
                                     <label>Choose Category</label>
                                 </div>
-                                
+
                                 <div class="section-space col s12"></div>
                             </div>
                             {{-- Stock --}}
@@ -98,7 +98,7 @@
                                                 <span class="lever"></span> On
                                             </label>
                                         </div>
-                                        @else 
+                                        @else
                                         <!-- Switch -->
                                         <div class="switch mar-bot-20">
                                             <label>
@@ -112,24 +112,22 @@
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <textarea required name="meta" class="materialize-textarea">{{$Product->meta}}</textarea>
-                                    <label for="textarea1">Meta Descriptions:</label>
-                                </div>
-                            </div>
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <textarea required id="article-ckeditor" name="content" class="materialilze-textarea" placeholder="content">{{$Product->content}}</textarea>
                                 </div>
                             </div><br><br>
-                         
-                            <script src="{{ asset('ckeditor/ckeditor.js')}}"></script>
-                            <script>CKEDITOR.replace('article-ckeditor');</script>
-                                                    
-                         
 
-                           
+
+
+
+                            <script src="https://amanivehiclesounds.co.ke/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+                            <script>
+                                CKEDITOR.replace( 'article_ckeditor' );
+                            </script>
+
+
                            {{-- Images --}}
                             <style>
                                 .btn-file {
@@ -163,7 +161,7 @@
                             {{-- Style --}}
                             <div class="row">
                                 <div class="">
-                                    <div class="input-field col s3 col-lg-3">
+                                    <div class="input-field col s3 col-lg-6">
                                         <div class="form-group">
                                             <label>Image One</label>
                                             <div class="input-group">
@@ -174,65 +172,21 @@
                                                 </span>
                                                 <input type="text" class="form-control" readonly>
                                             </div>
-                                            <img class="image-preview" style="width:100%" src="{{url('/')}}/uploads/products/{{$Product->image_one}}"/>
+                                            <img class="image-preview" style="width:100%" src="{{url('/')}}/uploads/products/{{$Product->image}}"/>
                                         </div>
                                     </div>
 
-                                    <div class="input-field col s3 col-lg-3">
-                                        <div class="form-group">
-                                            <label>Image Two</label>
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-                                                    <span class="btn btn-default btn-file">
-                                                        <small>Two: Size 277 by 377 Browse… </small>
-                                                        <input name="image_two" type="file" id="imgInp">
-                                                    </span>
-                                                </span>
-                                                <input type="text" class="form-control" readonly>
-                                            </div>
-                                            <img class="image-preview" style="width:100%" src="{{url('/')}}/uploads/products/{{$Product->image_two}}"/>
-                                        </div>
-                                    </div>
 
-                                    <div class="input-field col s3 col-lg-3">
-                                        <div class="form-group">
-                                            <label>Image Three</label>
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-                                                    <span class="btn btn-default btn-file">
-                                                        <small> Three: Size 277 by 377  Browse… </small><input name="image_three" type="file" id="imgInp">
-                                                    </span>
-                                                </span>
-                                                <input type="text" class="form-control" readonly>
-                                            </div>
-                                            <img class="image-preview img-upload" style="width:100%" src="{{url('/')}}/uploads/products/{{$Product->image_three}}"/>
-                                        </div>
-                                    </div>
-
-                                    <div class="input-field col s3 col-lg-3">
-                                        <div class="form-group">
-                                            <label>Image Four</label>
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-                                                    <span class="btn btn-default btn-file">
-                                                        <small> Four: Size 277 by 377  Browse… </small><input name="image_four" type="file" id="imgInp">
-                                                    </span>
-                                                </span>
-                                                <input type="text" class="form-control" readonly>
-                                            </div>
-                                            <img class="image-preview img-upload" style="width:100%" src="{{url('/')}}/uploads/products/{{$Product->image_four}}"/>
-                                        </div>
-                                    </div>
 
 
                                 </div>
                             </div>
 
-                            <input type="hidden" name="image_one_cheat" value="{{$Product->image_one}}">
+                            <input type="hidden" name="image_one_cheat" value="{{$Product->image}}">
                             <input type="hidden" name="image_two_cheat" value="{{$Product->image_two}}">
                             <input type="hidden" name="image_three_cheat" value="{{$Product->image_three}}">
                             <input type="hidden" name="image_four_cheat" value="{{$Product->image_four}}">
-                            
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input  type="submit" class="waves-effect waves-light btn-large" value="Save Changes">
