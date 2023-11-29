@@ -54,13 +54,13 @@
                         </li>
                         <li><a href="{{url('/')}}/admin/addProduct">Add Product</a>
                         </li>
-                        <li><a href="{{url('/')}}/admin/variations/color">All Color Variations </a>
+                        {{-- <li><a href="{{url('/')}}/admin/variations/color">All Color Variations </a>
+                        </li> --}}
+                        <li><a href="{{url('/')}}/admin/variations/size">All Variations </a>
                         </li>
-                        <li><a href="{{url('/')}}/admin/variations/size">All Size Variations </a>
-                        </li>
-                        <li><a href="{{url('/')}}/admin/addVariation/color">Add Color Variation</a>
-                        </li>
-                        <li><a href="{{url('/')}}/admin/addVariation/size">Add Size Variation</a>
+                        {{-- <li><a href="{{url('/')}}/admin/addVariation/color">Add Color Variation</a>
+                        </li> --}}
+                        <li><a href="{{url('/')}}/admin/addVariation/size">Add Variation</a>
                         </li>
                     </ul>
                 </div>
@@ -123,7 +123,7 @@
                         <li>
                             <a style="color:#000000 !important; font-weight:600" href="{{url('/')}}" class="collapsible-header"><i class="fa fa-paypal" aria-hidden="true"></i>Paypal Payments</a>
                             <div class="left-sub-menu">
-                            
+
                             </div>
                         </li>
 
@@ -140,7 +140,7 @@
                         </li>
                         <li><a href="{{url('/')}}/admin/admins">Manage Admins</a>
                         </li>
-                  
+
                     </ul>
                 </div>
             </li>
@@ -152,8 +152,8 @@
                         </li>
                         <li><a href="{{url('/')}}/admin/how">How It Works</a>
                         </li>
-                       
-                  
+
+
                     </ul>
                 </div>
             </li>
@@ -172,7 +172,7 @@
                         </li>
                         <li><a href="{{url('/')}}/admin/editCopyright"> Copyright Statement</a>
                         </li>
-                  
+
                     </ul>
                 </div>
             </li>
@@ -208,8 +208,8 @@
             <li><a href="{{url('/')}}/logout" target="_blank"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout </a>
             </li>
 
-        
-       
+
+
         </ul>
     </div>
 </div>
