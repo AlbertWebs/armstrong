@@ -95,7 +95,7 @@ All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
-    Route::get('/admin/home', [AdminsController::class, 'adminHome'])->name('admin.home');
+    Route::get('/admin', [AdminsController::class, 'adminHome'])->name('admin.home');
 
     Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
     Route::get('admin/', [AdminsController::class, 'adminHome'])->name('admin.home');

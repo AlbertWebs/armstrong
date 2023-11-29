@@ -55,7 +55,7 @@ class LoginController extends Controller
                 ->with('error','Email-Address And Password Are Wrong.');
         }
         if (auth()->user()->is_admin == 1) {
-            return redirect()->route('proceed-cart');
+            return redirect()->route('admin.home');
         }
         return redirect()->route('proceed-cart');
     }
