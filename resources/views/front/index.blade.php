@@ -14,10 +14,10 @@
                         <!-- Slider Content Start -->
                         <div class="home-2-slider-content-style-1 mx-auto text-center">
                             <h3 class="home-2-slider-content-style-1__sub-title">
-                                FROM ITALY
+                                Delivered to You By
                             </h3>
                             <h2 class="home-2-slider-content-style-1__title">
-                                Balbi Soprani Barolo
+                                Armstrong Boissons
                             </h2>
                             <p class="home-2-slider-content-style-1__description">
                                 We are your premier beverage delivery partner, renowned for its swift and reliable delivery service
