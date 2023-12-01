@@ -260,12 +260,47 @@
                                             </td>
                                         </tr>
 
+
+
                                         <tr>
                                             <th>Category</th>
                                             <td>
                                                 <p>{{$Category->title}}</p>
                                             </td>
                                         </tr>
+
+
+                                    </tbody>
+                                </table>
+                                <br><br>
+                                <table class="table align-middle">
+                                    <tbody>
+
+                                        <?php
+                                           $Variations = DB::table('variations')->where('product_id',$Product->id)->get();
+                                        ?>
+                                        @foreach ($Variations as $variant)
+                                        <tr>
+                                            <th>{{$variant->title}} - {{$variant->value}}ml</th>
+                                            <td>
+                                                <p style="font-weight: 900; color:#d68d67">kes {{$variant->price}}</p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <form method="POST" action="{{url('/')}}/add-to-cart-variant" class="ajax-requests">
+                                                        @csrf
+                                                        <input type="hidden" name="product_id" value="{{$variant->id}}">
+                                                        <button type="submit" id="ajax-add-to-cart" class="cart-empty__btn btn add-bg-color">
+                                                            Add To Basket  <i class="lastudioicon-shopping-cart-3"></i>
+                                                            <span class="loading-ajax" style="display: none;">
+                                                                <img width="25" src="{{url('/')}}/uploads/icon/loading.gif">
+                                                            </span>
+                                                        </button>
+                                                    </form>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

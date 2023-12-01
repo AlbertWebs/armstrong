@@ -43,6 +43,8 @@ Route::get('/shopping-cart/checkout/make-payment', [App\Http\Controllers\CartCon
 
 
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
+Route::post('add-to-cart-variant', [CartController::class, 'addToCartVariant'])->name('add.to.cart.variant');
+
 Route::post('add-to-cart', [CartController::class, 'addToCartPost'])->name('add.to.cart.post');
 Route::post('guest-checkout', [CartController::class, 'guest_checkout'])->name('guest-checkout');
 

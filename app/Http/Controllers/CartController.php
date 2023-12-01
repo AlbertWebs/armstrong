@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\orders;
+use App\Models\Variation;
+
 use App\Models\Payment;
 use App\Models\ReplyMessage;
 use Pesapal;
@@ -27,7 +29,6 @@ class CartController extends Controller
     }
 
 
-
     public function reorder($id)
     {
         $Order = DB::table('orders')->where('id',$id)->get();
@@ -44,6 +45,20 @@ class CartController extends Controller
         $Cart = Cart::content();
         // dd($Cart);
         return view('front.shopping-cart', compact('Cart'));
+    }
+
+    public function addToCartVariant(Request $request){
+        $id = $request->product_id;
+        $Variant = Variation::find($id);
+
+        $title = $Variant->title;
+        $Price = $Variant->price;
+        $ProductId = $Variant->id;
+
+        Cart::add($ProductId, $title, 1, $Price);
+        return response()->json([
+            ''.$title.' Added To Cart'
+        ]);
     }
 
 

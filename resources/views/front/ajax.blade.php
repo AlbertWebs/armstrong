@@ -26,6 +26,29 @@
             });
         });
     });
+
+    $(document).ready(function() {
+        $('.ajax-requests').submit(function(event) {
+            event.preventDefault();
+            // $(this).('.loading-ajax').show();
+            $.ajax({
+                url: '/add-to-cart-variant',
+                method: 'POST',
+                data: $(this).serialize(),
+                success: function(data) {
+                    // $("#cartSidebar").load(" #cartSidebar");
+                    $("#cartSidebar").load(" #cartSidebar > *");
+                    $("#cart-number").load(" #cart-number > *");
+                    // Open Cart
+                    $(".open-cart").click();
+                    console.log(data);
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        });
+    });
 </script>
 {{-- @include('front.concent') --}}
 
