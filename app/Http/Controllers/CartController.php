@@ -53,7 +53,7 @@ class CartController extends Controller
 
         $title = $Variant->title;
         $Price = $Variant->price;
-        $ProductId = $Variant->id;
+        $ProductId = $Variant->product_id;
 
         Cart::add($ProductId, $title, 1, $Price);
         return response()->json([
