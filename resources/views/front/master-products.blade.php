@@ -10,33 +10,33 @@
     @foreach ($ProductCategory as $products)
         <?php $Category = \App\Models\Category::find($products->category_id) ?>
         {{-- SEO --}}
-        <title>Order {{$Category->title}} in Nairobi - Armstrong Boissons Limited</title>
+        <title>Order {{$Category->title}} in Nairobi - Best Price Guaranteed - Amstrong Boissons Limited</title>
         <meta name="robots" content="noindex, follow" />
-        <meta name="description" content="Order {{$products->title}} in {{$Category->title}} Online From Armstrong Boissons From as Low as {{$products->price}} and get it delivered to your doorstep within 30 minutes {!!html_entity_decode($products->meta)!!}" />
+        <meta name="description" content="Order {{$products->title}} in {{$Category->title}} Online From Amstrong Boissons From as Low as {{$products->price}} and get it delivered to your doorstep within 30 minutes {!!html_entity_decode($products->meta)!!}" />
         <link rel="canonical" href="{{url('/')}}/products/{{$Category->slung}}"/>
 
         <meta name="robots" content="index,follow">
         <meta name="googlebot" content="index,follow"><!-- Google Specific -->
-        <meta name="subject" content="Order {{$Category->title}} in Nairobi - Armstrong Boissons Limited">
+        <meta name="subject" content="Order {{$Category->title}} in Nairobi - Best Price Guaranteed - Amstrong Boissons Limited">
         <meta name="rating" content="General">
         <meta name="referrer" content="no-referrer">
         <meta name="theme-color" content="#1c2c52">
-        <meta name="description" content="Order {{$products->title}} in {{$Category->title}} Online From Armstrong Boissons From as Low as {{$products->price}} and get it delivered to your doorstep within 30 minutes {!!html_entity_decode($products->meta)!!}">
+        <meta name="description" content="Order {{$products->title}} in {{$Category->title}} Online From Amstrong Boissons From as Low as {{$products->price}} and get it delivered to your doorstep within 30 minutes {!!html_entity_decode($products->meta)!!}">
 
-        <meta property="og:description" content="Order {{$products->title}} in {{$Category->title}} Online From Armstrong Boissons From as Low as {{$products->price}} and get it delivered to your doorstep within 30 minutes {!!html_entity_decode($products->meta)!!}" />
-        <meta property="og:title" content="Order {{$Category->title}} in Nairobi - Armstrong Boissons Limited" />
+        <meta property="og:description" content="Order {{$products->title}} in {{$Category->title}} Online From Amstrong Boissons From as Low as {{$products->price}} and get it delivered to your doorstep within 30 minutes {!!html_entity_decode($products->meta)!!}" />
+        <meta property="og:title" content="Order {{$Category->title}} in Nairobi - Best Price Guaranteed - Amstrong Boissons Limited" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{url('/')}}/products/{{$Category->slung}}" />
         <meta property="og:image" content="{{url('/')}}/uploads/products/{{$products->image}}" />
         <meta property="og:site_name" content="Royaltech Computers Limited">
         <meta property="og:locale" content="en_US">
 
-        <meta name="twitter:title" content="Order {{$Category->title}} in Nairobi - Armstrong Boissons Limited" />
+        <meta name="twitter:title" content="Order {{$Category->title}} in Nairobi - Best Price Guaranteed - Amstrong Boissons Limited" />
         <meta name="twitter:site" content="@amstrongboissons" />
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@amstrongboissons">
         <meta name="twitter:url" content="{{url('/')}}/products/{{$Category->slung}}">
-        <meta name="twitter:description" content="Order {{$products->title}} in {{$Category->title}} Online From Armstrong Boissons From as Low as {{$products->price}} and get it delivered to your doorstep within 30 minutes {!!html_entity_decode($products->meta)!!}">
+        <meta name="twitter:description" content="Order {{$products->title}} in {{$Category->title}} Online From Amstrong Boissons From as Low as {{$products->price}} and get it delivered to your doorstep within 30 minutes {!!html_entity_decode($products->meta)!!}">
         <meta name="twitter:image" content="{{url('/')}}/uploads/products/{{$products->image}}">
         {{-- SEO --}}
     @endforeach
@@ -75,9 +75,9 @@
                     <div class="header__top--left d-none d-md-block">
                         <ul class="header__top--items">
                             <li>
-                                <a href="mailto:info@armstrong.ke" aria-label="mail">
+                                <a href="mailto:info@Amstrong.ke" aria-label="mail">
                                     <i class="lastudioicon-mail-2"></i>
-                                    <span>info@armstrong.ke</span>
+                                    <span>info@Amstrong.ke</span>
                                 </a>
                             </li>
                             <li>
@@ -414,7 +414,7 @@
             <div class="offcanvas-sidebar__info">
                 <ul class="offcanvas-info-list">
                     <li><a href="tel:+254746300000">(+254) 746300000</a></li>
-                    <li><a href="mailto:info@armstrong.ke">info@armstrong.ke</a></li>
+                    <li><a href="mailto:info@Amstrong.ke">info@Amstrong.ke</a></li>
                     <li>
                         <span>
                             Mirage Towers, Tower 2, 1st Floor, Suite 9, Westlands, Nairobi, Kenya
@@ -456,7 +456,7 @@
                 <p>
                     ©
                     <span class="current-year">2023</span>
-                    <span> Armstrong Boissons Limited - All RIghts Reserved</span> | Powered By
+                    <span> Amstrong Boissons Limited - All RIghts Reserved</span> | Powered By
 
 
                     <a href="https://designekta.com/">Designekta Studio</a>
