@@ -5,36 +5,37 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Your One Stop Liquor Store - Armstrong Boissons Limited</title>
+    <title>Your One Stop Liquor Store - Amstrong Boissons Limited</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="Your One Stop Liquor Store - Armstrong Boissons Limited" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Amstrong Boissons Limited is your one-stop liquor store for all your alcoholic beverage needs. We offer a wide selection of beer, wine, spirits, and more, all at competitive prices. Whether you're looking for a special occasion bottle or just stocking up for the weekend, we have something for everyone. Shop with us today and enjoy fast, reliable delivery." />
 
     {{-- SEO --}}
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow"><!-- Google Specific -->
-    <meta name="subject" content="Your One Stop Liquor Store - Armstrong Boissons Limited">
+    <meta name="subject" content="Your One Stop Liquor Store - Amstrong Boissons Limited">
     <meta name="rating" content="General">
     <meta name="referrer" content="no-referrer">
     <meta name="theme-color" content="#1c2c52">
-    <meta name="description" content="Your One Stop Liquor Store In Nairobi - Armstrong Boissons Limited">
+
     <link rel="canonical" href="{{url('/')}}"/>
-    <meta property="og:description" content="Your One Stop Liquor Store In Nairobi - Armstrong Boissons Limited" />
-    <meta property="og:title" content="Your One Stop Liquor Store - Armstrong Boissons Limited" />
+
+    <meta property="og:description" content="Armstrong Boissons Limited is your one-stop liquor store for all your alcoholic beverage needs. We offer a wide selection of beer, wine, spirits, and more, all at competitive prices. Whether you're looking for a special occasion bottle or just stocking up for the weekend, we have something for everyone. Shop with us today and enjoy fast, reliable delivery." />
+    <meta property="og:title" content="Your One Stop Liquor Store - Amstrong Boissons Limited" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{url('/')}}" />
-
-    <meta property="og:image" content="http://localhost:8000/theme/assets/images/logo.png" />
-    <meta property="og:site_name" content="Royaltech Computers Limited">
+    <meta property="og:image" content="{{url('/')}}/uploads/johnnie-walker-blue-label.png" />
+    <meta property="og:site_name" content="Amstrong Boissons Limited">
     <meta property="og:locale" content="en_US">
-    <meta name="twitter:title" content="Your One Stop Liquor Store - Armstrong Boissons Limited" />
+
+    <meta name="twitter:title" content="Your One Stop Liquor Store - Amstrong Boissons Limited" />
     <meta name="twitter:site" content="@amstrongboissons" />
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@amstrongboissons">
     <meta name="twitter:url" content="{{url('/')}}">
-    <meta name="twitter:description" content="Your One Stop Liquor Store In Nairobi - Armstrong Boissons Limited">
-    <meta name="twitter:image" content="http://localhost:8000/theme/assets/images/logo.png">
+    <meta name="twitter:description" content="Armstrong Boissons Limited is your one-stop liquor store for all your alcoholic beverage needs. We offer a wide selection of beer, wine, spirits, and more, all at competitive prices. Whether you're looking for a special occasion bottle or just stocking up for the weekend, we have something for everyone. Shop with us today and enjoy fast, reliable delivery.d">
+    <meta name="twitter:image" content="{{url('/')}}/uploads/johnnie-walker-blue-label.png">
     {{-- SEO --}}
 
     <!-- Favicon -->
@@ -80,7 +81,7 @@
                         <!-- Header Main Logo Start -->
                         <div class="header__main--logo change-logo text-center text-xl-start">
                             <a href="{{url('/')}}">
-                                <img src="{{asset('theme/assets/images/logo.png')}}" alt="Armstrong Boissons Limited" width="150"  />
+                                <img src="{{asset('theme/assets/images/logo.png')}}" alt="Amstrong Boissons Limited" width="150"  />
                             </a>
                         </div>
                         <!-- Header Main Logo End -->
@@ -362,7 +363,7 @@
             <div class="offcanvas-sidebar__info">
                 <ul class="offcanvas-info-list">
                     <li><a href="tel:(+254) 7230 14032">(+254) 7230 14032</a></li>
-                    <li><a href="mailto:info@armstrong.ke">info@armstrong.ke</a></li>
+                    <li><a href="mailto:info@Amstrong.ke">info@Amstrong.ke</a></li>
                     <li>
                         <span>
                         Mirage Towers, Tower 2, 1st Floor, Suite 9, Westlands, Nairobi, Kenya, Gitaru Road, Western ByPass
@@ -404,7 +405,7 @@
                 <p>
                     &copy;
                     <span class="current-year">{{date('Y')}}</span>
-                    <span> Armstrong Boissons Limited - All Rights Reserved </span> Powered By
+                    <span> Amstrong Boissons Limited - All Rights Reserved </span> Powered By
                     <a href="https://designekta.com/">Designekta Studios</a>
                 </p>
             </div>
