@@ -66,8 +66,9 @@ class HomeController extends Controller
         $Category = Category::where('slung',$category)->get();
         foreach($Category as $cat){
             $Products = Product::where('category_id',$cat->id)->get();
+            $ProductCategory = Product::where('category_id',$cat->id)->limit('1')->get();
             $category = $cat->id;
-            return view('front.products', compact('Products','category'));
+            return view('front.products', compact('Products','category','ProductCategory'));
         }
     }
 

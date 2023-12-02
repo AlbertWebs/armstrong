@@ -383,11 +383,11 @@
             <!-- Off Canvas Sidebar Info Start -->
             <div class="offcanvas-sidebar__info">
                 <ul class="offcanvas-info-list">
-                    <li><a href="tel:+254723014032">(+254) 23014032</a></li>
+                    <li><a href="tel:+254746300000">(+254) 746300000</a></li>
                     <li><a href="mailto:info@armstrong.ke">info@armstrong.ke</a></li>
                     <li>
                         <span>
-                            4517 Riverside Downs. Gitaru Road, Wangige
+                            Mirage Towers, Tower 2, 1st Floor, Suite 9, Westlands, Nairobi, Kenya
                     </span>
                     </li>
                 </ul>

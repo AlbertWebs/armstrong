@@ -22,7 +22,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="tel:+254723014032"><span class="fa fa-phone"></span> 254723014032</a>
+                                            <a href="tel:+254746300000"><span class="fa fa-phone"></span> 254746300000</a>
                                         </li>
                                     </ul>
                                 </div>

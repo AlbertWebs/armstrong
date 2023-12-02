@@ -40,7 +40,10 @@
                     $("#cartSidebar").load(" #cartSidebar > *");
                     $("#cart-number").load(" #cart-number > *");
                     // Open Cart
-                    $(".open-cart").click();
+                    setTimeout(function() {
+                        $(".open-cart").click();
+                    }, 5000);
+                    // $(".open-cart").click();
                     console.log(data);
                 },
                 error: function(xhr, status, error) {
