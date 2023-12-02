@@ -28,7 +28,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{url('/')}}/product/{{$products->slung}}" />
         <meta property="og:image" content="{{url('/')}}/uploads/products/{{$products->image}}" />
-        <meta property="og:site_name" content="Royaltech Computers Limited">
+        <meta property="og:site_name" content="Amstrong Boissons Limited">
         <meta property="og:locale" content="en_US">
 
         <meta name="twitter:title" content="{{$products->title}} in Nairobi - Armstrong Boissons Limited" />

@@ -28,7 +28,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{url('/')}}/products/{{$Category->slung}}" />
         <meta property="og:image" content="{{url('/')}}/uploads/products/{{$products->image}}" />
-        <meta property="og:site_name" content="Royaltech Computers Limited">
+        <meta property="og:site_name" content="Amstrong Boissons Limited">
         <meta property="og:locale" content="en_US">
 
         <meta name="twitter:title" content="Order {{$Category->title}} in Nairobi - Best Price Guaranteed - Amstrong Boissons Limited" />
