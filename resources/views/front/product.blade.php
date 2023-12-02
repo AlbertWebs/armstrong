@@ -1,4 +1,4 @@
-@extends('front.master-pages')
+@extends('front.master-product')
 
 @section('content')
 <main>
