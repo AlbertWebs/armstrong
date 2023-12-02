@@ -80,7 +80,7 @@
                     <!-- Product Single content Start -->
                     <div class="product-single-content">
                         <h2 class="product-single-content__title">
-                            {{$Product->name}}
+                            {{$Product->title}}
                         </h2>
                         <div class="product-single-content__price-stock">
                             <div class="product-single-content__price">
@@ -92,9 +92,10 @@
                                             class="dlicon ui-1_check-circle-08"
                                         ></i>
                                     </span>
-                                <span class="stock-text">
+                                    <span class="stock-text">
                                         Acl {{$Product->abv}}%
                                     </span>
+                                    |
                                     <span class="stock-text">
                                          {{$Product->origin}}
                                     </span>
