@@ -122,9 +122,9 @@
                             <!-- Meta Item List Start -->
                             <ul class="meta-items-list meta-items-list--dark d-flex justify-content-end align-items-center">
                                 <li class="search d-none d-lg-block">
-                                    <form action="#">
+                                    <form action="{{route('search')}}" method="GET">
                                         <div class="meta-search meta-search--dark">
-                                            <input type="text" placeholder="Search products…" />
+                                            <input type="text" name="search" placeholder="Search product…" />
                                             <button aria-label="search">
                                                 <i class="lastudioicon-zoom-1"></i>
                                             </button>
