@@ -260,9 +260,15 @@
         <div class="offcanvas-body">
             <ul class="offcanvas-cart-list">
                 @foreach ($Cart as $cart)
-                <?php
-                    $Product = \App\Models\Product::find($cart->options->product_id);
-                 ?>
+                @if($cart->options->product_id == null)
+                    <?php
+                        $Product = \App\Models\Product::find($cart->options->product_id);
+                    ?>
+                @else
+                    <?php
+                        $Product = \App\Models\Product::find($cart->product_id);
+                    ?>
+                @endif
                 <li>
                     <!-- Offcanvas Cart Item Start -->
                     <div class="offcanvas-cart-item">
