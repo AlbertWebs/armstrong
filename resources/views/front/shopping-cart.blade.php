@@ -94,9 +94,16 @@
                             </thead>
                             <tbody>
                                 @foreach ($Cart as $cart)
-                                <?php
-                                    $Product = \App\Models\Product::find($cart->id);
-                                 ?>
+                                @if($cart->options->has('product_id'))
+                                    <?php
+                                        $Product = \App\Models\Product::find($cart->options->product_id);
+                                    ?>
+                                @else
+                                    <?php
+                                        $Product = \App\Models\Product::find($cart->id);
+                                    ?>
+                                @endif
+
                                 <tr class="cart-item">
                                     <td class="cart-product-remove">
                                         <a href="{{url('/')}}/shopping-cart/remove/{{$cart->rowId}}" class="remove">×</a>
