@@ -266,7 +266,7 @@
                     ?>
                 @else
                     <?php
-                        $Product = \App\Models\Product::find($cart->product_id);
+                        $Product = \App\Models\Product::find($cart->id);
                     ?>
                 @endif
                 <li>
