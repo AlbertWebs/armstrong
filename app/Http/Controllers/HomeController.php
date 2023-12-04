@@ -62,6 +62,23 @@ class HomeController extends Controller
         return view('front.product', compact('Products'));
     }
 
+    public function refund(){
+        return view('front.refund');
+    }
+
+    public function disclaimer(){
+        return view('front.disclaimer');
+    }
+
+    public function terms(){
+        return view('front.term');
+    }
+
+    public function privacy(){
+        return view('front.privacy');
+    }
+
+
     public function category($category){
         $Category = Category::where('slung',$category)->get();
         foreach($Category as $cat){

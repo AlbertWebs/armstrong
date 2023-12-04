@@ -37,47 +37,47 @@
                                                 Contact Us
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="#"> Careers </a>
-                                        </li>
+
                                         <li>
                                             <a href="https://maps.app.goo.gl/HQeqVPdBDWwTEw5W8"> Find a Location </a>
                                         </li>
                                         <li>
                                             <a href="#"> Site Map </a>
                                         </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="footer-link__wrapper">
-                                    <h4 class="footer-title-2">My Account</h4>
-
-                                    <ul class="footer-link__list">
                                         <li>
-                                            <a href="{{url('/')}}/login">
+                                            <a href="{{url('/')}}/dashboard">
                                                 Login or Register
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{url('/')}}/clientarea"> Account Settings </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('/')}}/clientarea/order">
-                                                My Orders
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Gift Card Balance Check
-                                            </a>
+                                            <a href="{{url('/')}}/dashboard"> Account Settings </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-sm-6">
                                 <div class="footer-link__wrapper">
-                                    <h4 class="footer-title-2">Support</h4>
+                                    <h4 class="footer-title-2">Order</h4>
+
+                                    <ul class="footer-link__list">
+                                    <?php
+                                        $Category = DB::table('categories')->limit('5')->get();
+                                     ?>
+                                     @foreach ($Category as $cat)
+
+                                        <li>
+                                            <a href="{{url('/')}}/products/{{$cat->slung}}">
+                                                {{$cat->title}}
+                                            </a>
+                                        </li>
+                                     @endforeach
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="footer-link__wrapper">
+                                    <h4 class="footer-title-2">Legal </h4>
 
                                     <ul class="footer-link__list">
                                         <li>
@@ -91,8 +91,13 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{url('/')}}/terms-and-conditions">
+                                            <a href="{{url('/')}}/refund-policy">
                                                 Shipping & Return Policy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url('/')}}/disclaimer">
+                                                Disclaimer
                                             </a>
                                         </li>
                                     </ul>

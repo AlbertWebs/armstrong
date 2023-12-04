@@ -105,16 +105,16 @@
                                             Customer Service
                                         </h4>
                                         <p>
-                                            <a href="tel:(254)723014032">(254)723014032</a>
-                                            <a href="tel:(254)723014032">(254)723014032</a>
+                                            <a href="tel:254746300000">(254)746300000</a>
+                                            <a href="tel:254746300000">(254)746300000</a>
                                         </p>
                                     </div>
                                     <div class="contact-info-item__service">
                                         <h4 class="contact-info-item__service--title">
-                                            Technical Service
+                                            Delivery Service
                                         </h4>
                                         <p>
-                                            <a href="tel:(254)723014032">(254)723014032</a>
+                                            <a href="tel:(254)746300000">(254)746300000</a>
                                         </p>
                                     </div>
                                 </div>

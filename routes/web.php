@@ -31,6 +31,13 @@ Route::get('/spirit/{type}', [App\Http\Controllers\HomeController::class, 'spiri
 Route::get('/beer/{type}', [App\Http\Controllers\HomeController::class, 'beer'])->name('beer');
 Route::get('/contact-us', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact-us');
 
+Route::get('/terms-and-conditions', [App\Http\Controllers\HomeController::class, 'terms'])->name('terms-and-conditions');
+Route::get('/privacy-policy', [App\Http\Controllers\HomeController::class, 'privacy'])->name('terms-and-conditions');
+Route::get('/refund-policy', [App\Http\Controllers\HomeController::class, 'refund'])->name('terms-and-refund');
+Route::get('/disclaimer', [App\Http\Controllers\HomeController::class, 'disclaimer'])->name('disclaimer');
+
+
+
 Route::get('/shopping-cart', [CartController::class, 'cart'])->name('shopping-cart');
 Route::get('/shopping-cart/destroy', [CartController::class, 'destroy'])->name('destroy-cart');
 Route::get('/shopping-cart/procced', [CartController::class, 'procced'])->name('proceed-cart');
