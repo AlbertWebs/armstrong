@@ -213,7 +213,6 @@ class CartController extends Controller
         $All = $Ship+$Tot;
         $amount = $All;
 
-        // $description = Session::get('description');
         $payments = new Payment;
         $payments -> businessid = 1; //Business ID
         $payments -> transactionid = Pesapal::random_reference();
@@ -226,7 +225,6 @@ class CartController extends Controller
 
         // Email Order
         ReplyMessage::mailclient(Auth::User()->email,Auth::User()->name,$OrderId,$Ship,$All);
-
         ReplyMessage::mailmerchant(Auth::User()->email,Auth::User()->name,Auth::User()->mobile);
 
         $description = "Ordering $Count Products Online";
@@ -251,12 +249,22 @@ class CartController extends Controller
         $cartItems = \Cart::Content();
 
         $Message = "";
-        $phone = "254790841987";
-        $this->sendSMS($sms_u,Auth::User()->mobile);
-        $this->sendSMS($sms_a,$phone);
+        // $phone = "254790841987";
+        // $this->sendSMS($sms_u,Auth::User()->mobile);
+        // $this->sendSMS($sms_a,$phone);
 
         // return view('payments.business.pesapal', compact('iframe'));
         return view('front.checkout-payment', compact('iframe','cartItems'));
+    }
+
+    function sendMessage(){
+        $u = Auth::User()->name;
+        $sms_u = "Hello $u, Your Order Was Posted Successfully, Our delivery agent will contact you shortly";
+        $sms_a = "New Order! You have received a new order, check your email for the order details";
+
+        $phone = "254790841987";
+        $this->sendSMS($sms_u,Auth::User()->mobile);
+        $this->sendSMS($sms_a,$phone);
     }
 
     public function sendSMS($Message,$PhoneNumber){
