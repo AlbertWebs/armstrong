@@ -111,12 +111,22 @@
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{$variants->id}}">
 
-                                    <button class="btn ajax-add-to-cart-gets" type="submit">
+                                    <button onclick="confirmCart_{{$variants->id}}()" class="btn ajax-add-to-cart-gets" type="submit">
                                         {{$variants->value}}ml
                                     </button>
                                     &nbsp;
                                 </form>
                                 {{--  --}}
+                                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                <script>
+                                    function confirmCart_{{$variants->id}}(){
+                                            Swal.fire({
+                                            title: "Add to Cart?",
+                                            text: "Do you wish to add ".$variants->title." to cart?",
+                                            icon: "question"
+                                        });
+                                    }
+                                </script>
 
                             @endforeach
                         <br><br>

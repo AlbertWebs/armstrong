@@ -1,11 +1,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $('.ajax-add-to-cart-get').click(function(e){
-            alert('this')
-            e.preventDefault();
-        });
-    });
+
     $(document).ready(function() {
         $('.loading-ajax').hide();
     });
@@ -49,8 +44,10 @@
                     // setTimeout(function() {
                     //     $(".open-cart").click();
                     // }, 5000);
+
                     $(".open-cart").click();
                     console.log(data);
+
                 },
                 error: function(xhr, status, error) {
                     console.error(error);

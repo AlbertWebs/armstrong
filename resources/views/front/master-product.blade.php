@@ -193,7 +193,7 @@
                 <i class="lastudioicon-e-remove"></i>
             </button>
         </div>
-        <?php $Cart = Cart::content(); ?>
+        <?php $Cart = Cart::content();  ?>
         @if($Cart->isEmpty())
         <div class="offcanvas-footer">
             <!-- Free Shipping Goal Start-->
@@ -261,7 +261,7 @@
             <ul class="offcanvas-cart-list">
                 @foreach ($Cart as $cart)
                 <?php
-                    $Product = \App\Models\Product::find($cart->id);
+                    $Product = \App\Models\Product::find($cart->options->product_id);
                  ?>
                 <li>
                     <!-- Offcanvas Cart Item Start -->
