@@ -58,8 +58,10 @@ class HomeController extends Controller
     }
 
     public function product($slung){
+        $Cart = \Cart::content();
+        // dd($Cart);
         $Products = Product::where('slung',$slung)->get();
-        return view('front.product', compact('Products'));
+        return view('front.product', compact('Products','Cart'));
     }
 
     public function refund(){

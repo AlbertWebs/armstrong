@@ -108,76 +108,83 @@
                 <i class="lastudioicon-e-remove"></i>
             </button>
         </div>
-        <?php $Cart = Cart::content(); ?>
+        <?php $Cart = Cart::content();  ?>
         @if($Cart->isEmpty())
-        <div class="offcanvas-footer">
-            <!-- Free Shipping Goal Start-->
-            <div class="free-shipping-goal">
+            <div class="offcanvas-footer">
+                <!-- Free Shipping Goal Start-->
+                <div class="free-shipping-goal">
 
+                </div>
+                <!-- Free Shipping Goal End-->
+
+
+
+                <!-- Cart Totals Table Start-->
+                <div class="cart-totals-table">
+                    <table class="table">
+                        <tbody>
+                            <tr class="cart-subtotal">
+                                <th>Subtotal</th>
+                                <td>
+                                    <span>kes 0.0</span>
+                                </td>
+                            </tr>
+
+                            <tr class="cart-shipping-totals">
+                                <th>Shipping</th>
+                                <td>
+                                    <ul class="shipping-methods">
+                                        <li class="single-form">
+                                            <input type="radio" name="shipping" id="flat-rate" />
+                                            <label for="flat-rate" class="single-form__label radio-label">
+                                                <span></span>
+                                                Flat rate:
+                                                <strong class="price">kes 0.00</strong>
+                                            </label>
+                                        </li>
+                                        <li class="single-form">
+                                            <input type="radio" name="shipping" id="local-pickup" />
+                                            <label for="local-pickup" class="single-form__label radio-label">
+                                                <span></span>
+                                                Local pickup
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            <tr class="order-total">
+                                <th>Total</th>
+                                <td data-title="Total">
+                                    <strong><span>kes 0.00</span></strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Cart Totals Table End-->
+
+                <!-- Cart Buttons End-->
+                <div class="cart-buttons">
+                    <a href="{{url('/')}}/shopping-cart/procced" class="cart-buttons__btn-1 btn">Checkout</a>
+                    <a href="{{url('/shopping-cart')}}" class="cart-buttons__btn-2 btn">View Cart</a>
+                </div>
+                <!-- Cart Buttons End-->
             </div>
-            <!-- Free Shipping Goal End-->
-
-
-
-            <!-- Cart Totals Table Start-->
-            <div class="cart-totals-table">
-                <table class="table">
-                    <tbody>
-                        <tr class="cart-subtotal">
-                            <th>Subtotal</th>
-                            <td>
-                                <span>kes 0.0</span>
-                            </td>
-                        </tr>
-
-                        <tr class="cart-shipping-totals">
-                            <th>Shipping</th>
-                            <td>
-                                <ul class="shipping-methods">
-                                    <li class="single-form">
-                                        <input type="radio" name="shipping" id="flat-rate" />
-                                        <label for="flat-rate" class="single-form__label radio-label">
-                                            <span></span>
-                                            Flat rate:
-                                            <strong class="price">kes 0.00</strong>
-                                        </label>
-                                    </li>
-                                    <li class="single-form">
-                                        <input type="radio" name="shipping" id="local-pickup" />
-                                        <label for="local-pickup" class="single-form__label radio-label">
-                                            <span></span>
-                                            Local pickup
-                                        </label>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-
-                        <tr class="order-total">
-                            <th>Total</th>
-                            <td data-title="Total">
-                                <strong><span>kes 0.00</span></strong>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Cart Totals Table End-->
-
-            <!-- Cart Buttons End-->
-            <div class="cart-buttons">
-                <a href="{{url('/')}}/shopping-cart/procced" class="cart-buttons__btn-1 btn">Checkout</a>
-                <a href="{{url('/shopping-cart')}}" class="cart-buttons__btn-2 btn">View Cart</a>
-            </div>
-            <!-- Cart Buttons End-->
-        </div>
         @else
         <div class="offcanvas-body">
             <ul class="offcanvas-cart-list">
                 @foreach ($Cart as $cart)
-                <?php
-                    $Product = \App\Models\Product::find($cart->id);
-                 ?>
+
+                    @if($cart->options->has('product_id'))
+                        <?php
+                            $Product = \App\Models\Product::find($cart->options->product_id);
+                        ?>
+                    @else
+                        <?php
+                            $Product = \App\Models\Product::find($cart->id);
+                        ?>
+                    @endif
                 <li>
                     <!-- Offcanvas Cart Item Start -->
                     <div class="offcanvas-cart-item">
