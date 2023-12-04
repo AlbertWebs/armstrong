@@ -42,6 +42,7 @@ Route::get('/shopping-cart/remove/{rowID}', [CartController::class, 'remove'])->
 Route::get('/shopping-cart/checkout/make-payment', [App\Http\Controllers\CartController::class, 'make_payments'])->name('make-paymens');
 
 
+Route::get('add-to-cart-get/{id}', [CartController::class, 'addToCartGet'])->name('add.to.cart.get');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
 Route::post('add-to-cart-variant', [CartController::class, 'addToCartVariant'])->name('add.to.cart.variant');
 

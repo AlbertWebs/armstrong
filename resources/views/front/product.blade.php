@@ -101,6 +101,25 @@
                                     </span>
                             </div>
                         </div>
+
+                        <?php
+                            $Variationz = DB::table('variations')->where('product_id',$Product->id)->get();
+                        ?>
+                            @foreach ($Variationz as $variants)
+                                {{--  --}}
+                                <form style="display:inline" method="POST" action="{{url('/')}}/add-to-cart-variant" class="ajax-requests">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{$variants->id}}">
+
+                                    <button class="btn ajax-add-to-cart-gets" type="submit">
+                                        {{$variants->value}}ml
+                                    </button>
+                                    &nbsp;
+                                </form>
+                                {{--  --}}
+
+                            @endforeach
+                        <br><br>
                         <div class="product-single-content__short-description">
                             <p>
                                 {!!html_entity_decode($Product->content)!!}

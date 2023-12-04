@@ -1,6 +1,12 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
+        $('.ajax-add-to-cart-get').click(function(e){
+            alert('this')
+            e.preventDefault();
+        });
+    });
+    $(document).ready(function() {
         $('.loading-ajax').hide();
     });
 
@@ -40,10 +46,10 @@
                     $("#cartSidebar").load(" #cartSidebar > *");
                     $("#cart-number").load(" #cart-number > *");
                     // Open Cart
-                    setTimeout(function() {
-                        $(".open-cart").click();
-                    }, 5000);
-                    // $(".open-cart").click();
+                    // setTimeout(function() {
+                    //     $(".open-cart").click();
+                    // }, 5000);
+                    $(".open-cart").click();
                     console.log(data);
                 },
                 error: function(xhr, status, error) {
@@ -52,7 +58,11 @@
             });
         });
     });
+
+
 </script>
+
+
 {{-- @include('front.concent') --}}
 
 <script>

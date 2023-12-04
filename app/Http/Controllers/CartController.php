@@ -55,12 +55,22 @@ class CartController extends Controller
         $Price = $Variant->price;
         $ProductId = $Variant->product_id;
 
-        Cart::add($ProductId, $title, 1, $Price);
+        Cart::add($id, $title, 1, $Price);
         return response()->json([
             ''.$title.' Added To Cart'
         ]);
     }
 
+    public function addToCartGet($id){
+        $Variant = Variation::find($id);
+        $title = $Variant->title;
+        $Price = $Variant->price;
+        $ProductId = $Variant->product_id;
+        Cart::add($id, $title, 1, $Price);
+        return response()->json([
+            ''.$title.' Added To Cart'
+        ]);
+    }
 
     public function addToCartPost(Request $request){
         $id= $request->product_id;
