@@ -357,7 +357,7 @@ class CartController extends Controller
 
     public function smsAPIV2(){
         $Message = "This is a sample Message";
-        $PhoneNumber = "0707190188";
+        $PhoneNumber = "0790841987";
         $url = env('SMS_API_CAL_URL');
         $token = env('SMS_API_KEY');
         $callBackUrl = env('SMS_API_CALLBACK_URL');
