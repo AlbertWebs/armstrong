@@ -302,7 +302,6 @@ class CartController extends Controller
         ));
 
         $response = curl_exec($curl);
-
         curl_close($curl);
         echo $response;
     }
@@ -313,7 +312,7 @@ class CartController extends Controller
 
     public function smsAPI(){
         $Message = "This is a test";
-        $PhoneNumber = "0790841987";
+        $PhoneNumber = "0707190188";
         $message = $Message;
         $phone =$PhoneNumber;
         $senderid = "AMSTRONG";
@@ -358,11 +357,10 @@ class CartController extends Controller
 
     public function smsAPIV2(){
         $Message = "This is a sample Message";
-        $PhoneNumber = "0790841987";
+        $PhoneNumber = "0707190188";
         $url = env('SMS_API_CAL_URL');
         $token = env('SMS_API_KEY');
         $callBackUrl = env('SMS_API_CALLBACK_URL');
-
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
