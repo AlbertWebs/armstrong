@@ -398,5 +398,12 @@ class CartController extends Controller
     }
 
 
+    public function smsAPIV2_env(){
+        $url = env('SMS_API_CAL_URL');
+        $token = env('SMS_API_KEY');
+        $callBackUrl = env('SMS_API_CALLBACK_URL');
+        echo $token;
+        echo "<br>";
+    }
 
 }

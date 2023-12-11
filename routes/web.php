@@ -36,6 +36,7 @@ Route::get('/privacy-policy', [App\Http\Controllers\HomeController::class, 'priv
 Route::get('/refund-policy', [App\Http\Controllers\HomeController::class, 'refund'])->name('terms-and-refund');
 Route::get('/disclaimer', [App\Http\Controllers\HomeController::class, 'disclaimer'])->name('disclaimer');
 Route::get('/smsAPI', [App\Http\Controllers\CartController::class, 'smsAPIV2'])->name('smsAPIPage');
+Route::get('/smsAPI-print-env', [App\Http\Controllers\CartController::class, 'smsAPIV2_env'])->name('smsAPIPageEnv');
 Route::post('/smsAPI', [App\Http\Controllers\CartController::class, 'smsAPI'])->name('smsAPI');
 Route::post('/smsAPIV2', [App\Http\Controllers\CartController::class, 'smsAPIV2'])->name('smsAPIV2');
 
