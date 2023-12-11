@@ -172,7 +172,8 @@ class CartController extends Controller
          $sms_u = "Hello $u, Your Order Was Posted Successfully, Our delivery agent will contact you shortly";
          $sms_a = "New Order! You have received a new order, check your email for the order details";
          $details = array(
-             'amount' => $payments -> amount,
+            //  'amount' => $payments -> amount,
+             'amount' => "1",
              'description' => $description,
              'type' => 'MERCHANT',
              'first_name' => $request->name,
@@ -248,9 +249,9 @@ class CartController extends Controller
         $cartItems = \Cart::Content();
 
         $Message = "";
-        // $phone = "254790841987";
-        // $this->sendSMS($sms_u,Auth::User()->mobile);
-        // $this->sendSMS($sms_a,$phone);
+        $phone = "254790841987";
+        $this->sendSMS($sms_u,Auth::User()->mobile);
+        $this->sendSMS($sms_a,$phone);
 
         // return view('payments.business.pesapal', compact('iframe'));
         return view('front.checkout-payment', compact('iframe','cartItems'));
@@ -267,22 +268,74 @@ class CartController extends Controller
     }
 
     public function sendSMS($Message,$PhoneNumber){
+        $url = env('SMS_API_CAL_URL');
+        $token = env('SMS_API_KEY');
+        $callBackUrl = env('SMS_API_CALLBACK_URL');
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://ujumbesms.co.ke/api/messaging?email=kimrop20@gmail.com',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS =>"{
+                \"data\": [
+                    {
+                        \"message_bag\": {
+                            \"numbers\": \"$PhoneNumber\",
+                            \"message\": \"$Message\",
+                            \"sender\": \"AMSTRONG\",
+                            \"source_id\":\"12347_a unique_identifier_for_each_message\",
+                            \"delivery_report_endpoint\": \"$callBackUrl\"
+                        }
+                    }
+                ]
+            }",
+            CURLOPT_HTTPHEADER => array(
+                'x-authorization: '.$token,
+                'Content-Type: application/json'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
+    }
+
+    public function smsAPIPage(){
+        return view('front.sms-api');
+    }
+
+    public function smsAPI(){
+        $Message = "This is a test";
+        $PhoneNumber = "0790841987";
         $message = $Message;
         $phone =$PhoneNumber;
-        $senderid = "DESIGNEKTA";
-        //
-        $url = 'https://bulk.cloudrebue.co.ke/api/v1/send-sms';
-        $token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYnVsay5jbG91ZHJlYnVlLmNvLmtlXC8iLCJhdWQiOiJodHRwczpcL1wvYnVsay5jbG91ZHJlYnVlLmNvLmtlXC8iLCJpYXQiOjE2NTM5Nzc0NTEsImV4cCI6NDgwOTczNzQ1MSwiZGF0YSI6eyJlbWFpbCI6ImluZm9AZGVzaWduZWt0YS5jb20iLCJ1c2VyX2lkIjoiMTQiLCJ1c2VySWQiOiIxNCJ9fQ.N3y4QhqTApKi46YSiHmkaoEctO9z6Poc4k1g44ToyjA";
+        $senderid = "AMSTRONG";
 
-            $post_data=array(
-            'sender'=>$senderid,
-            'phone'=>$phone,
-            'correlator'=>'Whatever',
-            'link_id'=>null,
-            'message'=>$message
-            );
+        //Call URL from env
 
-        $data_string = json_encode($post_data);
+        $url = env('SMS_API_CAL_URL');
+        $token = env('SMS_API_SMS_API_KEYCAL_URL');
+
+        $jayParsedAry = [
+        "data" =>
+            [
+                "message_bag" =>
+                    [
+                        "number" => $phone,
+                        "message" => $message,
+                        "sender" => "AMSTRONG"
+                    ]
+            ]
+        ];
+        // dd($jayParsedAry);
+        $data_string = json_encode($jayParsedAry);
         $ch = curl_init( $url );
         curl_setopt( $ch, CURLOPT_POST, 1);
         curl_setopt( $ch, CURLOPT_POSTFIELDS, $data_string);
@@ -291,16 +344,61 @@ class CartController extends Controller
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_HTTPHEADER,
             array(
-                'Content-Type: application/json',
-                'Accept: application/json',
-                'Authorization:Bearer '.$token,
-                'Content-Length: ' . strlen($data_string)
+                    'X-Authorization: '.$token,
+                    'email: kimrop20@gmail.com',
+                    'Cache-Control:no-cache',
+                    "content-type: application/json",
                 )
             );
-
         $response = curl_exec($ch);
+        dd($response);
         curl_close($ch);
-        // print_r($response);
+        return $response;
     }
+
+    public function smsAPIV2(){
+        $Message = "This is a sample Message";
+        $PhoneNumber = "0790841987";
+        $url = env('SMS_API_CAL_URL');
+        $token = env('SMS_API_KEY');
+        $callBackUrl = env('SMS_API_CALLBACK_URL');
+
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://ujumbesms.co.ke/api/messaging?email=kimrop20@gmail.com',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS =>"{
+                \"data\": [
+                    {
+                        \"message_bag\": {
+                            \"numbers\": \"$PhoneNumber\",
+                            \"message\": \"$Message\",
+                            \"sender\": \"AMSTRONG\",
+                            \"source_id\":\"12347_a unique_identifier_for_each_message\",
+                            \"delivery_report_endpoint\": \"$callBackUrl\"
+                        }
+                    }
+                ]
+            }",
+            CURLOPT_HTTPHEADER => array(
+                'x-authorization: '.$token,
+                'Content-Type: application/json'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
+    }
+
+
 
 }
