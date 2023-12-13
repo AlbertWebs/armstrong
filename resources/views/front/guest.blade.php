@@ -82,7 +82,7 @@
                                 </div>
 
 
-                                <form action="{{route('guest-checkout')}}" method="POST">
+                                <form action="{{route('guest-checkout')}}" method="POST" id="registration">
                                     @csrf
                                     <div class="single-form">
                                         <label class="single-form__label">Your Name</label>
@@ -90,14 +90,14 @@
                                     </div>
                                     <div class="single-form">
                                         <label class="single-form__label">Email</label>
-                                        <input class="single-form__input" type="email" name="email" required placeholder="Your Email" />
-                                        <p>
+                                        <input class="single-form__input" id="email" type="email" name="email" required placeholder="Your Email" />
+                                        <p class="d-none text-danger">
                                             Your email already exists as a user
                                         </p>
                                     </div>
                                     <div class="single-form">
                                         <label class="single-form__label">Phone Number</label>
-                                        <input class="single-form__input" type="text" name="password" required placeholder="Your Mobile Number" />
+                                        <input class="single-form__input" type="text" name="mobile" required placeholder="Your Mobile Number" />
                                     </div>
                                     <div class="single-form">
                                         <label class="single-form__label">Delivery Address</label>

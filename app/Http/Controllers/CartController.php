@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\orders;
 use App\Models\Variation;
-
 use App\Models\Payment;
+use App\Models\Guest;
 use App\Models\ReplyMessage;
 use Pesapal;
 use Redirect;
@@ -138,6 +138,14 @@ class CartController extends Controller
             'password' => Hash::make($request->email)
         ]);
 
+        Guest::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'mobile' => $request->password,
+            'address' => $request->address,
+            'password' => Hash::make($request->email)
+        ]);
+
         $user = User::where('email','=',$request->email)->first();
         Auth::loginUsingId($user->id, TRUE);
 
@@ -172,8 +180,7 @@ class CartController extends Controller
          $sms_u = "Hello $u, Your Order Was Posted Successfully, Our delivery agent will contact you shortly";
          $sms_a = "New Order! You have received a new order, check your email for the order details";
          $details = array(
-            //  'amount' => $payments -> amount,
-             'amount' => "1",
+             'amount' => $payments -> amount,
              'description' => $description,
              'type' => 'MERCHANT',
              'first_name' => $request->name,
@@ -184,17 +191,20 @@ class CartController extends Controller
              'height'=>'400px',
              'currency' => 'KES'
          );
-         // dd($details);
+
          $iframe=Pesapal::makePayment($details);
          $cartItems = \Cart::Content();
 
          $Message = "";
-         $phone = "254790841987";
+         $phone = "0707190188";
          $this->sendSMS($sms_u,$request->mobile);
          $this->sendSMS($sms_a,$phone);
-        //Logout now
-        $this->logout();
-        return view('front.checkout-payment', compact('iframe','cartItems'));
+         $delete = DB::table('users')->where('email',Auth::User()->email)->delete();
+        //  Delete logged in User
+         if($delete){
+            $this->logout();
+            return view('front.checkout-payment', compact('iframe','cartItems'));
+         }
     }
 
     public function logout(){
@@ -249,7 +259,7 @@ class CartController extends Controller
         $cartItems = \Cart::Content();
 
         $Message = "";
-        $phone = "254790841987";
+        $phone = "0707190188";
         $this->sendSMS($sms_u,Auth::User()->mobile);
         $this->sendSMS($sms_a,$phone);
 
@@ -262,7 +272,7 @@ class CartController extends Controller
         $sms_u = "Hello $u, Your Order Was Posted Successfully, Our delivery agent will contact you shortly";
         $sms_a = "New Order! You have received a new order, check your email for the order details";
 
-        $phone = "254790841987";
+        $phone = "0707190188";
         $this->sendSMS($sms_u,Auth::User()->mobile);
         $this->sendSMS($sms_a,$phone);
     }
@@ -303,7 +313,7 @@ class CartController extends Controller
 
         $response = curl_exec($curl);
         curl_close($curl);
-        echo $response;
+        // echo $response;
     }
 
     public function smsAPIPage(){

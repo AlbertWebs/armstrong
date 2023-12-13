@@ -78,3 +78,5 @@
         t['claspo'] = t['claspo'] || f;
     }(window, document, 'script', '34164ABA1CC34B99AFF06148BBDF041E');
 </script><script>claspo('init');</script>
+{{-- Validate Email on KeyUp --}}
+
