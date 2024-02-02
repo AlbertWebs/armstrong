@@ -69,6 +69,12 @@ Route::group(['prefix' => '/webhooks'], function () {
     Route::get('paymentconfirmation', [App\Http\Controllers\PaymentsController::class, 'paymentconfirmation']);
 });
 
+// Call php artisan down
+Route::get('/make-me-sleep', function() {
+    $exitCode = Artisan::call('down');
+    echo "Done";
+});
+
 Auth::routes();
 
     Route::group(['prefix'=>'dashboard'], function(){
